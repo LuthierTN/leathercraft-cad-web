@@ -1,0 +1,699 @@
+{
+  "version": 2,
+  "generated": "2026-09-18",
+  "pivot": "ja",
+  "target": "en",
+  "purpose": "Fixed vocabulary injected into Guild pattern-translation prompts. A wrong entry silently corrupts every translation that uses it, so every entry carries a source and a confidence.",
+  "confidence_levels": {
+    "project": "Already shipped in js/i18n.js. This is our own decision and translations MUST match it.",
+    "high": "Established English term, confirmed by two or more independent English-language sources.",
+    "medium": "Established but context-dependent, or confirmed by only one source. Review before relying on it.",
+    "pending": "Tier B. No English equivalent exists. Treatment not yet decided by LuthierTN."
+  },
+  "entries": [
+    {
+      "ja": "ステッチ",
+      "en": "stitch",
+      "tier": "A",
+      "confidence": "project",
+      "source": "i18n.js#tool.stitch"
+    },
+    {
+      "ja": "縫い穴",
+      "en": "stitch hole",
+      "tier": "A",
+      "confidence": "project",
+      "source": "i18n.js#rec.cap.shapeStitchHole"
+    },
+    {
+      "ja": "縫い目",
+      "en": "seam",
+      "tier": "A",
+      "confidence": "project",
+      "source": "i18n.js#thread.nRuns"
+    },
+    {
+      "ja": "菱目",
+      "en": "diamond",
+      "tier": "A",
+      "confidence": "project",
+      "source": "i18n.js#stl.stitch.diamond",
+      "note": "Hole SHAPE, not the tool. The tool is 菱目打ち."
+    },
+    {
+      "ja": "平目",
+      "en": "flat",
+      "tier": "A",
+      "confidence": "project",
+      "source": "i18n.js#stl.stitch.flat",
+      "note": "Hole shape."
+    },
+    {
+      "ja": "ヨーロッパ目",
+      "en": "European",
+      "tier": "A",
+      "confidence": "project",
+      "source": "i18n.js#stl.stitch.original_sizes",
+      "note": "Hole shape."
+    },
+    {
+      "ja": "糸",
+      "en": "thread",
+      "tier": "A",
+      "confidence": "project",
+      "source": "i18n.js#thread.series"
+    },
+    {
+      "ja": "革",
+      "en": "leather",
+      "tier": "A",
+      "confidence": "project",
+      "source": "i18n.js#sim.leather"
+    },
+    {
+      "ja": "型紙",
+      "en": "pattern",
+      "tier": "A",
+      "confidence": "project",
+      "source": "i18n.js#guild.pickOne",
+      "note": "Never 'paper pattern' or 'template' in Guild text."
+    },
+    {
+      "ja": "広場",
+      "en": "plaza",
+      "tier": "A",
+      "confidence": "project",
+      "source": "i18n.js#guild.buttonTitle"
+    },
+    {
+      "ja": "ギルド",
+      "en": "Guild",
+      "tier": "A",
+      "confidence": "project",
+      "source": "i18n.js#guild.buttonTitle",
+      "note": "Japanese text writes ギルド in katakana; English keeps Guild."
+    },
+    {
+      "ja": "ピッチ",
+      "en": "pitch",
+      "tier": "A",
+      "confidence": "project",
+      "source": "i18n.js#stitch.holesMm"
+    },
+    {
+      "ja": "面取り",
+      "en": "chamfer",
+      "tier": "A",
+      "confidence": "project",
+      "source": "i18n.js#tool.chamfer",
+      "note": "CAD operation, not the leather edge tool (that is ヘリ落とし)."
+    },
+    {
+      "ja": "寸法線",
+      "en": "dimension",
+      "tier": "A",
+      "confidence": "project",
+      "source": "i18n.js#tool.dimension"
+    },
+    {
+      "ja": "センターライン",
+      "en": "centerline",
+      "tier": "A",
+      "confidence": "project",
+      "source": "i18n.js#tool.centerline"
+    },
+    {
+      "ja": "自動目打ち",
+      "en": "punch stitching holes automatically",
+      "tier": "A",
+      "confidence": "project",
+      "source": "i18n.js#rec.cap.stitchRun"
+    },
+    {
+      "ja": "目打ち穴",
+      "en": "stitch hole",
+      "tier": "A",
+      "confidence": "project",
+      "source": "i18n.js#print.holesAsDots"
+    },
+    {
+      "ja": "刻印",
+      "en": "engrave",
+      "tier": "A",
+      "confidence": "medium",
+      "source": "i18n.js#stl.engrave.legend",
+      "note": "AMBIGUOUS. The UI uses 'engrave' for 3D text. But 刻印 as a hand tool is a 'stamp' and 刻印を打つ is 'stamping'. Pick by context."
+    },
+    {
+      "ja": "コバ",
+      "en": "edge",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2022-11-18; tannerbates; hydhandbags",
+      "note": "'cut edge' when contrasted with a turned edge; 'raw edge' when left unfinished."
+    },
+    {
+      "ja": "床面",
+      "en": "flesh side",
+      "tier": "A",
+      "confidence": "high",
+      "source": "learnleathercraft; popovleather"
+    },
+    {
+      "ja": "銀面",
+      "en": "grain side",
+      "tier": "A",
+      "confidence": "high",
+      "source": "learnleathercraft; popovleather"
+    },
+    {
+      "ja": "ヘリ返し",
+      "en": "turned edge",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hydhandbags; tannerbates",
+      "note": "The margin is skived thin, glued and folded inward so the cut section is hidden."
+    },
+    {
+      "ja": "漉き",
+      "en": "skiving",
+      "tier": "A",
+      "confidence": "high",
+      "source": "popovleather; learnleathercraft; hatenablog:2022-11-18"
+    },
+    {
+      "ja": "革漉き包丁",
+      "en": "skiving knife",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2024-06-12"
+    },
+    {
+      "ja": "菱目打ち",
+      "en": "stitching chisel",
+      "tier": "A",
+      "confidence": "high",
+      "source": "wikipedia:Pricking_iron",
+      "note": "IMPORTANT: pierces through. NOT 'pricking iron', which only dimples the surface and is followed by an awl. Mistranslating this changes the described procedure."
+    },
+    {
+      "ja": "目打ち",
+      "en": "stitching chisel",
+      "tier": "A",
+      "confidence": "medium",
+      "source": "hatenablog:2024-06-12",
+      "note": "In Japanese practice 目打ち usually means the piercing tool, so 'chisel'. Use 'pricking iron' only when the text explicitly says the holes are then opened with an awl."
+    },
+    {
+      "ja": "菱錐",
+      "en": "diamond awl",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2024-06-12; learnleathercraft",
+      "note": "'stitching awl' is the broader term."
+    },
+    {
+      "ja": "平縫い",
+      "en": "saddle stitch",
+      "tier": "A",
+      "confidence": "high",
+      "source": "learnleathercraft; hatenablog:2024-06-12",
+      "note": "Two needles, each passing through every hole from opposite sides. Beware: 平縫い can also mean a machine straight stitch."
+    },
+    {
+      "ja": "コバ磨き",
+      "en": "burnishing",
+      "tier": "A",
+      "confidence": "high",
+      "source": "learnleathercraft; popovleather"
+    },
+    {
+      "ja": "ヘリ落とし",
+      "en": "edge beveler",
+      "tier": "A",
+      "confidence": "high",
+      "source": "learnleathercraft; sailrite",
+      "note": "Corrects the 'grooved edger' given in hatenablog:2024-06-12, which names one specific variant."
+    },
+    {
+      "ja": "ネジ捻",
+      "en": "adjustable creaser",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2024-06-12"
+    },
+    {
+      "ja": "捻引き",
+      "en": "creasing",
+      "tier": "A",
+      "confidence": "medium",
+      "source": "hatenablog:2024-06-12",
+      "note": "The decorative line pressed parallel to the edge."
+    },
+    {
+      "ja": "ステッチンググルーバー",
+      "en": "stitching groover",
+      "tier": "A",
+      "confidence": "high",
+      "source": "learnleathercraft; hatenablog:2024-06-12"
+    },
+    {
+      "ja": "ガラス板",
+      "en": "glass slicker",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2024-06-12"
+    },
+    {
+      "ja": "床革",
+      "en": "split leather",
+      "tier": "A",
+      "confidence": "high",
+      "source": "popovleather; learnleathercraft"
+    },
+    {
+      "ja": "半裁",
+      "en": "side",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2024-06-12",
+      "note": "Half a hide, split down the spine."
+    },
+    {
+      "ja": "ベンズ",
+      "en": "bend",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2024-06-12; popovleather"
+    },
+    {
+      "ja": "ショルダー",
+      "en": "shoulder",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2024-06-12; popovleather"
+    },
+    {
+      "ja": "ベリー",
+      "en": "belly",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2024-06-12; popovleather"
+    },
+    {
+      "ja": "トラ",
+      "en": "growth wrinkles",
+      "tier": "A",
+      "confidence": "medium",
+      "source": "hatenablog:2024-06-12",
+      "note": "Source says just 'wrinkle'. Popov's 'fat wrinkles' is the nearest defined English term."
+    },
+    {
+      "ja": "タンニン鞣し",
+      "en": "vegetable tanned",
+      "tier": "A",
+      "confidence": "high",
+      "source": "popovleather; learnleathercraft"
+    },
+    {
+      "ja": "クロム鞣し",
+      "en": "chrome tanned",
+      "tier": "A",
+      "confidence": "high",
+      "source": "popovleather; learnleathercraft"
+    },
+    {
+      "ja": "鞣し",
+      "en": "tanning",
+      "tier": "A",
+      "confidence": "high",
+      "source": "popovleather"
+    },
+    {
+      "ja": "カシメ",
+      "en": "rivet",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2024-06-12"
+    },
+    {
+      "ja": "ハトメ",
+      "en": "eyelet",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2024-06-12"
+    },
+    {
+      "ja": "バネホック",
+      "en": "snap button",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2024-06-12",
+      "note": "Also 'dot button'. Component names vary by supplier: cap / socket / stud / post."
+    },
+    {
+      "ja": "ギボシ",
+      "en": "button stud",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2024-06-12"
+    },
+    {
+      "ja": "ポンチ",
+      "en": "hole punch",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2024-06-12; i18n.js#export.stitchRoundDesc"
+    },
+    {
+      "ja": "金具",
+      "en": "hardware",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2024-06-12",
+      "note": "Source gives 'metal fitting'; 'hardware' is the usual craft term."
+    },
+    {
+      "ja": "縫い代",
+      "en": "seam allowance",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2022-11-18"
+    },
+    {
+      "ja": "裁断線",
+      "en": "cut line",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2022-11-18"
+    },
+    {
+      "ja": "仕上り線",
+      "en": "finished line",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2022-11-18"
+    },
+    {
+      "ja": "縫い線",
+      "en": "stitch line",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2022-11-18"
+    },
+    {
+      "ja": "合印",
+      "en": "match mark",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2022-11-18"
+    },
+    {
+      "ja": "わ",
+      "en": "place on fold",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2022-11-18",
+      "note": "Pattern notation: the edge laid on the fold line."
+    },
+    {
+      "ja": "折り返し線",
+      "en": "fold line",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2022-11-18"
+    },
+    {
+      "ja": "当て革",
+      "en": "reinforcement piece",
+      "tier": "A",
+      "confidence": "medium",
+      "source": "hatenablog:2022-11-18"
+    },
+    {
+      "ja": "裏地",
+      "en": "lining",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2022-11-18; learnleathercraft"
+    },
+    {
+      "ja": "表地",
+      "en": "outer",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2022-11-18"
+    },
+    {
+      "ja": "芯材",
+      "en": "interfacing",
+      "tier": "A",
+      "confidence": "medium",
+      "source": "hatenablog:2022-11-18",
+      "note": "'padding' when it adds loft rather than stiffness."
+    },
+    {
+      "ja": "見返し",
+      "en": "facing",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2022-11-18"
+    },
+    {
+      "ja": "縁取り",
+      "en": "binding",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2022-11-18; steelhorseleather"
+    },
+    {
+      "ja": "玉縁",
+      "en": "piped edge",
+      "tier": "A",
+      "confidence": "medium",
+      "source": "hatenablog:2022-11-18",
+      "note": "Only one source. Check whether the intended sense is piping or a bound edge."
+    },
+    {
+      "ja": "型押し",
+      "en": "embossed",
+      "tier": "A",
+      "confidence": "high",
+      "source": "popovleather; wikipedia:Leather_crafting"
+    },
+    {
+      "ja": "成形",
+      "en": "molding",
+      "tier": "A",
+      "confidence": "high",
+      "source": "wikipedia:Leather_crafting; learnleathercraft"
+    },
+    {
+      "ja": "ケーシング",
+      "en": "casing",
+      "tier": "A",
+      "confidence": "medium",
+      "source": "learnleathercraft",
+      "note": "Wetting veg-tan to the right internal moisture so it cuts, models and stamps cleanly. Japanese also says 水引き — confirm which headword LuthierTN prefers."
+    },
+    {
+      "ja": "スーベルナイフ",
+      "en": "swivel knife",
+      "tier": "A",
+      "confidence": "high",
+      "source": "learnleathercraft; wikipedia:Leather_crafting",
+      "note": "hatenablog:2024-06-12 has the typo 'swievel'."
+    },
+    {
+      "ja": "マチ",
+      "en": "gusset",
+      "tier": "A",
+      "confidence": "high",
+      "source": "hatenablog:2022-11-18; motitown; kawanowa",
+      "note": "The generic term translates cleanly. Its named subtypes do not — see Tier B."
+    },
+    {
+      "ja": "通しマチ",
+      "romaji": "tōshi-machi",
+      "en": "continuous gusset",
+      "tier": "B",
+      "confidence": "high",
+      "source": "trimax:Manual of Leather Goods p.98; jlia:924; leatherworker.net:86486; patent:US2539051; arsutoriaschool",
+      "gloss_draft": "a gusset that runs up one side, across the bottom and up the other, so the front and back panels never meet",
+      "reading_verified": true,
+      "note": "VERIFIED in the primary source: Manual of Leather Goods p.98 names three types — 'side gussets, continuous gussets and folded gussets' — matching JLIA's 横まち／通しまち／折れまち in name and number. CAVEAT ON MEANING: the manual defines a continuous gusset as joined at the sides, TOP and bottom, whereas Japanese consumer usage of 通しマチ (kawanowa, sot-web, munekawa) is sides and bottom only — which that manual would call a FOLDED gusset. Keep the edge list explicit in the gloss so an English reader trained on the manual is not misled. Alternatives: 'wraparound gusset', 'T-gusset' (leathercrafthaven), 'through gusset' (munekawa's own English site). Arsutoria School independently names this 'side-bottom (Italian: fianco-fondo) — side and bottom panels form a single piece', which is the sides+bottom sense, not the manual's sides+top+bottom."
+    },
+    {
+      "ja": "笹マチ",
+      "romaji": "sasa-machi",
+      "en": "tapered gusset",
+      "tier": "B",
+      "confidence": "medium",
+      "source": "munekawa-en; kawanowa; sot-web",
+      "gloss_draft": "a gusset tapering narrower toward the bottom, named for the shape of a bamboo leaf",
+      "reading_verified": true,
+      "note": "munekawa's English site romanizes this 'Sasago gusset' and glosses it; 'tapered gusset' is clearer for a UI label. sot-web's 'sasara-machi' reading is wrong."
+    },
+    {
+      "ja": "箱マチ",
+      "romaji": "hako-machi",
+      "en": "box gusset",
+      "tier": "B",
+      "confidence": "high",
+      "source": "internal:reference_box_gusset_stitch_design; kawanowa",
+      "gloss_draft": "a boxed gusset that closes the opening as it folds, used on coin compartments so coins cannot spill",
+      "reading_verified": true,
+      "note": "We already call this a box gusset in our own design notes. Also written 函マチ."
+    },
+    {
+      "ja": "風琴マチ",
+      "romaji": "fūkin-machi",
+      "en": "bellows gusset",
+      "tier": "B",
+      "confidence": "medium",
+      "source": "leathercrafthaven; kawanowa; sot-web",
+      "gloss_draft": "a bellows gusset folded like an accordion, with the dividers set in the valleys of the folds",
+      "reading_verified": true,
+      "note": "風琴 is a reed organ, which works by bellows — and leathercrafthaven defines a bellows gusset as 'the accordion's tailored cousin, shaped so the pleats collapse cleanly', matching how Japanese treats 風琴マチ as the more refined accordion. CAVEAT: this JA-EN pairing is our inference from the two definitions, not a documented equivalence, and 'bellows' does not by itself encode the real distinction (dividers in the valleys for 風琴, on the peaks for 蛇腹). Needs LuthierTN's confirmation as a maker. kawanowa's 'fūgin' reading is wrong; 風琴 is ふうきん."
+    },
+    {
+      "ja": "蛇腹マチ",
+      "romaji": "jabara-machi",
+      "en": "accordion gusset",
+      "tier": "B",
+      "confidence": "medium",
+      "source": "leathercrafthaven; sot-web",
+      "gloss_draft": "an accordion gusset with the dividers set on the peaks of the folds rather than the valleys",
+      "reading_verified": true,
+      "note": "leathercrafthaven gives 'accordion/concertina' as one type. Dividers sit on the peaks of the folds, versus the valleys for 風琴マチ."
+    },
+    {
+      "ja": "扇マチ",
+      "romaji": "ōgi-machi",
+      "en": "fan gusset",
+      "tier": "B",
+      "confidence": "medium",
+      "source": "sot-web",
+      "gloss_draft": "an accordion gusset whose top edge spreads open in a fan",
+      "reading_verified": true
+    },
+    {
+      "ja": "三角マチ",
+      "romaji": "sankaku-machi",
+      "en": "triangular gusset",
+      "tier": "B",
+      "confidence": "medium",
+      "source": "sot-web",
+      "gloss_draft": "no side gusset at all: the depth comes from a triangular fold at each bottom corner",
+      "reading_verified": true
+    },
+    {
+      "ja": "天マチ",
+      "romaji": "ten-machi",
+      "en": "top gusset",
+      "tier": "B",
+      "confidence": "medium",
+      "source": "sot-web",
+      "gloss_draft": "a gusset at the top face rather than the sides or bottom",
+      "reading_verified": true
+    },
+    {
+      "ja": "帯マチ",
+      "romaji": "obi-machi",
+      "en": "strip gusset",
+      "tier": "B",
+      "confidence": "medium",
+      "source": "arsutoriaschool; sakaiworks.info:2021-12-23; moricobo.jimdoweb.com:2020-07-09",
+      "gloss_draft": "a narrow band joining the body panels to the opening or zip section, rather than a gusset folded out of the body itself",
+      "reading_verified": true,
+      "note": "Same structure as 捨てマチ — confirmed by LuthierTN (2026-09-18) and by Sakai workS: 「いわゆる'帯マチ'とか'捨てマチ'等と言われる構造」. The professional English term names the CONSTRUCTION, not the part: Arsutoria School defines 'Strip Construction' as 'a small band of leather or fabric acts as a connection between two main parts of the bag'. 'Strip gusset' is our part-name derived from it. Note English has no everyday word for this because a plain English gusset IS a strip; Japanese needs 帯 only because it also has gussets folded out of the body (笹・三角・折れ).",
+      "aliases": [
+        "捨てマチ"
+      ]
+    },
+    {
+      "ja": "別マチ",
+      "romaji": "betsu-machi",
+      "en": "separate gusset",
+      "tier": "B",
+      "confidence": "medium",
+      "source": "sot-web",
+      "gloss_draft": "a gusset whose side and bottom panels are separate pieces, not continuous with the body",
+      "reading_verified": true
+    },
+    {
+      "ja": "横マチ",
+      "romaji": "yoko-machi",
+      "en": "side gusset",
+      "tier": "B",
+      "confidence": "high",
+      "source": "jlia:924; trimax:Manual of Leather Goods p.98",
+      "gloss_draft": "a gusset on each side only, leaving the front and back panels joined at the bottom",
+      "reading_verified": true,
+      "note": "Agrees across both primary sources: JLIA '両側のまちを独立させた横まち'; Manual of Leather Goods p.98 'Side gussets are joined at the sides of the article'."
+    },
+    {
+      "ja": "折れマチ",
+      "romaji": "ore-machi",
+      "en": "folded gusset",
+      "tier": "B",
+      "confidence": "medium",
+      "source": "jlia:924; trimax:Manual of Leather Goods p.98; leathercrafthaven",
+      "gloss_draft": "a gusset split in two down its height, each half joined to the front and back panels so it folds shut",
+      "reading_verified": false,
+      "note": "Named in both primaries but defined differently: JLIA says the gusset is halved vertically and joined to the left and right of the front and back panels; Manual of Leather Goods p.98 says folded gussets are 'joined at the sides and bottom'. These may not be the same construction — confirm before using. Reading unverified."
+    },
+    {
+      "ja": "捨てマチ",
+      "romaji": "sute-machi",
+      "en": "strip gusset",
+      "tier": "B",
+      "confidence": "medium",
+      "source": "arsutoriaschool; sakaiworks.info:2021-12-23; moricobo.jimdoweb.com:2020-07-09",
+      "gloss_draft": "a narrow band joining the body panels to the opening or zip section; set back so it does not read as a gusset from outside",
+      "reading_verified": true,
+      "note": "RESOLVED 2026-09-18: LuthierTN uses it in the same sense as 帯マチ, matching Sakai workS. See 帯マチ for the full reasoning. Rejected 'welted gusset': an English welt sits PROUD of the seam, while 森革工房 describes this tucking inward (「うまく引っ込むように作るのがポイント」) — opposite directions. The Reddit thread often cited for a 捨てマチ↔welted gusset equivalence could not be verified (blocked to both fetchers).",
+      "aliases": [
+        "帯マチ"
+      ]
+    },
+    {
+      "ja": "菊寄せ",
+      "romaji": "kikuyose",
+      "en": "radial corner pleating",
+      "tier": "B",
+      "confidence": "medium",
+      "source": "jlia:446; l-phoenix.jp; 3leather.com",
+      "gloss_draft": "gathering the slack at a turned rounded corner into fine, even radial pleats",
+      "reading_verified": true,
+      "note": "JLIA defines it but leaves its English field EMPTY — even the industry body declined to translate it. English craft sources use 'kikuyose' as a loanword. Japanese alias: キザミ (kizami). Suggest label 'Radial Corner Pleating', with kikuyose in the gloss."
+    },
+    {
+      "ja": "ビニモ",
+      "en": "Vinymo",
+      "tier": "A",
+      "confidence": "high",
+      "source": "internal:LuthierTN 2026-09-19",
+      "gloss_draft": "a brand of polyester sewing thread; always spelt Vinymo",
+      "note": "A brand name, not a word: it is never translated. Without this entry the translator gave four different spellings in three runs — Vinymo, Vinio, Binimoⓡ and Binimoファイル. With it, Vinymo six times out of six."
+    },
+    {
+      "ja": "栃木レザー",
+      "en": "Tochigi Leather",
+      "tier": "A",
+      "confidence": "high",
+      "source": "internal:LuthierTN 2026-09-19",
+      "gloss_draft": "a tannery and its vegetable-tanned leather; always spelt Tochigi Leather",
+      "note": "A tannery name. Without this entry German left it in Japanese; with it, Tochigi Leather six times out of six."
+    },
+    {
+      "ja": "腕ミシン",
+      "en": "arm sewing machine",
+      "tier": "A",
+      "confidence": "high",
+      "source": "internal:LuthierTN 2026-09-19",
+      "gloss_draft": "a cylinder-arm sewing machine, for sewing tubes, bags and other closed shapes",
+      "note": "Without this entry the translator invented \"wrist stitcher\". It is a machine with a narrow cylindrical arm, not anything worn."
+    }
+  ]
+}

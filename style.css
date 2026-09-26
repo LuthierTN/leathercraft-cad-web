@@ -1,0 +1,1524 @@
+/* LINE Seed JP — shipped with the app (assets/fonts, SIL OFL 1.1). One family, four
+   weights; a text's fontFamily holds the face's full name (see js/fonts.js). */
+@font-face { font-family: 'LINE Seed JP';           font-weight: 100; font-style: normal; font-display: swap; src: url('assets/fonts/LINESeedJP-Thin.woff2') format('woff2'); }
+@font-face { font-family: 'LINE Seed JP';           font-weight: 400; font-style: normal; font-display: swap; src: url('assets/fonts/LINESeedJP-Regular.woff2') format('woff2'); }
+@font-face { font-family: 'LINE Seed JP';           font-weight: 700; font-style: normal; font-display: swap; src: url('assets/fonts/LINESeedJP-Bold.woff2') format('woff2'); }
+@font-face { font-family: 'LINE Seed JP';           font-weight: 800; font-style: normal; font-display: swap; src: url('assets/fonts/LINESeedJP-ExtraBold.woff2') format('woff2'); }
+
+/* ============================================================
+   LeathercraftCAD Lite — Dark Theme
+   ============================================================ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-dark:      #1a1a1e;
+  --bg-panel:     #26262c;
+  --bg-pane:      #1e1e24;
+  --bg-hover:     #35353e;
+  --bg-active:    #4a3f28;
+  --border:       #3a3a45;
+  --border-light: #50505e;
+  --accent:       #c8922a;
+  --accent-light: #e8b44a;
+  --text:         #d8d4cc;
+  --text-dim:     #888884;
+  --text-bright:  #f0ece4;
+  --canvas-bg:    #f8f6f0;
+  --tool-size:    42px;
+  --left-w:       52px;
+  --right-w:      280px;
+  --top-h:        44px;
+  --bottom-h:     34px;
+  --status-h:     24px;
+}
+
+html, body { width: 100%; height: 100%; overflow: hidden; background: var(--bg-dark); color: var(--text); font-family: 'Segoe UI', 'Noto Sans JP', system-ui, sans-serif; font-size: 12px; }
+
+#app {
+  display: grid;
+  grid-template-rows: var(--top-h) 1fr auto var(--status-h);
+  grid-template-columns: 1fr;
+  width: 100vw;
+  height: 100vh;                        /* fallback */
+  height: var(--app-height, 100dvh);    /* iOS: set dynamically via window.innerHeight */
+  overflow: hidden;
+}
+
+/* ---- Top Pane ---- */
+#top-pane {
+  background: var(--bg-panel);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  gap: 8px;
+  overflow: hidden;
+}
+
+#app-logo {
+  flex: none;
+  display: flex;
+  align-items: center;
+  height: var(--top-h);
+  margin-right: 6px;
+  text-decoration: none;
+  cursor: default;
+}
+#app-logo img {
+  height: 40px;              /* source 150×48 CSS px (rendered at 6×) */
+  width: auto;
+  display: block;
+}
+
+#tool-options-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.tool-option-label {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 11px;
+  white-space: nowrap;
+  min-width: 60px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#tool-name-display {
+  color: var(--accent-light);
+  font-weight: 700;
+  font-size: 12px;
+  white-space: nowrap;
+  padding: 3px 8px;
+  background: var(--bg-active);
+  border-radius: 3px;
+  min-width: 64px;
+  text-align: center;
+}
+
+#tool-options {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.top-option {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.top-option label { color: var(--text-dim); font-size: 11px; }
+
+.top-option input[type="text"],
+.top-option input[type="number"] {
+  width: 72px;
+  background: var(--bg-dark);
+  border: 1px solid var(--border-light);
+  color: var(--text-bright);
+  padding: 3px 5px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-family: 'Consolas', monospace;
+  text-align: right;
+}
+
+.top-option input:focus { outline: none; border-color: var(--accent); }
+
+/* Hide native number-input spinners app-wide — wheel adjusts the value
+   instead (see js/ui/numberInputWheel.js), and the spinner arrows would
+   otherwise eat horizontal space and obscure decimal places. Scoped
+   selectors below match the existing .top-option specificity. */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button,
+.top-option input[type="number"]::-webkit-inner-spin-button,
+.top-option input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  display: none !important;
+  margin: 0 !important;
+  width: 0 !important;
+}
+input[type="number"],
+.top-option input[type="number"] {
+  -moz-appearance: textfield !important;
+  appearance: textfield !important;
+}
+
+.top-option button {
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 3px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 11px;
+}
+.top-option button:hover { background: var(--bg-active); border-color: var(--accent); }
+.top-option button.active { background: var(--accent); color: #fff; border-color: var(--accent-light); }
+
+.top-sep { width: 1px; height: 22px; background: var(--border); margin: 0 4px; }
+
+/* ---- Main Area ---- */
+#main-area {
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ---- Left Pane ---- */
+#left-pane {
+  width: var(--left-w);
+  background: var(--bg-panel);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4px 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-shrink: 0;
+  gap: 2px;
+}
+
+/* 元に戻す／やり直しの段: ツール列が縦に収まらずスクロールしても上端に
+   留まる。下を流れるボタンを隠すため背景を塗る（top は #left-pane の
+   padding-top 分だけ持ち上げて、隙間から覗かせない）。 */
+#left-pane-pinned {
+  position: sticky;
+  top: -4px;
+  z-index: 1;
+  width: 100%;
+  margin-top: -4px;
+  padding-top: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  flex-shrink: 0;
+  background: var(--bg-panel);
+}
+
+.tool-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  width: 100%;
+  padding: 0 4px;
+}
+
+.tool-btn {
+  width: 40px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  color: var(--text-dim);
+  transition: background 0.1s, color 0.1s, border-color 0.1s;
+  flex-shrink: 0;
+}
+
+.tool-btn svg {
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+}
+
+.tool-btn:hover {
+  background: var(--bg-hover);
+  color: var(--text-bright);
+  border-color: var(--border-light);
+}
+
+.tool-btn.active {
+  background: var(--bg-active);
+  color: var(--accent-light);
+  border-color: var(--accent);
+}
+
+.tool-btn:focus,
+.tool-btn:focus-visible {
+  outline: none;
+}
+
+.tool-separator {
+  width: 32px;
+  height: 1px;
+  background: var(--border);
+  margin: 4px 0;
+}
+
+/* ツール名ラベル（ToolLabels.js）: マウスが左パネルに入った間だけ右隣に
+   重ねて出す。各行はボタンと同じ高さ・同じ top に置く。 */
+.tool-btn.label-hover {
+  background: var(--bg-hover);
+  color: var(--text-bright);
+  border-color: var(--border-light);
+}
+#tool-labels {
+  position: fixed;
+  z-index: 60;
+  min-width: 96px;
+  overflow: hidden;
+  background: var(--bg-panel);
+  border-right: 1px solid var(--border);
+  box-shadow: 4px 0 12px rgba(0,0,0,0.35);
+}
+#tool-labels .tool-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px 0 6px;
+  white-space: nowrap;
+  font-size: 12.5px;
+  color: var(--text-dim);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+#tool-labels .tool-label .name { flex: 1; }
+#tool-labels .tool-label kbd {
+  font-family: inherit;
+  font-size: 11px;
+  color: var(--text-dim);
+  opacity: 0.75;
+}
+#tool-labels .tool-label.hover,
+#tool-labels .tool-label:hover {
+  background: var(--bg-hover);
+  color: var(--text-bright);
+  border-color: var(--border-light);
+}
+#tool-labels .tool-label.active {
+  color: var(--accent-light);
+}
+
+/* ペン用ツールチップ（PenTooltips.js）: iPad の Safari は title を出さない
+   ので、Apple Pencil をかざした時だけ同じ文言をこれで出す。 */
+#pen-tooltip {
+  position: fixed;
+  z-index: 10000;
+  max-width: 280px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: rgba(20, 20, 24, 0.95);
+  border: 1px solid var(--border-light);
+  color: var(--text-bright);
+  font-size: 12px;
+  line-height: 1.4;
+  white-space: pre-line;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* ---- Center Pane ---- */
+#center-pane {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: #2a2a30;
+}
+
+#main-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: crosshair;
+  touch-action: none;
+}
+
+/* ---- Edge rulers (X/Y bars + corner toggle) ---- */
+.edge-ruler {
+  position: absolute;
+  background: #1f1f24;
+  pointer-events: none;
+  z-index: 5;
+}
+#ruler-x {
+  top: 0;
+  left: 22px;
+  width: calc(100% - 22px);
+  height: 22px;
+  border-bottom: 1px solid #444;
+}
+#ruler-y {
+  top: 22px;
+  left: 0;
+  width: 22px;
+  height: calc(100% - 22px);
+  border-right: 1px solid #444;
+}
+#ruler-corner {
+  top: 0;
+  left: 0;
+  width: 22px;
+  height: 22px;
+  border-right: 1px solid #444;
+  border-bottom: 1px solid #444;
+  pointer-events: auto;
+  cursor: pointer;
+}
+#ruler-corner:hover {
+  background: #2a2a32;
+}
+
+/* ---- Right Pane ---- */
+#right-pane {
+  width: var(--right-w);
+  background: var(--bg-pane);
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+#r1-pane {
+  width: 150px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#r2-pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* ---- Recording column (r1.5): controls + step list ---- */
+/* Only present while the recording UI is on; main.js adds the body class so the
+   right pane grows by exactly this column's width instead of squeezing the others. */
+body.has-steps-pane { --right-w: 470px; }
+
+#rsteps-pane {
+  width: 190px;
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+  flex-shrink: 0;
+}
+
+#recording-panel-container {
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+/* The transport buttons share a row instead of stacking full-width, so the
+   step list below them keeps its space. */
+#recording-panel .file-btn {
+  width: auto;
+  flex: 1 1 auto;
+  min-width: 0;
+  text-align: center;
+  padding: 4px 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* The list takes what the controls leave, but never shrinks to nothing —
+   on a short window the whole column scrolls instead. */
+#step-list-panel {
+  flex: 1 1 auto;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#step-list {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#step-list .step-empty {
+  padding: 10px 8px;
+  font-size: 11px;
+  color: var(--text-dim);
+}
+
+.step-row {
+  display: flex;
+  gap: 5px;
+  align-items: flex-start;
+  padding: 4px 6px 4px 5px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  border-left: 3px solid transparent;
+  font-size: 11px;
+  line-height: 1.35;
+  cursor: pointer;
+  color: var(--text);
+}
+.step-row:hover { background: var(--bg-hover, #2e2e36); }
+.step-row.done  { color: var(--text-dim); }
+.step-row.current {
+  background: rgba(232,180,74,0.14);
+  border-left-color: #e8b44a;
+  color: var(--text-bright, #eee);
+}
+.step-row .step-no {
+  flex-shrink: 0;
+  min-width: 18px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: var(--text-dim);
+  font-size: 10px;
+  padding-top: 1px;
+}
+.step-row.current .step-no { color: #e8b44a; font-weight: 600; }
+.step-row .step-body { flex: 1; min-width: 0; word-break: break-word; }
+.step-row .step-note {
+  margin-top: 2px;
+  padding-left: 5px;
+  border-left: 2px solid #4a8a4a;
+  color: #a8cfa8;
+  font-size: 10px;
+  white-space: pre-wrap;
+}
+.step-row .step-memo-btn {
+  flex-shrink: 0;
+  background: transparent;
+  border: 0;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 11px;
+  padding: 0 2px;
+  line-height: 1.3;
+  opacity: 0.35;
+}
+.step-row:hover .step-memo-btn { opacity: 1; }
+.step-row .step-memo-btn.has-note { opacity: 1; color: #7bbf7b; }
+.step-row textarea.step-note-edit {
+  width: 100%;
+  margin-top: 3px;
+  background: #1c1c22;
+  color: #ddd;
+  border: 1px solid #555;
+  border-radius: 3px;
+  font: 11px/1.4 inherit;
+  padding: 3px 4px;
+  resize: vertical;
+  min-height: 42px;
+  box-sizing: border-box;
+}
+
+/* ---- Replay HUD (top-left of the canvas): what is happening + author memo ---- */
+#replay-hud {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  max-width: min(46%, 420px);
+  z-index: 40;
+  pointer-events: none;
+  background: rgba(0,0,0,0.72);
+  border: 1px solid rgba(100,220,100,0.55);
+  border-radius: 6px;
+  padding: 8px 11px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.45);
+}
+/* 再生中／一時停止中の札。面取りした緑枠に白抜き ―― 枠の色は解説枠と同じ。
+   再生中はゆっくり明滅、一時停止中ははっきり点滅（止まっている画面で唯一
+   動くものが「待っている」合図になる）。 */
+/* 操作ガイドの吹き出し（図面の左上）。デスクトップ版と同じ置き場所で、
+   作図中の「次に何をするか」を目の行く所に出す。 */
+#tool-guide {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  max-width: min(46%, 420px);
+  z-index: 39;
+  pointer-events: none;
+  font-size: 13px;
+  line-height: 1.45;
+  white-space: pre-wrap;
+  color: #fdf3d8;
+  background: rgba(28,24,16,0.86);
+  border: 1px solid rgba(232,180,74,0.75);
+  border-radius: 8px;
+  padding: 7px 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.45);
+}
+/* 吹き出しのしっぽ（左下） */
+#tool-guide::after {
+  content: '';
+  position: absolute;
+  left: 16px;
+  bottom: -7px;
+  width: 11px;
+  height: 11px;
+  background: inherit;
+  border-right: 1px solid rgba(232,180,74,0.75);
+  border-bottom: 1px solid rgba(232,180,74,0.75);
+  transform: rotate(45deg);
+  border-bottom-right-radius: 2px;
+}
+#tool-guide.warn {
+  color: #ffe2e2;
+  background: rgba(58,20,20,0.88);
+  border-color: rgba(255,107,107,0.8);
+}
+#tool-guide.warn::after {
+  border-right-color: rgba(255,107,107,0.8);
+  border-bottom-color: rgba(255,107,107,0.8);
+}
+
+#replay-hud .hud-badge {
+  display: inline-block;
+  margin-bottom: 5px;
+  padding: 2px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+  background: rgba(52,132,52,0.9);
+  border: 1.5px solid rgba(100,220,100,0.9);
+  /* 四隅を丸める。clip-path で切り落とすと角の枠線まで消えてしまうので、
+     border-radius にして枠がぐるりと一周するようにしている。 */
+  border-radius: 7px;
+}
+#replay-hud .hud-badge.playing { animation: lc-hud-pulse 1.9s ease-in-out infinite; }
+#replay-hud .hud-badge.paused  { animation: lc-hud-blink 1.1s steps(1, end) infinite; }
+@keyframes lc-hud-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.45; } }
+@keyframes lc-hud-blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0.18; } }
+/* 学習モードのボタン（続ける／もう一度）。HUD 自体はクリックを通すので、
+   受け取るのはボタンだけ。図面の上に置いた札が当たり判定を持つと、
+   その下を描けなくなる。 */
+#replay-hud .hud-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+#replay-hud .hud-btn {
+  pointer-events: auto;
+  background: #2b2b33; color: #ddd8cc; border: 1px solid #55555f;
+  border-radius: 5px; padding: 4px 12px; font-size: 12px; cursor: pointer;
+  white-space: nowrap;
+}
+#replay-hud .hud-btn:hover { border-color: #7a7a88; color: #fff; }
+#replay-hud .hud-btn.primary { background: #3a6ea8; border-color: #4f86c4; color: #fff; font-weight: 600; }
+#replay-hud .hud-btn.primary:hover { background: #4579b5; }
+#replay-hud .hud-actions + .hud-actions { margin-top: 5px; }
+#replay-hud .hud-warn {
+  margin-top: 6px; padding: 5px 8px; border-radius: 5px;
+  background: rgba(150,105,20,0.28); border: 1px solid rgba(232,180,74,0.8);
+  color: #ffd98a; font-size: 12px; line-height: 1.45;
+}
+#replay-hud .hud-btn.small { padding: 2px 9px; font-size: 11px; color: #bdb8ad; }
+#replay-hud .hud-badge.ready {
+  background: rgba(58,110,168,0.92);
+  border-color: rgba(120,170,225,0.95);
+}
+#replay-hud .hud-badge.waiting {
+  /* 学習モードは「待っている」ので、緑ではなく手番の色（金）で出す。
+     点滅は一時停止と同じ ―― 画面が止まっているときに動くものが合図になる。 */
+  background: rgba(150,105,20,0.92);
+  border-color: rgba(232,180,74,0.95);
+  animation: lc-hud-blink 1.1s steps(1, end) infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  #replay-hud .hud-badge.playing,
+  #replay-hud .hud-badge.waiting,
+  #replay-hud .hud-badge.paused { animation: none; opacity: 1; }
+}
+
+/* ---- The lesson's own words (author side): a small two-field editor ---- */
+.lesson-dlg-back {
+  position: fixed; inset: 0; z-index: 4300;
+  background: rgba(0,0,0,0.55);
+  display: flex; align-items: center; justify-content: center;
+}
+.lesson-dlg {
+  width: min(520px, 92vw);
+  background: #222; color: var(--text, #d8d4cc);
+  border: 1px solid #3a3a45; border-radius: 10px;
+  padding: 18px 20px; box-shadow: 0 8px 28px rgba(0,0,0,0.55);
+}
+.lesson-dlg h3 { margin: 0 0 12px; font-size: 15px; color: #e8b44a; }
+.lesson-dlg label { display: block; margin: 10px 0 4px; font-size: 12px; color: #aaa; }
+.lesson-dlg textarea {
+  width: 100%; box-sizing: border-box; resize: vertical;
+  background: #1a1a1e; color: #eee; border: 1px solid #555; border-radius: 4px;
+  padding: 7px 9px; font-size: 13px; line-height: 1.5; font-family: inherit;
+}
+.lesson-dlg label.check { display: flex; align-items: center; gap: 7px; margin-top: 14px; font-size: 13px; color: var(--text, #d8d4cc); cursor: pointer; }
+.lesson-dlg .count { margin-top: 3px; font-size: 11px; color: #888; text-align: right; }
+.lesson-dlg .btns { display: flex; gap: 8px; justify-content: flex-end; margin-top: 14px; }
+.lesson-dlg .btns button {
+  background: #444; color: #fff; border: 0; border-radius: 5px;
+  padding: 7px 16px; font-size: 13px; cursor: pointer;
+}
+.lesson-dlg .btns button.primary { background: #3a6ea8; }
+
+/* ---- Demonstration hints: where it clicked, and how far the next point is ----
+   Pinned to world coordinates (repositioned every frame), so they stay put
+   while the camera moves. They never take the pointer. */
+.demo-hints { position: fixed; inset: 0; pointer-events: none; z-index: 4150; }
+.demo-pin, .demo-delta { position: fixed; pointer-events: none; white-space: nowrap; }
+.demo-pin .dh-dot {
+  position: absolute; left: -4px; top: -4px; width: 8px; height: 8px;
+  border-radius: 50%; background: #ffcc00; box-shadow: 0 0 0 2px rgba(0,0,0,0.55);
+}
+.demo-pin .dh-label {
+  position: absolute; left: 9px; top: 5px;
+  background: rgba(20,18,12,0.92); color: #ffe9a8;
+  border: 1px solid rgba(232,180,74,0.7); border-radius: 4px;
+  padding: 2px 6px; font-size: 11px; line-height: 1.3;
+}
+.demo-delta {
+  transform: translate(14px, -26px);
+  background: rgba(12,20,28,0.92); color: #cfe6ff;
+  border: 1px solid rgba(110,170,225,0.75); border-radius: 4px;
+  padding: 2px 7px; font-size: 11.5px; line-height: 1.3;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---- Pointer ghost (learn mode): a cursor that can leave the canvas ----
+   Shows where a hand would go for moves that happen on the toolbar or a
+   panel, which the canvas's own virtual cursor cannot reach. */
+.pointer-ghost {
+  position: fixed;
+  z-index: 4200;
+  pointer-events: none;
+  margin: -3px 0 0 -3px;          /* the arrow's tip, not its box, sits on the point */
+  filter: drop-shadow(0 2px 3px rgba(0,0,0,0.55));
+}
+.pointer-ghost .pg-ring {
+  position: absolute;
+  left: 1px; top: 1px;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  border: 2px solid #e8b44a;
+  opacity: 0;
+}
+.pointer-ghost .pg-ring.bloom { animation: lc-pg-bloom 0.45s ease-out 1; }
+@keyframes lc-pg-bloom {
+  0%   { opacity: 0.95; transform: translate(0, 0) scale(0.4); }
+  100% { opacity: 0;    transform: translate(-13px, -13px) scale(3.6); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pointer-ghost .pg-ring.bloom { animation-duration: 0.01s; }
+}
+
+/* ---- Coach mark (learn mode): the ring over the control to press next ----
+   Sits above the panels but takes no clicks — the button underneath has to
+   stay pressable, since pressing it is the whole point. */
+.coach-ring {
+  position: fixed;
+  z-index: 4100;
+  pointer-events: none;
+  border: 2px solid #e8b44a;
+  border-radius: 8px;
+  box-shadow: 0 0 0 3px rgba(232,180,74,0.22), 0 0 14px rgba(232,180,74,0.5);
+}
+.coach-ring.nudge { animation: lc-coach-nudge 0.9s ease-out 3; }
+@keyframes lc-coach-nudge {
+  0%   { box-shadow: 0 0 0 3px rgba(232,180,74,0.22), 0 0 14px rgba(232,180,74,0.5); }
+  35%  { box-shadow: 0 0 0 9px rgba(232,180,74,0.05), 0 0 22px rgba(232,180,74,0.8); }
+  100% { box-shadow: 0 0 0 3px rgba(232,180,74,0.22), 0 0 14px rgba(232,180,74,0.5); }
+}
+.coach-bubble {
+  position: fixed;
+  z-index: 4100;
+  pointer-events: none;
+  max-width: 190px;
+  padding: 5px 9px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #f2ede2;
+  background: rgba(28,24,16,0.94);
+  border: 1px solid #c8922a;
+  border-radius: 6px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.5);
+}
+@media (prefers-reduced-motion: reduce) {
+  .coach-ring.nudge { animation: none; }
+}
+#replay-hud .hud-step {
+  font-size: 10px;
+  color: #e8b44a;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+}
+#replay-hud .hud-caption {
+  font-size: 14px;
+  line-height: 1.4;
+  color: #eaffea;
+  white-space: pre-wrap;
+}
+#replay-hud .hud-note {
+  margin-top: 6px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  font-size: 12px;
+  line-height: 1.5;
+  color: #ffe6a8;
+  white-space: pre-wrap;
+}
+
+/* Panel sections */
+#linestyle-panel, #layer-panel, #file-panel, #view-panel {
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+#layer-panel { flex: 1; overflow: hidden; display: flex; flex-direction: column; }
+
+.panel-header {
+  background: var(--bg-panel);
+  color: var(--text-dim);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 5px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+
+.panel-header button {
+  background: transparent;
+  border: none;
+  color: var(--accent-light);
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1;
+  padding: 0 2px;
+}
+.panel-header button:hover { color: #fff; }
+
+/* Line Style Palette */
+#linestyle-content {
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.linestyle-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.linestyle-row label { color: var(--text-dim); font-size: 10px; min-width: 28px; }
+
+.color-swatch {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  border: 1px solid var(--border-light);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.linestyle-select {
+  flex: 1;
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 2px 3px;
+  border-radius: 3px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.linestyle-select:focus { outline: none; border-color: var(--accent); }
+
+.width-input {
+  width: 36px;
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  color: var(--text-bright);
+  padding: 2px 3px;
+  border-radius: 3px;
+  font-size: 10px;
+  font-family: 'Consolas', monospace;
+  text-align: right;
+}
+
+.width-input:focus { outline: none; border-color: var(--accent); }
+
+/* Layer Panel */
+#layer-list {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.layer-item {
+  display: flex;
+  align-items: center;
+  padding: 4px 6px;
+  gap: 5px;
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  transition: background 0.1s;
+}
+
+.layer-item:hover { background: var(--bg-hover); }
+.layer-item.active { background: var(--bg-active); }
+
+.layer-color {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.3);
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.layer-name {
+  flex: 1;
+  font-size: 11px;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.layer-name input {
+  width: 100%;
+  background: var(--bg-dark);
+  border: 1px solid var(--accent);
+  color: var(--text-bright);
+  padding: 1px 3px;
+  font-size: 11px;
+  border-radius: 2px;
+}
+.layer-name input:focus { outline: none; }
+
+.layer-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1;
+  padding: 1px 2px;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+.layer-btn:hover { color: var(--text-bright); background: var(--bg-hover); }
+.layer-btn.active { color: var(--accent-light); }
+
+/* File Panel */
+#file-buttons {
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.file-btn {
+  width: 100%;
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 5px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 11px;
+  text-align: left;
+  transition: background 0.1s, border-color 0.1s;
+}
+
+.file-btn:hover {
+  background: var(--bg-active);
+  border-color: var(--accent);
+  color: var(--text-bright);
+}
+
+.file-btn-separator {
+  color: var(--text-dim);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 5px 2px 2px;
+  border-top: 1px solid var(--border);
+  margin-top: 3px;
+}
+
+/* Grid Panel */
+#grid-options, #view-options {
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.option-row {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--text-dim);
+}
+.option-row span { flex: 1; }
+
+.unit-toggle {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.unit-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  padding: 3px 7px;
+  cursor: pointer;
+  font-size: 11px;
+  transition: background 0.1s, color 0.1s;
+}
+.unit-btn:hover { background: var(--bg-hover); color: var(--text); }
+.unit-btn.active { background: var(--accent); color: #fff; }
+
+.num-input {
+  width: 50px;
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  color: var(--text-bright);
+  padding: 2px 4px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-family: 'Consolas', monospace;
+  text-align: right;
+}
+.num-input:focus { outline: none; border-color: var(--accent); }
+
+#view-options .file-btn { padding: 4px 8px; font-size: 11px; }
+
+/* ---- Drawing check (lint) ----
+   オン・オフと種別チップは設定ダイアログの「検図」タブ（#lint-options を
+   運び込む）。送りと修復は、警告を表示している間だけキャンバス上部中央の
+   #lint-float に出す。 */
+#lint-float {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 50;
+  display: flex;
+  flex-wrap: wrap;            /* キャンバスが狭い時は2段に（右ペインの下に潜らせない） */
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: max-content;
+  max-width: calc(100% - 40px);
+  box-sizing: border-box;
+  padding: 4px 6px 4px 12px;
+  background: rgba(30, 30, 36, 0.92);
+  border: 1px solid #4a4a52;
+  border-radius: 16px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.45);
+  font-size: 12px;
+  color: var(--text);
+  white-space: nowrap;
+}
+#lint-float[hidden] { display: none; }
+#lint-float .lint-float-title { color: #e8a33d; font-weight: 600; margin-right: 4px; }
+#lint-float button {
+  background: transparent;
+  color: var(--text-bright);
+  border: 1px solid #55555e;
+  border-radius: 12px;
+  padding: 3px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+#lint-float button:hover:not(:disabled) { background: var(--bg-hover); }
+#lint-float button:disabled { opacity: 0.35; cursor: default; }
+#lint-float .lint-float-icon { border-color: transparent; padding: 3px 7px; }
+
+#lint-kinds {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+/* 種別チップ。押すとその種別を伏せる。件数はフィルタ前の数を出すので、
+   伏せた種別も「何件あったか」は読めたままになる。 */
+.lint-chip {
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  border-radius: 10px;
+  padding: 2px 8px;
+  font-size: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.1s, color 0.1s, opacity 0.1s;
+}
+.lint-chip:hover { background: var(--bg-hover); color: var(--text); }
+/* 0 件の種別は主張しない。伏せた種別は取り消し線で「今は見ていない」と示す。 */
+.lint-chip.empty { opacity: 0.45; }
+.lint-chip.off { text-decoration: line-through; opacity: 0.4; }
+
+#lint-position {
+  min-width: 4.5em;
+  text-align: center;
+  font-size: 11px;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+/* 押せないボタンは押せないように見せる。.file-btn は :hover で明るくなるので、
+   disabled を素通しにすると「押せるのに何も起きない」に見えていた。 */
+.file-btn:disabled,
+.file-btn:disabled:hover {
+  opacity: 0.4;
+  cursor: default;
+  background: var(--bg-hover);
+  border-color: var(--border);
+  color: var(--text-dim);
+}
+
+/* 検図の警告の説明の箱。desktop と同じく作図領域の左上に、種別の色（隙間=橙、
+   重なり=紫、軸ずれ=金、T字=青緑）で「種別の説明 ＋ 実測値と座標」を出す。
+   背景色は CanvasController が種別ごとに入れる。 */
+#lint-tip {
+  position: fixed;
+  z-index: 9998;
+  pointer-events: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background: #444;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.45);
+  white-space: pre-wrap;
+}
+#lint-tip b { color: #fff; font-weight: 700; }
+
+/* ---- Bottom Pane ---- */
+#bottom-pane {
+  background: var(--bg-panel);
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 0 10px;
+}
+#bottom-pane > #coord-input-area { min-height: var(--bottom-h); }
+#memo-area { padding: 0 0 6px; }
+#memo-text {
+  display: block; width: 100%; box-sizing: border-box;
+  min-height: 48px; max-height: 40vh; resize: vertical;
+  background: var(--bg-dark); color: var(--text); border: 1px solid var(--border);
+  border-radius: 4px; padding: 6px 8px; font-size: 12px; line-height: 1.5;
+  font-family: inherit;
+}
+#memo-text:focus { outline: 1px solid var(--accent); }
+
+#coord-input-area {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  width: 100%;
+}
+
+.coord-label { color: var(--text-dim); white-space: nowrap; }
+
+.coord-input {
+  width: 80px;
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  color: var(--text-bright);
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-family: 'Consolas', monospace;
+}
+.coord-input:focus { outline: none; border-color: var(--accent); }
+
+.small-btn {
+  background: var(--bg-hover);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 2px 8px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 11px;
+}
+.small-btn:hover { background: var(--bg-active); border-color: var(--accent); }
+
+.pipe-sep { color: var(--border-light); }
+
+#selection-info { color: var(--accent-light); font-family: 'Consolas', monospace; }
+#cursor-world-coords { color: var(--text-bright); font-family: 'Consolas', monospace; }
+
+/* ---- Status Bar ---- */
+#status-bar {
+  background: #141418;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  gap: 6px;
+  font-size: 11px;
+  font-family: 'Consolas', monospace;
+  color: var(--text-dim);
+}
+
+#sb-coords { color: var(--text-bright); min-width: 180px; }
+.sb-sep { color: var(--border-light); }
+#sb-tool { color: var(--accent-light); }
+/* 検図の件数。0 件のときは出さない ―― 知らせるべき問題が無いのに
+   常駐させると、ただの飾りになる。 */
+#sb-lint { color: #e8a33d; }
+#sb-zoom { color: var(--text); }
+
+.clickable {
+  cursor: pointer;
+  padding: 1px 5px;
+  border-radius: 2px;
+  transition: background 0.1s;
+}
+.clickable:hover { background: var(--bg-hover); color: var(--text-bright); }
+
+/* 単位はタブレットでも押して切り替えるので、ボタンに見える枠を付ける */
+#sb-units {
+  color: var(--accent-light);
+  border: 1px solid var(--border-light);
+  border-radius: 3px;
+}
+#sb-snap { color: #4caf82; }
+#sb-snap.off { color: #a04040; }
+#sb-shapes { margin-left: auto; color: var(--text-dim); }
+
+/* ---- Modal ---- */
+#modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+#modal-overlay.hidden { display: none; }
+
+#modal-box {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  min-width: 320px;
+  max-width: 480px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+}
+
+#modal-title {
+  padding: 12px 16px;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--text-bright);
+  border-bottom: 1px solid var(--border);
+}
+
+#modal-body {
+  padding: 16px;
+  color: var(--text);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+#modal-footer {
+  padding: 10px 16px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  border-top: 1px solid var(--border);
+}
+
+#modal-ok, #modal-cancel {
+  padding: 5px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  border: 1px solid var(--border);
+}
+
+#modal-ok { background: var(--accent); color: #fff; border-color: var(--accent-light); }
+#modal-ok:hover { background: var(--accent-light); }
+#modal-cancel { background: var(--bg-hover); color: var(--text); }
+#modal-cancel:hover { background: var(--bg-dark); }
+
+/* ---- SVG Import Modal ---- */
+#modal-box { min-width: 340px; max-width: 520px; }
+
+#svg-drop-zone {
+  border: 2px dashed var(--border-light);
+  border-radius: 6px;
+  padding: 28px 16px;
+  text-align: center;
+  cursor: pointer;
+  color: var(--text-dim);
+  font-size: 12px;
+  transition: border-color 0.15s, background 0.15s;
+  margin-bottom: 8px;
+}
+#svg-drop-zone:hover, #svg-drop-zone.drag-over {
+  border-color: var(--accent-light);
+  background: rgba(200, 146, 42, 0.07);
+  color: var(--text);
+}
+#svg-file-info {
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-bottom: 12px;
+  min-height: 16px;
+}
+#svg-mode-section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.svg-mode-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--text);
+}
+.svg-mode-label input[type="radio"] { accent-color: var(--accent); }
+
+/* ---- Scrollbars ---- */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-dark); }
+::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-dim); }
+
+/* ---- Selection handle ---- */
+.selection-dot {
+  position: absolute;
+  width: 8px; height: 8px;
+  background: var(--accent-light);
+  border: 1px solid #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+/* ---- Language switcher ---- */
+#lang-switcher {
+  display: flex;
+  align-items: center;
+  padding: 0 6px;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+#lang-select {
+  background: var(--bg-panel);
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 1px 4px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  line-height: 1.7;
+  outline: none;
+}
+
+#lang-select:hover {
+  color: var(--text-bright);
+  border-color: var(--accent-light);
+}
+
+/* ---- Numpad Modal (touch / pen input) ---- */
+#numpad-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 4000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#numpad-modal {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+  padding: 14px;
+  width: 292px;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#numpad-display {
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 8px 12px;
+  margin-bottom: 10px;
+  min-height: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 2px;
+}
+
+#numpad-expr {
+  font-size: 24px;
+  color: var(--text-bright);
+  font-family: 'Segoe UI', monospace;
+  word-break: break-all;
+  text-align: right;
+}
+
+#numpad-preview {
+  font-size: 13px;
+  color: var(--accent-light);
+  font-family: monospace;
+  min-height: 16px;
+  text-align: right;
+}
+
+#numpad-keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 7px;
+  margin-bottom: 9px;
+}
+
+.numpad-key {
+  height: 58px;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  background: var(--bg-hover);
+  color: var(--text-bright);
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: none;
+  transition: background 0.08s, color 0.08s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.numpad-key[data-key="."] {
+  /* 小数点は20pxだと点が米粒でペンの照準がつらい — 大きく太く表示 */
+  font-size: 36px;
+  font-weight: bold;
+  line-height: 0.4;
+  padding-bottom: 14px;
+}
+
+.numpad-key.numpad-fn {
+  background: var(--bg-panel);
+  color: var(--text-dim);
+  font-size: 15px;
+}
+
+.numpad-key.numpad-op {
+  background: var(--bg-panel);
+  color: var(--accent-light);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.numpad-key.numpad-eq {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent-light);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.numpad-key.numpad-wide {
+  grid-column: span 2;
+}
+
+.numpad-key.pressed,
+.numpad-key:active {
+  background: var(--accent) !important;
+  color: #fff !important;
+  border-color: var(--accent-light);
+}
+
+#numpad-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+}
+
+#numpad-cancel,
+#numpad-ok {
+  height: 50px;
+  border-radius: 7px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#numpad-cancel {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+}
+
+#numpad-ok {
+  background: var(--accent);
+  border: none;
+  color: #fff;
+}
+
+#numpad-cancel:active { background: var(--bg-hover); color: var(--text-bright); }
+#numpad-ok:active     { background: var(--accent-light); }
+
+
+/* ---- Narrow screens (iPad landscape etc.): keep Guild / account / settings reachable ---- */
+#tool-options-container { min-width: 0; }
+@media (max-width: 1280px) {
+  #lang-switcher { position: relative; width: 30px; padding: 0; margin-left: 4px; justify-content: center; }
+  #lang-switcher::before { content: '🌐'; font-size: 15px; pointer-events: none; }
+  #lang-select { position: absolute; inset: 0; width: 100%; opacity: 0; cursor: pointer; }
+  #btn-guild span[data-i18n] { display: none; }
+  #btn-guild, #btn-account, #btn-settings { padding: 2px 5px !important; margin-left: 3px !important; }
+  #app-logo img { height: 32px; }
+}
+@media (max-width: 1100px) {
+  #app-logo { display: none; }
+}
+/* The recording column costs the canvas real estate; trim it where space is tight. */
+@media (max-width: 1280px) {
+  #rsteps-pane { width: 158px; }
+  body.has-steps-pane { --right-w: 438px; }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <!-- Content-Security-Policy: scripts only from this origin, the CDNs the app imports from,
+       and the bundle blob the loader runs; no inline scripts except the gtag bootstrap below,
+       whose hash the build fills in. Everything else (data, images, sockets) stays open over TLS. -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' blob: https://cdn.jsdelivr.net https://esm.sh https://cdnjs.cloudflare.com https://www.googletagmanager.com 'sha256-rEbQ5Uzkq1SC3d4H+OqIaiKnZrV86cFOnpob5Zpggtc='; worker-src 'self' blob: https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; font-src 'self' data:; media-src 'self' data: blob:; connect-src 'self' data: blob: https: wss:; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Leathercraft CAD Web</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/icon-180.png">
+  <meta name="theme-color" content="#1a1a1e">
+  <link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="style.css">
+  <style>
+    #lcad-gate {
+      position:fixed; inset:0; display:flex; align-items:center; justify-content:center;
+      overflow:auto; padding:12px;
+      background:var(--bg-dark, #1a1a1e); color:var(--text, #d8d4cc);
+      font-family:-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Hiragino Sans", "Noto Sans JP", sans-serif;
+      font-size:14px; line-height:1.6;
+    }
+    #lcad-gate .box {
+      background:#222; padding:24px 28px; border-radius:10px; margin:auto;
+      width:min(480px, 100%); min-width:0;
+      box-shadow:0 8px 28px rgba(0,0,0,0.5); border:1px solid #3a3a45;
+    }
+    #lcad-gate .gate-hero { display:block; width:100%; height:auto; border-radius:8px; margin:4px 0 14px; box-shadow:0 4px 18px rgba(0,0,0,0.5); }
+    #lcad-gate h1 { margin:0 0 2px; font-size:20px; color:#e8b44a; }
+    #lcad-gate h1 .gate-en { white-space:nowrap; }
+    #lcad-gate h1 .gate-ja { font-size:14px; font-weight:normal; color:#c8922a; white-space:nowrap; }
+    #lcad-gate .gate-brand { margin:0 0 10px; font-size:13.5px; color:#cfcabf; letter-spacing:0.02em; }
+    #lcad-gate .gate-tagline { margin:0 0 16px; font-size:12px; color:#888884; }
+    #lcad-gate .dim { color:#aaa; font-size:12px; }
+    #lcad-gate .gate-nav { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 14px; }
+    #lcad-gate .gate-nav a {
+      display:inline-block; padding:5px 11px; border:1px solid #4a4a55; border-radius:999px;
+      background:#26262c; color:#cfcabf; font-size:12.5px; text-decoration:none;
+    }
+    #lcad-gate .gate-nav a:hover { border-color:#6a6a78; color:#e8e4dc; }
+    #lcad-gate .gate-nav a.accent { border-color:#c8922a; color:#e8b44a; }
+    #lcad-gate .gate-nav a.accent:hover { background:#31281a; }
+    #lcad-gate .bad { color:#e88; }
+    #lcad-gate .row { display:flex; align-items:center; gap:8px; margin:8px 0; flex-wrap:wrap; }
+    #lcad-gate input[type=text] {
+      flex:1; min-width:180px; background:#1a1a1e; color:#eee; border:1px solid #555;
+      border-radius:4px; padding:8px 10px; font-size:14px; letter-spacing:1px;
+    }
+    #lcad-gate button {
+      color:#fff; border:0; border-radius:5px; padding:8px 16px; cursor:pointer; font-size:13px; background:#444;
+    }
+    #lcad-gate button.primary { background:#3a6ea8; }
+    #lcad-gate button.google { background:#fff; color:#333; font-weight:bold; width:100%; padding:10px; }
+    #lcad-gate button.secondary { margin-left:auto; }
+    #lcad-gate button:disabled { opacity:0.5; cursor:default; }
+    #lcad-gate .msg { min-height:18px; font-size:12px; }
+    #lcad-gate label.consent { display:flex; gap:8px; align-items:flex-start; margin:12px 0; font-size:13px; cursor:pointer; }
+    #lcad-gate label.consent input { margin-top:4px; }
+    #lcad-gate .msg.ok { color:#7fd08a; }
+    #lcad-gate .msg.bad { color:#e88; }
+    #lcad-gate a { color:#e8b44a; }
+    #lcad-gate .gate-lang { display:flex; gap:4px; justify-content:flex-end; margin:-8px -12px 6px 0; }
+    #lcad-gate .gate-lang button {
+      background:none; border:1px solid #444; color:#888884; padding:2px 8px; font-size:11px; border-radius:4px;
+    }
+    #lcad-gate .gate-lang button.active { color:#e8b44a; border-color:#c8922a; }
+  </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QB0HNEXG6E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QB0HNEXG6E');
+  </script>
+</head>
+<body>
+  <div id="lcad-gate">
+    <div class="box">
+      <div class="gate-lang">
+        <button type="button" data-lang="ja">日本語</button>
+        <button type="button" data-lang="en">English</button>
+      </div>
+      <img class="gate-hero" src="lcad_web_logo.jpg" alt="">
+      <h1><span class="gate-en">Leathercraft CAD Web</span> <span class="gate-ja"></span></h1>
+      <p class="gate-brand"></p>
+      <p class="gate-tagline"></p>
+      <div class="gate-body"><p class="dim">…</p></div>
+    </div>
+  </div>
+  <script type="module" src="loader.js?v=c9cb25e84e"></script>
+</body>
+</html>

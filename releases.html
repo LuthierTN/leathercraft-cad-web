@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leathercraft CAD Web — リリースノート / Release notes</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/icon-180.png">
+  <meta name="theme-color" content="#1a1a1e">
+  <link rel="stylesheet" href="_legal.css?v=2">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QB0HNEXG6E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QB0HNEXG6E');
+  </script>
+</head>
+<body>
+<main>
+  <div class="lang"><button type="button" data-lang="ja">日本語</button><button type="button" data-lang="en">English</button></div>
+
+  <section data-lang="ja">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="about.html">なぜ Web 版か</a> · <a href="start.html">始め方</a> · <a href="terms.html">利用規約</a> · <a href="privacy.html">プライバシーポリシー</a></nav>
+    <h1>リリースノート</h1>
+    <p class="meta">新しいものが上。不具合の報告は ギルドの固定スレッド <a href="https://cad.coffee-craft.net/feedback">「🐞 フィードバックの送り方」</a>（好きな言語で OK）か <a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">GitHub の Issue</a> へ。</p>
+
+    <h2>2026-10-01　β テスト開始</h2>
+    <p>YouTube チャンネルメンバーと、これまでにご支援いただいた方に向けて β テストを始めました。Google でログインし、アンロックコード（メンバー限定動画の固定コメント、またはご支援のお礼メールに記載）を入力すると使えます。</p>
+    <h3>できること</h3>
+    <ul>
+      <li>図面・縫い穴・印刷（印刷キャリブレーション付き）。Windows・macOS・Linux のブラウザと iPad（Apple Pencil）で動きます。Android タブレットは動くはずですが、まだ確かめていません。Raspberry Pi 4 / Pi 5 のブラウザでも動くかもしれません（こちらも未確認です。試した方はギルドで教えてください）。</li>
+      <li>革シミュレーター：革の画像を型紙に置いて、仕上がりを確かめられます（塗りつぶしバケツ、単色塗り、線を隠す表示）。</li>
+      <li>クラウド保存（版の履歴付き）。フォルダ分けと、デモ用に中身を隠せる Privacy フォルダ。</li>
+      <li>革ギルド：型紙の公開・共有（ライセンスを選んで公開）と「広場」での検索、写真付きの掲示板、イイね、フォロー。</li>
+      <li>20 言語の画面（ログイン画面を含む）と、革の専門用語を踏まえたギルドの AI 翻訳。</li>
+      <li>デスクトップ版のデータ（.lcc）の読み込みと書き出し。DXF・SVG・PDF の読み込みと、DXF・SVG・STL の書き出し（DXF・SVG の文字は文字のまま、またはアウトライン化を選べます）。</li>
+      <li>原寸の PDF 書き出し：レーザーカッターや抜き型、印刷屋さんに渡すデータ。1枚にするか、用紙に分割（のりしろ・トンボ付き）するかを選べ、線種ごとにレイヤーに分かれます。</li>
+      <li>作者が記録した型紙の作り方の再生と、学習モード（次の一手を見て、自分の手でなぞる）。</li>
+      <li>mm とインチの切り替え（数値入力欄と目打ちのピッチもインチで扱えます）。</li>
+    </ul>
+    <h3>9月19日の非公開テストから変わったこと（主なもの）</h3>
+    <ul>
+      <li>革シミュレーターをデスクトップ版と同じ「モード」に。専用のツールバー（選択／革を置く／単色で塗る／消す）。</li>
+      <li>デスクトップ版への書き出し（.lcc）に対応。</li>
+      <li>画面の 20 言語化。</li>
+      <li>一直線上の 2 本の線の結合（K キー）、目打ちの「穴の数を指定」、余りを両端に均等に配る固定ピッチ、スマートコーナーの改良。</li>
+      <li>オフセット・トリム・ミラー・面取りの細かな不具合の修正。</li>
+      <li>クラウドの開く／保存ダイアログが最後にいたフォルダで開くように。上書き前の確認。</li>
+      <li>ギルドのサムネイルを、革あり・線画の 2 枚が切り替わる表示に。</li>
+    </ul>
+    <h3>先にお断りしておくこと</h3>
+    <ul>
+      <li>デスクトップ版と完全に同じではありません。機能の有無や操作が異なる箇所があります。</li>
+      <li>デスクトップ版のデータの曼荼羅図形は、ふつうの図形として読み込まれます。</li>
+      <li>.lcc への書き出しでは、円弧に沿った文字、SVG 画像、旧式のステッチはまだ書き出せません。</li>
+      <li>型紙の作り方を記録する機能は、当面は作者だけが使えます（再生は誰でもできます）。</li>
+      <li>MCP（Claude などの AI アシスタントと一緒に作図する機能）は、いまは一部のテスターだけで試しています。β の途中から皆さんに開放します。</li>
+      <li>クラウド保存の容量は 1 人あたり 100 MB（図面は圧縮して保存、直近 2 版を保持）、写真は 1 人あたり 50 MB です。上限は今後見直すことがあります。</li>
+      <li>β 版です。予告なく変わることがあり、正式版として公開される保証はありません。</li>
+    </ul>
+
+    <h2>2026-09-19　非公開テスト</h2>
+    <p>少人数のテスターで試験運用を始めました。</p>
+  </section>
+
+  <section data-lang="en">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="about.html">Why a web version</a> · <a href="start.html">Getting started</a> · <a href="terms.html">Terms of Use</a> · <a href="privacy.html">Privacy Policy</a></nav>
+    <h1>Release notes</h1>
+    <p class="meta">Newest first. Report bugs in the pinned Guild thread <a href="https://cad.coffee-craft.net/feedback">"🐞 How to send feedback"</a> (any language) or as <a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">GitHub issues</a>.</p>
+
+    <h2>2026-10-01　Beta test begins</h2>
+    <p>Opened to YouTube channel members and past supporters. Sign in with Google and enter the unlock code (posted in the pinned comment of the members-only video, or sent in the thank-you mail to supporters).</p>
+    <h3>What works</h3>
+    <ul>
+      <li>Drawing, stitching holes and printing (with print calibration). Runs in browsers on Windows, macOS and Linux, and on iPad (Apple Pencil). Android tablets should work but have not been tested yet. It may also run in the browser on a Raspberry Pi 4 / Pi 5 (also untested; if you try it, please tell us in the Guild).</li>
+      <li>The leather simulator: lay leather images on a pattern to see the finished piece (paint bucket, solid colours, hiding the lines on leather).</li>
+      <li>Cloud save with version history, folders, and Privacy folders that hide their contents for demos.</li>
+      <li>The leather Guild: publishing patterns with a license of your choice, searching them in the Plaza, a board with photos, likes and follows.</li>
+      <li>The interface in 20 languages (sign-in screen included), and Guild AI translation that knows the craft's terms.</li>
+      <li>Import and export of desktop-version files (.lcc). Import of DXF, SVG and PDF; export to DXF, SVG and STL (text in DXF and SVG stays text, or can be exported as outlines).</li>
+      <li>Full-size PDF export for laser cutters, die makers and print shops: one page, or tiled on paper with overlap and crop marks, with each line type on its own layer.</li>
+      <li>Replays of how a pattern is made, recorded by the author, and learn mode (see the next move, then do it yourself).</li>
+      <li>Millimetres or inches (length fields and stitching pitches work in inches too).</li>
+    </ul>
+    <h3>Changes since the private test of 19 September (highlights)</h3>
+    <ul>
+      <li>The leather simulator is now a mode, as on the desktop, with its own toolbar (select / place leather / solid colour / erase).</li>
+      <li>Export to the desktop version (.lcc).</li>
+      <li>The interface in 20 languages.</li>
+      <li>Merging two lines that lie on one straight line (K key), stitching a given number of holes, fixed pitch with the leftover spread over both ends, better smart corners.</li>
+      <li>Many small fixes to offset, trim, mirror and chamfer.</li>
+      <li>Cloud open / save dialogs start in the folder last visited, and ask before saving over another drawing.</li>
+      <li>Guild thumbnails alternate between the leather picture and the line drawing.</li>
+    </ul>
+    <h3>Please note</h3>
+    <ul>
+      <li>It is not identical to the desktop version. Some features and operations differ.</li>
+      <li>Mandala shapes in desktop files are imported as plain shapes.</li>
+      <li>Export to .lcc cannot yet write text along an arc, SVG images or old-style stitches.</li>
+      <li>Recording how a pattern is made is limited to the author for now (anyone can replay).</li>
+      <li>MCP (drawing together with an AI assistant such as Claude) is being tried by a few testers for now; it opens to everyone part-way through the beta.</li>
+      <li>Cloud storage is limited to 100 MB per person (drawings are stored compressed, the latest 2 versions are kept) and photos to 50 MB per person. These limits may be reviewed.</li>
+      <li>This is a beta. Things may change without notice, and there is no guarantee that it will be launched as a final release.</li>
+    </ul>
+
+    <h2>2026-09-19　Private test</h2>
+    <p>Trial run with a small group of testers.</p>
+  </section>
+</main>
+<script src="_legal.js?v=2"></script>
+</body>
+</html>

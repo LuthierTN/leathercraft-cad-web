@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leathercraft CAD Web — AI と描く / Drawing with an AI</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/icon-180.png">
+  <meta name="theme-color" content="#1a1a1e">
+  <link rel="stylesheet" href="_legal.css?v=2">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QB0HNEXG6E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QB0HNEXG6E');
+  </script>
+</head>
+<body>
+<main>
+  <div class="lang"><button type="button" data-lang="ja">日本語</button><button type="button" data-lang="en">English</button></div>
+
+  <section data-lang="ja">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="start.html">始め方</a> · <a href="releases.html">リリースノート</a></nav>
+    <h1>AI と描く（MCP）</h1>
+    <p class="meta">Claude や ChatGPT に、開いている CAD のタブへ直接型紙を描いてもらう機能です。いまは使える設定になっているアカウントだけで動きます（設定に「AI」タブが無ければ、まだ対象外です）。</p>
+    <p class="meta">現段階では、MCP 機能について個別のサポート（使い方の個別のご案内）は行っていません。また、MCP 機能はこれからも随時更新していきます。あらかじめご了承ください。</p>
+
+    <h2>1. CAD のタブを AI に任せる</h2>
+    <ol>
+      <li>Leathercraft CAD Web を開いてログインします。</li>
+      <li>設定 › AI で「<strong>AI からの操作を受け付ける</strong>」をオンにします。「接続済み」になれば準備完了です。</li>
+      <li>AI に任せられるのは、アカウントごとに 1 つのタブだけです。別のタブでオンにすると、そちらへ移ります。</li>
+      <li>AI は、作った型紙をクラウドに保存できます（「<strong>AI の保存を許可</strong>」、最初からオン。させたくなければオフに）。保存先は「AI出力」フォルダ（日付ごと）だけで、ほかの図面を読んだり上書きしたりはできません。</li>
+    </ol>
+
+    <h2>2. AI にコネクタを足す（最初の 1 回だけ）</h2>
+    <ol>
+      <li>設定 › AI の「<strong>コネクタの URL をコピー</strong>」で URL をコピーします。</li>
+      <li>Claude.ai なら 設定 › コネクタ の「カスタムコネクタを追加」、ChatGPT なら Plugins の右上の「Add」から「Create custom MCP Server」を選び、その URL を貼ります。ほかの欄は空のままで構いません。</li>
+      <li>最初につなぐと、ログインと許可の画面が開きます。<strong>戻り先が claude.ai や chatgpt.com になっていること</strong>を確かめてから「許可」を押してください。</li>
+    </ol>
+    <p>トークンを作ったり貼ったりする必要はありません。</p>
+
+    <h2>3. 頼んでみる</h2>
+    <ul>
+      <li>寸法よりも<strong>何を入れるか・どう使うか</strong>から伝えると、うまくいきます。例：「交通系 IC カードが 1 枚入る、ストラップ穴付きのパスケース」「名刺が 20 枚入るケース。縫い代は 3 mm で」。</li>
+      <li>AI はふだんのツール（四角・面取り・オフセット・自動ステッチ…）を人と同じ順に使って描くので、タブで手順を見ていられます。</li>
+      <li>描いている途中は、タブを閉じたり別の図面を開いたりしないでください。長い作業の間は、画面がしばらく止まって見えることがあります。</li>
+      <li>気に入らない所は、そのまま会話で直しを頼めます。自分で手を入れても構いません。</li>
+    </ul>
+
+    <h2>4. 安心して使うために</h2>
+    <ul>
+      <li>AI は<strong>いま開いている図面を直接書き換えます</strong>。大事な図面は、先に保存しておくか、新しい図面を開いてから頼んでください。図面を消したり新しくしたりする前には、AI が確認してきます。</li>
+      <li>止めたいときは「AI からの操作を受け付ける」をオフにすれば、すぐに止まります。</li>
+      <li>許可した AI は 設定 › AI の「<strong>許可した AI</strong>」に並びます。「解除」を押すと、1 分ほどでつながらなくなります（また使うときは、AI の側でつなぎ直して許可すれば戻ります）。</li>
+      <li>AI が届くのは、あなたのタブの操作と「AI出力」フォルダへの保存だけです。クラウドのほかの図面やアカウントの設定には届きません。</li>
+    </ul>
+
+    <h2>うまくいかないとき</h2>
+    <ul>
+      <li><strong>「タブがつながっていない」と言われる</strong>：CAD のタブが開いていて、ログイン済みで、「AI からの操作を受け付ける」がオンかを確かめてください。</li>
+      <li><strong>「タブが古い」と言われる</strong>：CAD のタブを再読み込みしてください。</li>
+      <li><strong>新しいツールが使えない</strong>：AI 側で新しい会話を始めてください。それでもだめなら、コネクタをつなぎ直してください。</li>
+      <li>不具合に気づいたら、ギルドの <a href="https://cad.coffee-craft.net/feedback">「🐞 フィードバックの送り方」</a> でお知らせください（個別の返答はお約束できません）。</li>
+    </ul>
+  </section>
+
+  <section data-lang="en">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="start.html">Getting started</a> · <a href="releases.html">Release notes</a></nav>
+    <h1>Drawing with an AI (MCP)</h1>
+    <p class="meta">Let Claude or ChatGPT draw patterns straight into your open CAD tab. For now it works only on accounts that have it turned on (if Settings has no “AI” tab, yours is not included yet).</p>
+    <p class="meta">For now, we do not offer individual support for the MCP feature (no one-to-one help with how to use it). The feature will also keep changing as it is updated. Thank you for your understanding.</p>
+
+    <h2>1. Hand a CAD tab to the AI</h2>
+    <ol>
+      <li>Open Leathercraft CAD Web and sign in.</li>
+      <li>In Settings › AI, turn on “<strong>Let an AI drive this tab</strong>”. When it says “Connected”, you are ready.</li>
+      <li>An account can hand only one tab to the AI. Turning it on in another tab moves the connection there.</li>
+      <li>The AI can save what it makes to the cloud (“<strong>Allow AI to save</strong>”, on by default; turn it off if you prefer). It can save only into the “AI output” folder (one folder per day). It cannot read or overwrite any other drawing.</li>
+    </ol>
+
+    <h2>2. Add the connector to your AI (once)</h2>
+    <ol>
+      <li>In Settings › AI, press “<strong>Copy connector URL</strong>”.</li>
+      <li>In Claude.ai, go to Settings › Connectors › “Add custom connector”. In ChatGPT, open Plugins, then choose “Create custom MCP Server” from the “Add” menu at the top right. Paste the URL. Leave the other fields empty.</li>
+      <li>The first time it connects, a sign-in and approval page opens. <strong>Check that it will return to claude.ai or chatgpt.com</strong>, then press Allow.</li>
+    </ol>
+    <p>There is no token to create or paste.</p>
+
+    <h2>3. Ask for something</h2>
+    <ul>
+      <li>It works best if you say <strong>what the item holds and how it is used</strong>, not just the measurements. For example: “a pass case for one transit card, with a strap hole” or “a case for 20 business cards, 3 mm stitch margin”.</li>
+      <li>The AI draws with the usual tools (rectangle, chamfer, offset, auto stitch…) in the order a person would, so you can watch the steps in your tab.</li>
+      <li>While it draws, do not close the tab or open another drawing in it. During a long job the screen may look frozen for a while.</li>
+      <li>If you do not like something, ask for changes in the same conversation, or fix it by hand.</li>
+    </ul>
+
+    <h2>4. Staying safe</h2>
+    <ul>
+      <li>The AI <strong>changes the drawing that is open right now</strong>. Save anything important first, or open a new drawing before you ask. The AI asks before it clears or replaces a drawing.</li>
+      <li>To stop it, turn “Let an AI drive this tab” off. It stops at once.</li>
+      <li>The AIs you have allowed are listed under “<strong>AIs you have allowed</strong>” in Settings › AI. Revoke one and it is disconnected within about a minute. To use it again, reconnect from the AI and allow it once more.</li>
+      <li>The AI can reach only your tab and saves to the “AI output” folder. It cannot reach your other cloud drawings or your account settings.</li>
+    </ul>
+
+    <h2>If something goes wrong</h2>
+    <ul>
+      <li><strong>The AI says no tab is connected</strong>: check that the CAD tab is open, you are signed in, and “Let an AI drive this tab” is on.</li>
+      <li><strong>The AI says the tab is out of date</strong>: reload the CAD tab.</li>
+      <li><strong>New tools do not show up</strong>: start a new conversation in the AI. If that does not help, reconnect the connector.</li>
+      <li>Found a bug? Report it in the Guild thread <a href="https://cad.coffee-craft.net/feedback">“🐞 How to send feedback”</a> (we cannot promise a personal reply).</li>
+    </ul>
+  </section>
+</main>
+<script src="_legal.js?v=2"></script>
+</body>
+</html>

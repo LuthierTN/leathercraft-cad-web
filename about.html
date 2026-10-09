@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leathercraft CAD Web — なぜ Web 版か / Why a web version</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/icon-180.png">
+  <meta name="theme-color" content="#1a1a1e">
+  <link rel="stylesheet" href="_legal.css?v=2">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QB0HNEXG6E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QB0HNEXG6E');
+  </script>
+</head>
+<body>
+<main>
+  <div class="lang"><button type="button" data-lang="ja">日本語</button><button type="button" data-lang="en">English</button></div>
+
+  <section data-lang="ja">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="start.html">始め方</a> · <a href="releases.html">リリースノート</a> · <a href="terms.html">利用規約</a> · <a href="privacy.html">プライバシーポリシー</a></nav>
+    <p class="brand">ブラウザで動く型紙CAD。世界とつながる革ギルドへ、ようこそ。</p>
+    <h1>なぜ Web 版を作ったのか</h1>
+    <p class="meta">作者 LuthierTN ／ 2026年9月</p>
+
+    <p>Leathercraft CAD Web（レザクラCAD Web）は、Windows / macOS 向けに公開してきたレザークラフト用 CAD「Leathercraft CAD」のブラウザ版です。2026年10月1日から、YouTube チャンネルメンバーと、これまでにご支援いただいた方に向けて β テストを行っています。</p>
+
+    <h2>きっかけ</h2>
+    <p>直接のきっかけは、Linux 版や iPad 版を望む声を多くいただいたことです。ネイティブアプリを OS ごとに作るのは大変ですが、ブラウザで動けば、その両方に一度に応えられます。実際、Web 版は Windows・macOS・Linux などのデスクトップのブラウザに加えて、iPad（Apple Pencil 対応）でも動きます。Android タブレットは動くはずですが、まだ確かめていません。Raspberry Pi 4 / Pi 5 のブラウザでも動くかもしれません（こちらも未確認です）。</p>
+
+    <h2>もう一つの理由</h2>
+    <p>デスクトップ版を作り始めた頃から、ずっと感じていたことがあります。レザークラフトの情報や手法は、国や地域ごとに閉じていて、互いに行き来しにくい。同じ道具、同じ革を使っていても、隣の国でどんな型紙が作られ、どんな縫い方が好まれているのかは、なかなか伝わってきません。</p>
+    <p>型紙ツールとしての Leathercraft CAD を「共通言語」にできないか。型紙を共有し、掲示板で語り合うことで、世界中のレザークラフターが交流できる場を作れないか。そう考えてきました。ゼロから始めるなら難しいことですが、Leathercraft CAD にはすでに世界中に何万人ものユーザーがいて、土台はできています。</p>
+
+    <h2>Web 版でできること ―― 型紙CAD × 革ギルド</h2>
+    <ul>
+      <li><strong>ブラウザだけで動く型紙 CAD。</strong>図面・縫い穴・革シミュレーター・印刷まで、デスクトップ版と同じ使い心地を目指しています。Windows・macOS・Linux のブラウザと iPad（Apple Pencil）で動きます（Android タブレットと Raspberry Pi 4 / Pi 5 は未確認）。</li>
+      <li><strong>クラウド保存。</strong>どの端末からでも同じ図面を開けます。</li>
+      <li><strong>革ギルド。</strong>型紙をライセンスを選んで公開し、「広場」で探せます。掲示板では、作ったもの、うまくいかなかったこと、道具の話を気軽に。</li>
+      <li><strong>レザークラフトの言葉がわかる AI 翻訳。</strong>画面は日本語・英語を含む 20 言語。ギルドでは、みんな自分の言葉で書き、AI が革の専門用語を踏まえて訳します。</li>
+      <li><strong>デスクトップ版とのデータのやりとり。</strong>.lcc の読み込みと書き出しの両方に対応しています（書き出せない図形が一部あります。<a href="releases.html">リリースノート</a>を参照）。</li>
+      <li><strong>AI と一緒に型紙を作る（MCP）。</strong>Claude などの AI アシスタントをつなぐと、AI が図面を描いたり直したりできます。いまは一部のテスターで試していて、β の途中から皆さんに開放します。</li>
+    </ul>
+    <p><strong>これから：</strong>ギルドにはランクを設ける予定です。はじめは「見習い」から。型紙を世界に公開する、評価を受ける、掲示板で質問に答える、といったことで経験値がたまり、ランクが上がると、型紙の作り方を手順ごとに再生できる機能などが使えるようになります。</p>
+    <p>世界のレザークラフターと革業界を元気にしたい。そして自分自身も、もっとレザークラフトを楽しみたい。その思いで Web 版を作りました。この思いに共感してくださる方に、最初のテスターとして加わっていただけたら嬉しいです。</p>
+
+    <h2>料金について</h2>
+    <p>デスクトップ版はこれからも無料です。Web 版を無料にするか、無料と有料の段階を設けるかは、β テストでいただいた声をもとに決めます。β の間の運営費は作者が負担しています。</p>
+
+    <h2>β 版について</h2>
+    <ul>
+      <li>対象は YouTube チャンネルメンバーと、これまでにご支援いただいた方です。Google でログインし、アンロックコードを入力して使います。</li>
+      <li>未完成です。予告なく変わることがあり、正式版として公開される保証はありません。</li>
+      <li>個別のサポートは行っていません。使い方の相談はアプリ内の掲示板「ギルド」で。不具合・要望の報告は、ギルドの固定スレッド <a href="https://cad.coffee-craft.net/feedback">「🐞 フィードバックの送り方」</a>（好きな言語で OK。英訳と GitHub 登録はこちらで行います）か、<a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">GitHub の Issue</a> にお願いします。</li>
+      <li>変更点は <a href="releases.html">リリースノート</a> に記録します。</li>
+    </ul>
+    <p class="meta">デスクトップ版・寄付・チャンネルメンバーシップについて: <a href="https://coffee-craft.net/leathercraft_cad/" target="_blank" rel="noopener">coffee-craft.net/leathercraft_cad</a></p>
+  </section>
+
+  <section data-lang="en">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="start.html">Getting started</a> · <a href="releases.html">Release notes</a> · <a href="terms.html">Terms of Use</a> · <a href="privacy.html">Privacy Policy</a></nav>
+    <p class="brand">Pattern CAD in your browser. A guild without borders.</p>
+    <h1>Why a web version?</h1>
+    <p class="meta">by LuthierTN, September 2026</p>
+
+    <p>Leathercraft CAD Web is the browser edition of Leathercraft CAD, the pattern-making CAD for leathercraft that has been available for Windows and macOS. Since 1 October 2026 it is in beta testing with YouTube channel members and past supporters of Leathercraft CAD.</p>
+
+    <h2>The immediate reason</h2>
+    <p>Many of you asked for Linux and iPad versions. Building a native app for every OS is a lot of work, but a browser version answers both at once. The web version runs in desktop browsers on Windows, macOS and Linux, and also on iPad (with Apple Pencil). Android tablets should work but have not been tested yet, and it may also run in the browser on a Raspberry Pi 4 / Pi 5 (also untested).</p>
+
+    <h2>The second reason</h2>
+    <p>There is something I have felt since the desktop version began. Leathercraft knowledge and techniques tend to stay inside each country or region and rarely cross over. We use the same tools and the same leather, yet we seldom learn what patterns are being made, or which stitching styles are loved, just across the border.</p>
+    <p>Could Leathercraft CAD, as a pattern tool, become a "common language"? Could sharing patterns and talking on a board let leathercrafters around the world meet? Starting from zero that would be a tall order, but Leathercraft CAD already has tens of thousands of users worldwide, so the foundation is there.</p>
+
+    <h2>What it does — pattern CAD × leather Guild</h2>
+    <ul>
+      <li><strong>A pattern CAD that runs in the browser.</strong> Drawing, stitching holes, the leather simulator and printing, aiming to feel like the desktop version. It runs in browsers on Windows, macOS and Linux, and on iPad (with Apple Pencil); Android tablets and Raspberry Pi 4 / Pi 5 are untested.</li>
+      <li><strong>Cloud save.</strong> Open the same drawing from any device.</li>
+      <li><strong>The leather Guild.</strong> Publish patterns with a license of your choice and find them in the Plaza. On the board, share what you made, what went wrong and the tools you like.</li>
+      <li><strong>AI translation that knows leathercraft.</strong> The interface speaks 20 languages, Japanese and English included. In the Guild everyone writes in their own language, and the AI translates with the craft's terms in mind.</li>
+      <li><strong>Exchange with the desktop version.</strong> .lcc files can be both imported and exported (a few kinds of shape cannot be exported yet; see the <a href="releases.html">release notes</a>).</li>
+      <li><strong>Design patterns with an AI (MCP).</strong> Connect an AI assistant such as Claude and it can draw and edit the drawing with you. A few testers are trying it now; it opens to everyone part-way through the beta.</li>
+    </ul>
+    <p><strong>Coming next:</strong> the Guild will get ranks. Everyone starts as an Apprentice and gains experience by publishing patterns for the world, receiving ratings and answering questions on the board. Higher ranks unlock features such as step-by-step replays of how a pattern is made.</p>
+    <p>I want to help leathercrafters and the leather industry around the world thrive, and I want to enjoy leathercraft more myself. That is why the web version exists. If this resonates with you, I would be glad to have you among the first testers.</p>
+
+    <h2>Pricing</h2>
+    <p>The desktop version stays free. Whether the web version will be free, or have free and paid tiers, will be decided from what we hear during the beta. During the beta, the running costs are paid by the author.</p>
+
+    <h2>About the beta</h2>
+    <ul>
+      <li>It is open to YouTube channel members and past supporters. Sign in with Google and enter your unlock code.</li>
+      <li>It is unfinished. Things may change without notice, and there is no guarantee that it will be launched as a final release.</li>
+      <li>There is no individual support. Please ask questions on the in-app Guild board. Report bugs and requests either in the pinned Guild thread <a href="https://cad.coffee-craft.net/feedback">"🐞 How to send feedback"</a> (any language; we translate and file the issue) or directly as <a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">GitHub issues</a>.</li>
+      <li>Changes are recorded in the <a href="releases.html">release notes</a>.</li>
+    </ul>
+    <p class="meta">Desktop version, donations and channel membership: <a href="https://coffee-craft.net/leathercraft_cad/" target="_blank" rel="noopener">coffee-craft.net/leathercraft_cad</a></p>
+  </section>
+
+  <!-- i18n:pages begin — generated by tools/i18n/translate_pages.mjs from the ja/en sections above; do not edit by hand -->
+  <section data-lang="de">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="start.html">Erste Schritte</a> · <a href="releases.html">Versionshinweise</a> · <a href="terms.html">Nutzungsbedingungen</a> · <a href="privacy.html">Datenschutzrichtlinie</a></nav>
+    <p class="brand">Schnittmuster-CAD im Browser. Eine Gilde ohne Grenzen.</p>
+    <h1>Warum eine Webversion?</h1>
+    <p class="meta">von LuthierTN, September 2026</p>
+
+    <p>Leathercraft CAD Web ist die Browserausgabe von Leathercraft CAD, dem CAD-Programm für Schnittmuster im Lederhandwerk, das es bisher für Windows und macOS gibt. Seit dem 1. Oktober 2026 läuft ein Betatest mit den Kanalmitgliedern auf YouTube und allen, die Leathercraft CAD bisher unterstützt haben.</p>
+
+    <h2>Der unmittelbare Anlass</h2>
+    <p>Viele von Ihnen haben sich eine Version für Linux und für das iPad gewünscht. Für jedes Betriebssystem eine eigene App zu bauen ist viel Arbeit – eine Browserversion erfüllt beide Wünsche auf einmal. Die Webversion läuft in Desktop-Browsern unter Windows, macOS und Linux und auch auf dem iPad (mit Apple Pencil). Android-Tablets sollten funktionieren, sind aber noch nicht getestet. Vielleicht läuft sie auch im Browser auf einem Raspberry Pi 4 / Pi 5 (ebenfalls nicht getestet).</p>
+
+    <h2>Der zweite Grund</h2>
+    <p>Seit ich mit der Desktop-Version angefangen habe, beschäftigt mich etwas: Wissen und Techniken des Lederhandwerks bleiben meist innerhalb eines Landes oder einer Region und kommen selten darüber hinaus. Wir arbeiten mit denselben Werkzeugen und demselben Leder und erfahren doch kaum, welche Schnittmuster gleich hinter der Grenze entstehen oder welche Nähweisen man dort besonders mag.</p>
+    <p>Könnte Leathercraft CAD als Werkzeug für Schnittmuster zu einer „gemeinsamen Sprache“ werden? Könnten Lederhandwerker aus aller Welt zusammenfinden, indem sie Schnittmuster teilen und sich im Forum austauschen? Bei null anzufangen wäre ein großes Vorhaben, aber Leathercraft CAD hat schon Zehntausende Nutzer weltweit – das Fundament steht also.</p>
+
+    <h2>Was sie kann – Schnittmuster-CAD × Ledergilde</h2>
+    <ul>
+      <li><strong>Ein Schnittmuster-CAD, das im Browser läuft.</strong> Zeichnen, Nählöcher, Ledersimulator und Drucken – sie soll sich anfühlen wie die Desktop-Version. Sie läuft in Browsern unter Windows, macOS und Linux sowie auf dem iPad (mit Apple Pencil); Android-Tablets und Raspberry Pi 4 / Pi 5 sind noch nicht getestet.</li>
+      <li><strong>Speichern in der Cloud.</strong> Öffnen Sie dieselbe Zeichnung auf jedem Gerät.</li>
+      <li><strong>Die Ledergilde.</strong> Veröffentlichen Sie Schnittmuster mit einer Lizenz Ihrer Wahl und finden Sie andere in der Plaza. Im Forum erzählen Sie, was Sie gemacht haben, was schiefgegangen ist und welche Werkzeuge Sie mögen.</li>
+      <li><strong>KI-Übersetzung, die das Lederhandwerk kennt.</strong> Die Oberfläche gibt es in 20 Sprachen, darunter Japanisch und Englisch. In der Gilde schreibt jeder in seiner eigenen Sprache, und die KI übersetzt mit Blick auf die Fachbegriffe rund ums Leder.</li>
+      <li><strong>Datenaustausch mit der Desktop-Version.</strong> .lcc-Dateien lassen sich sowohl importieren als auch exportieren (einige Formen können noch nicht exportiert werden; siehe die <a href="releases.html">Versionshinweise</a>).</li>
+      <li><strong>Schnittmuster gemeinsam mit einer KI entwerfen (MCP).</strong> Verbinden Sie einen KI-Assistenten wie Claude, dann kann er mit Ihnen die Zeichnung erstellen und bearbeiten. Im Moment probieren das einige Tester aus; im Lauf der Beta wird es für alle freigegeben.</li>
+    </ul>
+    <p><strong>Als Nächstes:</strong> Die Gilde bekommt Ränge. Alle beginnen als Lehrling und sammeln Erfahrung, indem sie Schnittmuster für die Welt veröffentlichen, Bewertungen erhalten und Fragen im Forum beantworten. Höhere Ränge schalten Funktionen frei, etwa die Schritt-für-Schritt-Wiedergabe, wie ein Schnittmuster entsteht.</p>
+    <p>Ich möchte Lederhandwerker und die Lederbranche auf der ganzen Welt stärken – und selbst noch mehr Freude am Lederhandwerk haben. Dafür gibt es die Webversion. Wenn Sie das genauso sehen, würde ich mich freuen, Sie unter den ersten Testern zu haben.</p>
+
+    <h2>Preise</h2>
+    <p>Die Desktop-Version bleibt kostenlos. Ob die Webversion kostenlos wird oder kostenlose und kostenpflichtige Stufen bekommt, entscheide ich anhand der Rückmeldungen aus der Beta. Während der Beta trage ich die laufenden Kosten selbst.</p>
+
+    <h2>Zur Beta</h2>
+    <ul>
+      <li>Sie steht Kanalmitgliedern auf YouTube und bisherigen Unterstützern offen. Melden Sie sich mit Google an und geben Sie Ihren Entsperrcode ein.</li>
+      <li>Sie ist noch nicht fertig. Dinge können sich ohne Ankündigung ändern, und es gibt keine Garantie, dass daraus eine endgültige Version wird.</li>
+      <li>Persönlichen Support gibt es nicht. Fragen stellen Sie bitte im Forum der Gilde in der App. Fehler und Wünsche melden Sie entweder im angehefteten Gilde-Thema <a href="https://cad.coffee-craft.net/feedback">„🐞 So senden Sie Feedback“</a> (in jeder Sprache; ich übersetze und lege das Issue an) oder direkt als <a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">GitHub-Issue</a>.</li>
+      <li>Änderungen werden in den <a href="releases.html">Versionshinweisen</a> festgehalten.</li>
+    </ul>
+    <p class="meta">Desktop-Version, Spenden und Kanalmitgliedschaft: <a href="https://coffee-craft.net/leathercraft_cad/" target="_blank" rel="noopener">coffee-craft.net/leathercraft_cad</a></p>
+  </section>
+
+  <section data-lang="es">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="start.html">Primeros pasos</a> · <a href="releases.html">Notas de la versión</a> · <a href="terms.html">Términos de uso</a> · <a href="privacy.html">Política de privacidad</a></nav>
+    <p class="brand">Un CAD de patrones en tu navegador. Un gremio sin fronteras.</p>
+    <h1>¿Por qué una versión web?</h1>
+    <p class="meta">por LuthierTN, septiembre de 2026</p>
+
+    <p>Leathercraft CAD Web es la versión para navegador de Leathercraft CAD, el CAD de patrones para marroquinería que ya estaba disponible para Windows y macOS. Desde el 1 de octubre de 2026 está en fase beta con los miembros del canal de YouTube y con quienes han apoyado Leathercraft CAD hasta ahora.</p>
+
+    <h2>El motivo inmediato</h2>
+    <p>Mucha gente me pidió versiones para Linux y para iPad. Crear una app nativa para cada sistema operativo da mucho trabajo, pero una versión para navegador resuelve las dos cosas a la vez. La versión web funciona en navegadores de ordenador con Windows, macOS y Linux, y también en iPad (con Apple Pencil). En tabletas Android debería funcionar, pero aún no lo he probado, y quizá también funcione en el navegador de una Raspberry Pi 4 / Pi 5 (tampoco probado).</p>
+
+    <h2>El segundo motivo</h2>
+    <p>Hay algo que siento desde que empecé con la versión de escritorio. Los conocimientos y las técnicas de marroquinería suelen quedarse dentro de cada país o región y rara vez cruzan fronteras. Usamos las mismas herramientas y el mismo cuero, y sin embargo pocas veces llegamos a saber qué patrones se hacen o qué formas de coser se prefieren en el país de al lado.</p>
+    <p>¿Podría Leathercraft CAD, como herramienta de patrones, convertirse en una «lengua común»? ¿Podríamos crear un lugar donde artesanos del cuero de todo el mundo se encuentren compartiendo patrones y conversando en un foro? Empezar desde cero sería muy difícil, pero Leathercraft CAD ya tiene decenas de miles de usuarios en todo el mundo, así que la base ya está.</p>
+
+    <h2>Qué ofrece: CAD de patrones × Gremio del cuero</h2>
+    <ul>
+      <li><strong>Un CAD de patrones que funciona en el navegador.</strong> Dibujo, agujeros de costura, el simulador de cuero e impresión, con la idea de que se sienta como la versión de escritorio. Funciona en navegadores con Windows, macOS y Linux, y en iPad (con Apple Pencil); las tabletas Android y la Raspberry Pi 4 / Pi 5 aún no se han probado.</li>
+      <li><strong>Guardado en la nube.</strong> Abre el mismo dibujo desde cualquier dispositivo.</li>
+      <li><strong>El Gremio del cuero.</strong> Publica tus patrones con la licencia que elijas y encuentra otros en la Plaza. En el foro puedes contar con toda tranquilidad lo que has hecho, lo que no salió bien y las herramientas que te gustan.</li>
+      <li><strong>Traducción con IA que conoce el oficio.</strong> La interfaz está en 20 idiomas, entre ellos japonés e inglés. En el Gremio cada cual escribe en su propio idioma y la IA traduce teniendo en cuenta los términos del trabajo en cuero.</li>
+      <li><strong>Intercambio con la versión de escritorio.</strong> Los archivos .lcc se pueden importar y exportar (algunos tipos de forma todavía no se pueden exportar; consulta las <a href="releases.html">notas de la versión</a>).</li>
+      <li><strong>Diseña patrones con una IA (MCP).</strong> Conecta un asistente de IA como Claude y podrá dibujar y corregir el dibujo contigo. Ahora lo están probando algunos testers; se abrirá a todos a mitad de la beta.</li>
+    </ul>
+    <p><strong>Próximamente:</strong> el Gremio tendrá rangos. Todo el mundo empieza como Aprendiz y gana experiencia publicando patrones para el mundo, recibiendo valoraciones y respondiendo preguntas en el foro. Los rangos más altos desbloquean funciones como la reproducción paso a paso de cómo se hizo un patrón.</p>
+    <p>Quiero dar impulso a los artesanos del cuero y a la industria del cuero de todo el mundo, y también quiero disfrutar más de la marroquinería yo mismo. Por eso he creado la versión web. Si compartes esta idea, me encantaría contar contigo entre los primeros testers.</p>
+
+    <h2>Precio</h2>
+    <p>La versión de escritorio seguirá siendo gratuita. Si la versión web será gratuita o tendrá niveles gratuitos y de pago se decidirá según los comentarios que reciba durante la beta. Mientras dure la beta, los costes de funcionamiento los pago yo.</p>
+
+    <h2>Sobre la beta</h2>
+    <ul>
+      <li>Está abierta a los miembros del canal de YouTube y a quienes me han apoyado hasta ahora. Inicia sesión con Google e introduce tu código de desbloqueo.</li>
+      <li>Está sin terminar. Puede cambiar sin previo aviso y no hay garantía de que llegue a publicarse como versión definitiva.</li>
+      <li>No hay soporte individual. Haz tus preguntas en el foro del Gremio, dentro de la app. Para informar de errores o hacer peticiones, usa el hilo fijado del Gremio <a href="https://cad.coffee-craft.net/feedback">«🐞 Cómo enviar comentarios»</a> (en el idioma que quieras; yo me encargo de traducirlo y abrir el issue) o abre directamente un <a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">issue en GitHub</a>.</li>
+      <li>Los cambios se registran en las <a href="releases.html">notas de la versión</a>.</li>
+    </ul>
+    <p class="meta">Versión de escritorio, donativos y membresía del canal: <a href="https://coffee-craft.net/leathercraft_cad/" target="_blank" rel="noopener">coffee-craft.net/leathercraft_cad</a></p>
+  </section>
+
+  <section data-lang="fr">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="start.html">Premiers pas</a> · <a href="releases.html">Notes de version</a> · <a href="terms.html">Conditions d'utilisation</a> · <a href="privacy.html">Politique de confidentialité</a></nav>
+    <p class="brand">La CAO de patrons dans votre navigateur. Une Guilde sans frontières.</p>
+    <h1>Pourquoi une version web ?</h1>
+    <p class="meta">par LuthierTN, septembre 2026</p>
+
+    <p>Leathercraft CAD Web est l'édition pour navigateur de Leathercraft CAD, le logiciel de CAO de patrons pour le travail du cuir déjà disponible sous Windows et macOS. Depuis le 1er octobre 2026, il est en phase bêta auprès des membres de la chaîne YouTube et des personnes qui ont soutenu Leathercraft CAD jusqu'ici.</p>
+
+    <h2>Le point de départ</h2>
+    <p>Beaucoup d'entre vous m'ont demandé des versions Linux et iPad. Développer une application native pour chaque système demande énormément de travail, alors qu'une version pour navigateur répond aux deux demandes d'un coup. La version web fonctionne dans les navigateurs des ordinateurs sous Windows, macOS et Linux, et aussi sur iPad (avec l'Apple Pencil). Les tablettes Android devraient fonctionner mais n'ont pas encore été testées, et elle tourne peut-être aussi dans le navigateur d'un Raspberry Pi 4 / Pi 5 (pas encore testé non plus).</p>
+
+    <h2>La deuxième raison</h2>
+    <p>Il y a une chose que je ressens depuis les débuts de la version pour ordinateur. Les connaissances et les techniques du travail du cuir restent souvent cantonnées à chaque pays ou région, et circulent peu. Nous utilisons les mêmes outils et les mêmes cuirs, et pourtant nous savons rarement quels patrons sont réalisés, ni quelles façons de coudre sont appréciées, juste de l'autre côté de la frontière.</p>
+    <p>Et si Leathercraft CAD, en tant qu'outil de patronage, pouvait devenir une « langue commune » ? Et si le partage de patrons et les discussions sur un forum permettaient aux artisans du cuir du monde entier de se rencontrer ? Partir de zéro serait bien difficile, mais Leathercraft CAD compte déjà des dizaines de milliers d'utilisateurs dans le monde : les fondations sont là.</p>
+
+    <h2>Ce qu'elle permet — CAO de patrons × Guilde du cuir</h2>
+    <ul>
+      <li><strong>Une CAO de patrons qui fonctionne dans le navigateur.</strong> Dessin, trous de couture, simulateur de cuir et impression, avec l'ambition d'offrir le même confort que la version pour ordinateur. Elle fonctionne dans les navigateurs sous Windows, macOS et Linux, et sur iPad (avec l'Apple Pencil) ; les tablettes Android et le Raspberry Pi 4 / Pi 5 n'ont pas été testés.</li>
+      <li><strong>Enregistrement dans le cloud.</strong> Ouvrez le même dessin depuis n'importe quel appareil.</li>
+      <li><strong>La Guilde du cuir.</strong> Publiez vos patrons sous la licence de votre choix et découvrez ceux des autres sur la Place. Sur le forum, partagez en toute simplicité ce que vous avez fabriqué, ce qui n'a pas marché et les outils que vous aimez.</li>
+      <li><strong>Une traduction par IA qui connaît le travail du cuir.</strong> L'interface est disponible en 20 langues, dont le japonais et l'anglais. Dans la Guilde, chacun écrit dans sa propre langue, et l'IA traduit en tenant compte du vocabulaire du métier.</li>
+      <li><strong>Échanges avec la version pour ordinateur.</strong> Les fichiers .lcc peuvent être importés comme exportés (quelques types de formes ne peuvent pas encore être exportés ; voir les <a href="releases.html">notes de version</a>).</li>
+      <li><strong>Concevoir des patrons avec une IA (MCP).</strong> Connectez un assistant IA comme Claude, et il pourra dessiner et modifier le dessin avec vous. Quelques testeurs l'essaient en ce moment ; la fonction sera ouverte à tous en cours de bêta.</li>
+    </ul>
+    <p><strong>Prochainement :</strong> la Guilde aura des rangs. Chacun commence Apprenti et gagne de l'expérience en publiant des patrons pour le monde entier, en recevant des évaluations et en répondant aux questions sur le forum. Les rangs supérieurs débloquent des fonctions comme la relecture pas à pas de la fabrication d'un patron.</p>
+    <p>J'ai envie d'aider les artisans du cuir et toute la filière du cuir à s'épanouir partout dans le monde, et j'ai envie, moi aussi, de prendre encore plus de plaisir à travailler le cuir. C'est pour cela que j'ai créé la version web. Si cette idée vous parle, je serais heureux de vous compter parmi les premiers testeurs.</p>
+
+    <h2>Tarifs</h2>
+    <p>La version pour ordinateur reste gratuite. Quant à la version web, gratuite ou avec une formule gratuite et une formule payante, la décision sera prise en fonction de vos retours pendant la bêta. Pendant la bêta, les frais de fonctionnement sont à ma charge.</p>
+
+    <h2>À propos de la bêta</h2>
+    <ul>
+      <li>Elle est ouverte aux membres de la chaîne YouTube et aux personnes qui m'ont déjà soutenu. Connectez-vous avec Google et saisissez votre code de déverrouillage.</li>
+      <li>Elle n'est pas terminée. Des choses peuvent changer sans préavis, et rien ne garantit qu'elle sortira un jour en version définitive.</li>
+      <li>Il n'y a pas d'assistance individuelle. Posez vos questions sur le forum de la Guilde, dans l'application. Signalez les bugs et vos suggestions soit dans le sujet épinglé de la Guilde <a href="https://cad.coffee-craft.net/feedback">« 🐞 Comment envoyer vos retours »</a> (dans la langue de votre choix ; je traduis et crée l'issue moi-même), soit directement dans les <a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">issues GitHub</a>.</li>
+      <li>Les changements sont consignés dans les <a href="releases.html">notes de version</a>.</li>
+    </ul>
+    <p class="meta">Version pour ordinateur, dons et adhésion à la chaîne : <a href="https://coffee-craft.net/leathercraft_cad/" target="_blank" rel="noopener">coffee-craft.net/leathercraft_cad</a></p>
+  </section>
+
+  <section data-lang="it">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="start.html">Come iniziare</a> · <a href="releases.html">Note di rilascio</a> · <a href="terms.html">Condizioni d'uso</a> · <a href="privacy.html">Politica sulla privacy</a></nav>
+    <p class="brand">Un CAD per cartamodelli nel tuo browser. Benvenuto nella Gilda della pelle, aperta al mondo intero.</p>
+    <h1>Perché una versione web</h1>
+    <p class="meta">di LuthierTN, settembre 2026</p>
+
+    <p>Leathercraft CAD Web è la versione per browser di Leathercraft CAD, il CAD per cartamodelli di pelletteria finora disponibile per Windows e macOS. Dal 1° ottobre 2026 è in fase di beta test con i membri del canale YouTube e con chi ha sostenuto Leathercraft CAD in passato.</p>
+
+    <h2>Come è nata</h2>
+    <p>In tanti mi avete chiesto una versione per Linux e una per iPad. Creare un'app nativa per ogni sistema operativo è un lavoro enorme, ma una versione che gira nel browser risponde a entrambe le richieste in un colpo solo. La versione web funziona nei browser dei computer con Windows, macOS e Linux, e anche su iPad (con Apple Pencil). Sui tablet Android dovrebbe funzionare, ma non l'ho ancora provata; potrebbe girare anche nel browser di un Raspberry Pi 4 / Pi 5 (anche questo non ancora verificato).</p>
+
+    <h2>L'altro motivo</h2>
+    <p>C'è una cosa che sento fin da quando ho iniziato la versione per computer. Le conoscenze e le tecniche della lavorazione della pelle tendono a restare chiuse dentro ciascun paese o regione, e passano di rado da una parte all'altra. Usiamo gli stessi attrezzi e la stessa pelle, eppure difficilmente sappiamo quali cartamodelli si realizzano o quali tipi di cucitura si preferiscono appena oltre il confine.</p>
+    <p>Leathercraft CAD, come strumento per cartamodelli, potrebbe diventare una «lingua comune»? Condividendo cartamodelli e parlandone in una bacheca, i pellettieri di tutto il mondo potrebbero incontrarsi? È quello che mi chiedo da tempo. Partendo da zero sarebbe un'impresa, ma Leathercraft CAD ha già decine di migliaia di utenti in tutto il mondo: le basi ci sono.</p>
+
+    <h2>Cosa fa: CAD per cartamodelli × Gilda della pelle</h2>
+    <ul>
+      <li><strong>Un CAD per cartamodelli che funziona nel browser.</strong> Disegno, fori di cucitura, simulatore della pelle e stampa, con l'obiettivo di offrire la stessa comodità della versione per computer. Funziona nei browser di Windows, macOS e Linux e su iPad (con Apple Pencil); tablet Android e Raspberry Pi 4 / Pi 5 non sono ancora stati provati.</li>
+      <li><strong>Salvataggio online.</strong> Apri lo stesso disegno da qualsiasi dispositivo.</li>
+      <li><strong>La Gilda della pelle.</strong> Pubblica i tuoi cartamodelli con la licenza che preferisci e trovali nella «Piazza». Nella bacheca puoi raccontare con leggerezza cosa hai realizzato, cosa non è andato per il verso giusto e gli attrezzi che usi.</li>
+      <li><strong>Una traduzione IA che conosce la pelletteria.</strong> L'interfaccia è disponibile in 20 lingue, tra cui giapponese e inglese. Nella Gilda ognuno scrive nella propria lingua e l'IA traduce tenendo conto dei termini tecnici del mestiere.</li>
+      <li><strong>Scambio di dati con la versione per computer.</strong> I file .lcc si possono sia importare sia esportare (alcuni tipi di forme non si possono ancora esportare; vedi le <a href="releases.html">note di rilascio</a>).</li>
+      <li><strong>Progettare cartamodelli insieme all'IA (MCP).</strong> Collega un assistente IA come Claude e potrà disegnare e modificare il disegno insieme a te. Per ora lo stanno provando alcuni tester; sarà aperto a tutti nel corso della beta.</li>
+    </ul>
+    <p><strong>Prossimamente:</strong> la Gilda avrà dei gradi. Tutti iniziano come Apprendista e accumulano esperienza pubblicando cartamodelli per il mondo, ricevendo valutazioni e rispondendo alle domande in bacheca. Salendo di grado si sbloccano funzioni come la riproduzione passo passo di come è stato realizzato un cartamodello.</p>
+    <p>Vorrei dare nuova energia ai pellettieri e al settore della pelle in tutto il mondo, e vorrei anch'io divertirmi di più a lavorare la pelle. È per questo che ho creato la versione web. Se condividi questo desiderio, sarei felice di averti tra i primi tester.</p>
+
+    <h2>Prezzi</h2>
+    <p>La versione per computer resterà gratuita. Se la versione web sarà gratuita, oppure avrà un livello gratuito e uno a pagamento, lo deciderò in base ai pareri raccolti durante la beta. Durante la beta i costi di gestione sono a carico mio.</p>
+
+    <h2>Informazioni sulla beta</h2>
+    <ul>
+      <li>È riservata ai membri del canale YouTube e a chi mi ha sostenuto in passato. Accedi con Google e inserisci il tuo codice di sblocco.</li>
+      <li>Non è ancora finita. Le cose possono cambiare senza preavviso e non c'è garanzia che venga pubblicata come versione definitiva.</li>
+      <li>Non offro assistenza individuale. Per domande sull'uso, scrivi nella bacheca «Gilda» all'interno dell'app. Per segnalare problemi o proporre idee, usa la discussione fissata della Gilda <a href="https://cad.coffee-craft.net/feedback">«🐞 Come inviare un feedback»</a> (va bene qualsiasi lingua; la traduzione in inglese e la registrazione su GitHub le faccio io) oppure apri direttamente una <a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">issue su GitHub</a>.</li>
+      <li>Le modifiche sono annotate nelle <a href="releases.html">note di rilascio</a>.</li>
+    </ul>
+    <p class="meta">Versione per computer, donazioni e abbonamento al canale: <a href="https://coffee-craft.net/leathercraft_cad/" target="_blank" rel="noopener">coffee-craft.net/leathercraft_cad</a></p>
+  </section>
+
+  <section data-lang="ru">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="start.html">С чего начать</a> · <a href="releases.html">История релизов</a> · <a href="terms.html">Условия использования</a> · <a href="privacy.html">Политика конфиденциальности</a></nav>
+    <p class="brand">CAD для выкроек прямо в браузере. Гильдия без границ.</p>
+    <h1>Зачем веб-версия?</h1>
+    <p class="meta">Автор: LuthierTN, сентябрь 2026</p>
+
+    <p>Leathercraft CAD Web — это браузерная версия Leathercraft CAD, программы для построения выкроек изделий из кожи, которая до сих пор выходила для Windows и macOS. С 1 октября 2026 года идёт бета-тестирование для спонсоров YouTube-канала и тех, кто раньше поддерживал Leathercraft CAD.</p>
+
+    <h2>Непосредственный повод</h2>
+    <p>Многие из вас просили версии для Linux и iPad. Делать отдельное приложение под каждую ОС — огромная работа, а браузерная версия решает обе задачи сразу. Веб-версия работает в браузерах на компьютерах с Windows, macOS и Linux, а также на iPad (с поддержкой Apple Pencil). На Android-планшетах она должна работать, но я это ещё не проверял; возможно, она запустится и в браузере на Raspberry Pi 4 / Pi 5 (тоже не проверено).</p>
+
+    <h2>Вторая причина</h2>
+    <p>Есть мысль, которая не отпускает меня с тех пор, как я начал делать версию для компьютеров. Знания и приёмы работы с кожей обычно остаются внутри своей страны или региона и редко выходят за их пределы. Мы пользуемся теми же инструментами и той же кожей, но почти не знаем, какие выкройки делают и какие швы любят у соседей прямо за границей.</p>
+    <p>Может ли Leathercraft CAD как инструмент для выкроек стать «общим языком»? Можно ли, делясь выкройками и общаясь на форуме, дать мастерам по коже со всего мира возможность встретиться? Начинать такое с нуля было бы очень непросто, но у Leathercraft CAD уже десятки тысяч пользователей по всему миру, так что основа есть.</p>
+
+    <h2>Что умеет веб-версия — CAD для выкроек × кожевенная Гильдия</h2>
+    <ul>
+      <li><strong>CAD для выкроек, работающий в браузере.</strong> Чертежи, отверстия под шов, симулятор кожи и печать — я стараюсь, чтобы работать было так же удобно, как в версии для компьютеров. Работает в браузерах на Windows, macOS и Linux, а также на iPad (с Apple Pencil); Android-планшеты и Raspberry Pi 4 / Pi 5 пока не проверены.</li>
+      <li><strong>Сохранение в облако.</strong> Один и тот же чертёж можно открыть с любого устройства.</li>
+      <li><strong>Кожевенная Гильдия.</strong> Публикуйте выкройки под выбранной вами лицензией и находите чужие на Площади. На форуме можно запросто рассказать, что вы сделали, что не получилось и какие инструменты вам нравятся.</li>
+      <li><strong>ИИ-перевод, который понимает язык работы с кожей.</strong> Интерфейс доступен на 20 языках, включая японский и английский. В Гильдии каждый пишет на своём языке, а ИИ переводит с учётом профессиональных терминов.</li>
+      <li><strong>Обмен данными с версией для компьютеров.</strong> Файлы .lcc можно как импортировать, так и экспортировать (некоторые виды фигур пока не экспортируются; см. <a href="releases.html">историю релизов</a>).</li>
+      <li><strong>Выкройки вместе с ИИ (MCP).</strong> Подключите ИИ-ассистента, например Claude, и он сможет рисовать и править чертёж вместе с вами. Сейчас это пробуют несколько тестировщиков; для всех функция откроется по ходу бета-теста.</li>
+    </ul>
+    <p><strong>Что дальше:</strong> в Гильдии появятся ранги. Все начинают с ранга «Ученик» и набирают опыт, публикуя выкройки для всего мира, получая оценки и отвечая на вопросы на форуме. Более высокие ранги открывают новые возможности — например, пошаговое воспроизведение того, как строилась выкройка.</p>
+    <p>Мне хочется поддержать мастеров по коже и кожевенную отрасль по всему миру — и самому получать от работы с кожей ещё больше радости. Ради этого и появилась веб-версия. Если вам это близко, я буду рад видеть вас среди первых тестировщиков.</p>
+
+    <h2>О стоимости</h2>
+    <p>Версия для компьютеров останется бесплатной. Будет ли веб-версия бесплатной или появятся бесплатный и платный уровни, я решу по отзывам, полученным во время бета-теста. Пока идёт бета-тест, расходы на работу сервиса оплачиваю я сам.</p>
+
+    <h2>О бета-версии</h2>
+    <ul>
+      <li>Бета-версия доступна спонсорам YouTube-канала и тем, кто раньше поддерживал проект. Войдите через Google и введите код разблокировки.</li>
+      <li>Программа ещё не закончена. Всё может меняться без предупреждения, и нет гарантии, что она выйдет в виде окончательной версии.</li>
+      <li>Индивидуальной поддержки нет. С вопросами обращайтесь на форум Гильдии внутри приложения. Об ошибках и пожеланиях сообщайте в закреплённой теме Гильдии <a href="https://cad.coffee-craft.net/feedback">«🐞 Как отправить отзыв»</a> (на любом языке; мы переведём и сами создадим issue) или напрямую через <a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">issue на GitHub</a>.</li>
+      <li>Все изменения записываются в <a href="releases.html">историю релизов</a>.</li>
+    </ul>
+    <p class="meta">Версия для компьютеров, пожертвования и спонсорство канала: <a href="https://coffee-craft.net/leathercraft_cad/" target="_blank" rel="noopener">coffee-craft.net/leathercraft_cad</a></p>
+  </section>
+
+  <section data-lang="zh">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="start.html">開始使用</a> · <a href="releases.html">發行說明</a> · <a href="terms.html">服務條款</a> · <a href="privacy.html">隱私政策</a></nav>
+    <p class="brand">在瀏覽器中執行的紙型 CAD。歡迎加入與世界相連的皮革公會。</p>
+    <h1>為什麼要推出網頁版</h1>
+    <p class="meta">作者 LuthierTN／2026年9月</p>
+
+    <p>Leathercraft CAD Web 是一直以來為 Windows / macOS 提供的皮革工藝紙型 CAD「Leathercraft CAD」的瀏覽器版。自 2026年10月1日起，我們邀請 YouTube 頻道會員，以及過去曾支持過我的朋友參與 β 測試。</p>
+
+    <h2>起因</h2>
+    <p>直接的契機，是收到許多希望推出 Linux 版和 iPad 版的聲音。要為每個作業系統各做一套原生應用程式非常吃力，但只要能在瀏覽器上執行，就能一次滿足這兩種需求。實際上，網頁版除了能在 Windows、macOS、Linux 等電腦的瀏覽器上執行，也能在 iPad 上使用（支援 Apple Pencil）。Android 平板應該也能用，但我還沒有實際確認。Raspberry Pi 4 / Pi 5 的瀏覽器或許也能執行（同樣尚未確認）。</p>
+
+    <h2>另一個理由</h2>
+    <p>從開始製作電腦版的時候起，我就一直有這樣的感受：皮革工藝的資訊和技法，往往只在各個國家或地區內流通，彼此很難交流。即使用的是同樣的工具、同樣的皮革，鄰近國家做出了什麼樣的紙型、大家偏好哪種縫法，卻很少能傳到我們這裡。</p>
+    <p>能不能讓 Leathercraft CAD 這個紙型工具，成為一種「共通語言」？能不能透過分享紙型、在討論版上交流，打造一個讓世界各地皮革工藝玩家互相認識的地方？我一直這樣想著。如果從零開始，這會非常困難，但 Leathercraft CAD 在全世界已經有數萬名使用者，基礎已經打好了。</p>
+
+    <h2>網頁版能做什麼 ―― 紙型 CAD × 皮革公會</h2>
+    <ul>
+      <li><strong>只用瀏覽器就能執行的紙型 CAD。</strong> 從繪圖、縫孔、皮革模擬器到列印，目標是做到與電腦版相同的使用手感。可在 Windows、macOS、Linux 的瀏覽器及 iPad（Apple Pencil）上執行（Android 平板與 Raspberry Pi 4 / Pi 5 尚未確認）。</li>
+      <li><strong>雲端儲存。</strong> 不論用哪台裝置，都能開啟同一份圖面。</li>
+      <li><strong>皮革公會。</strong> 您可以選擇授權方式公開紙型，並在「公開廣場」中尋找紙型。在討論版上，歡迎輕鬆分享自己的作品、做失敗的經驗，或是聊聊喜歡的工具。</li>
+      <li><strong>懂皮革工藝用語的 AI 翻譯。</strong> 介面支援包含日文與英文在內的 20 種語言。在公會裡，每個人都用自己的語言書寫，再由 AI 依照皮革工藝的專業用語來翻譯。</li>
+      <li><strong>與電腦版交換資料。</strong> 支援 .lcc 檔案的匯入與匯出（有部分圖形目前還無法匯出，請參閱<a href="releases.html">發行說明</a>）。</li>
+      <li><strong>與 AI 一起製作紙型（MCP）。</strong> 連接 Claude 等 AI 助理後，AI 就能幫您繪製和修改圖面。目前由部分測試者試用中，會在 β 測試期間開放給所有人。</li>
+    </ul>
+    <p><strong>接下來：</strong>公會預計會設立等級制度。每個人都從「學徒」開始，透過向全世界公開紙型、獲得評價、在討論版上回答問題等方式累積經驗值。等級提升後，就能使用依步驟重播紙型製作過程等功能。</p>
+    <p>我希望讓世界各地的皮革工藝玩家與皮革產業更有活力，也希望自己能更享受皮革工藝。正是抱著這樣的心情，我做了這個網頁版。如果您也有同感，非常歡迎您成為第一批測試者。</p>
+
+    <h2>關於費用</h2>
+    <p>電腦版今後也會繼續免費。網頁版要完全免費，還是分成免費與付費方案，會依照 β 測試期間收到的意見來決定。β 測試期間的營運費用由我自己負擔。</p>
+
+    <h2>關於 β 版</h2>
+    <ul>
+      <li>開放對象為 YouTube 頻道會員，以及過去曾支持過我的朋友。請使用 Google 登入，並輸入解鎖碼後開始使用。</li>
+      <li>目前仍未完成。內容可能在未事先通知的情況下變更，也不保證一定會推出正式版。</li>
+      <li>恕不提供個別支援。使用上的問題，請到應用程式內的討論版「公會」詢問。錯誤回報或功能建議，請發到公會的置頂討論串 <a href="https://cad.coffee-craft.net/feedback">「🐞 如何回報意見」</a>（任何語言都可以，英文翻譯和 GitHub 登錄由我們處理），或直接提交 <a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">GitHub Issue</a>。</li>
+      <li>更新內容會記錄在<a href="releases.html">發行說明</a>中。</li>
+    </ul>
+    <p class="meta">關於電腦版、贊助與頻道會員：<a href="https://coffee-craft.net/leathercraft_cad/" target="_blank" rel="noopener">coffee-craft.net/leathercraft_cad</a></p>
+  </section>
+
+  <section data-lang="zh-cn">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="start.html">入门指南</a> · <a href="releases.html">更新日志</a> · <a href="terms.html">使用条款</a> · <a href="privacy.html">隐私政策</a></nav>
+    <p class="brand">在浏览器里运行的纸样 CAD。欢迎来到连接世界的皮革公会。</p>
+    <h1>为什么要开发网页版</h1>
+    <p class="meta">作者 LuthierTN ／ 2026年9月</p>
+
+    <p>Leathercraft CAD Web 是 Leathercraft CAD 的浏览器版。Leathercraft CAD 是一款用于皮具手工制版的 CAD，此前一直面向 Windows / macOS 提供。自 2026 年 10 月 1 日起，我们面向 YouTube 频道会员和以往支持过我的朋友进行 β 测试。</p>
+
+    <h2>直接的契机</h2>
+    <p>直接的契机，是很多人希望能有 Linux 版和 iPad 版。为每个操作系统分别开发原生应用很辛苦，但只要能在浏览器里运行，就能一次满足这两种需求。实际上，网页版除了能在 Windows、macOS、Linux 等电脑的浏览器上运行，也能在 iPad（支持 Apple Pencil）上使用。Android 平板应该也能运行，但还没有确认过。Raspberry Pi 4 / Pi 5 的浏览器或许也能运行（同样尚未确认）。</p>
+
+    <h2>另一个原因</h2>
+    <p>从开始做桌面版的时候起，我就一直有一种感受：皮具手工的信息和技法往往局限在各个国家和地区之内，彼此很难交流。明明用着同样的工具、同样的皮革，邻国的人在做什么样的纸样、偏爱什么样的缝法，却很难传到我们这里。</p>
+    <p>能不能让 Leathercraft CAD 这个纸样工具成为一种“共同语言”？能不能通过分享纸样、在论坛里交流，打造一个让全世界皮具手作人相互交流的地方？我一直在思考这件事。如果从零开始，这会很难；但 Leathercraft CAD 在全世界已经有数万名用户，基础已经有了。</p>
+
+    <h2>网页版能做什么 —— 纸样 CAD × 皮革公会</h2>
+    <ul>
+      <li><strong>只用浏览器就能运行的纸样 CAD。</strong> 绘图、缝孔、皮革模拟器、打印，目标是做到和桌面版一样顺手。可在 Windows、macOS、Linux 的浏览器以及 iPad（Apple Pencil）上运行（Android 平板和 Raspberry Pi 4 / Pi 5 尚未确认）。</li>
+      <li><strong>云端保存。</strong> 在任何设备上都能打开同一张图纸。</li>
+      <li><strong>皮革公会。</strong> 你可以选择许可协议来发布纸样，并在“广场”中查找纸样。在论坛里，可以随意聊聊自己做的作品、没做好的地方，还有工具的话题。</li>
+      <li><strong>懂皮具手工用语的 AI 翻译。</strong> 界面支持包括日语、英语在内的 20 种语言。在公会里，大家都用自己的母语写，AI 会结合皮革专业术语进行翻译。</li>
+      <li><strong>与桌面版互通数据。</strong> 支持 .lcc 文件的导入和导出（部分图形暂时无法导出，详见<a href="releases.html">更新日志</a>）。</li>
+      <li><strong>和 AI 一起做纸样（MCP）。</strong> 连接 Claude 等 AI 助手后，AI 就能绘制和修改图纸。目前由部分测试者试用，β 测试期间会向所有人开放。</li>
+    </ul>
+    <p><strong>接下来：</strong>公会将设立等级。大家都从“学徒”开始。向全世界发布纸样、获得评价、在论坛里回答问题等，都能积累经验值；等级提升后，就能使用按步骤回放纸样制作过程等功能。</p>
+    <p>我希望让全世界的皮具手作人和皮革行业更有活力，也希望自己能更享受皮具手工。正是怀着这样的想法，我做了网页版。如果你也认同这份想法，非常欢迎你成为第一批测试者。</p>
+
+    <h2>关于费用</h2>
+    <p>桌面版今后仍然免费。网页版是完全免费，还是分为免费和付费档位，将根据 β 测试期间收到的反馈来决定。β 测试期间的运营费用由作者承担。</p>
+
+    <h2>关于 β 版</h2>
+    <ul>
+      <li>面向 YouTube 频道会员和以往支持过我的朋友。使用 Google 登录，并输入解锁码即可使用。</li>
+      <li>目前尚未完成。内容可能会在不另行通知的情况下变更，也不保证一定会作为正式版发布。</li>
+      <li>不提供个别支持。关于使用方法的问题，请在应用内的“公会”论坛里提问。错误报告和功能建议，请发到公会的置顶帖 <a href="https://cad.coffee-craft.net/feedback">“🐞 如何发送反馈”</a>（用任何语言都可以，翻译成英语并提交到 GitHub 由我们来做），或者直接提交 <a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">GitHub Issue</a>。</li>
+      <li>变更内容会记录在 <a href="releases.html">更新日志</a> 中。</li>
+    </ul>
+    <p class="meta">关于桌面版、捐助和频道会员：<a href="https://coffee-craft.net/leathercraft_cad/" target="_blank" rel="noopener">coffee-craft.net/leathercraft_cad</a></p>
+  </section>
+
+  <section data-lang="ko">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="start.html">시작하기</a> · <a href="releases.html">릴리스 노트</a> · <a href="terms.html">이용약관</a> · <a href="privacy.html">개인정보 보호정책</a></nav>
+    <p class="brand">브라우저에서 쓰는 패턴 CAD. 세계와 이어지는 가죽 길드에 오신 것을 환영합니다.</p>
+    <h1>웹 버전을 만든 이유</h1>
+    <p class="meta">작성자 LuthierTN / 2026년 9월</p>
+
+    <p>Leathercraft CAD Web은 그동안 Windows / macOS용으로 공개해 온 가죽공예용 패턴 CAD인 Leathercraft CAD의 브라우저 버전입니다. 2026년 10월 1일부터 YouTube 채널 멤버와 그동안 후원해 주신 분들을 대상으로 베타 테스트를 진행하고 있습니다.</p>
+
+    <h2>시작하게 된 계기</h2>
+    <p>직접적인 계기는 Linux 버전과 iPad 버전을 원하는 목소리를 많이 들었기 때문입니다. 운영체제마다 네이티브 앱을 따로 만들기는 쉽지 않지만, 브라우저에서 돌아간다면 두 가지 요청에 한 번에 답할 수 있습니다. 실제로 웹 버전은 Windows·macOS·Linux 같은 컴퓨터의 브라우저뿐 아니라 iPad(Apple Pencil 지원)에서도 작동합니다. Android 태블릿에서도 작동할 것으로 보이지만 아직 확인하지 못했습니다. Raspberry Pi 4 / Pi 5의 브라우저에서도 작동할지 모릅니다(이것도 아직 확인하지 못했습니다).</p>
+
+    <h2>또 하나의 이유</h2>
+    <p>데스크톱 버전을 만들기 시작했을 때부터 줄곧 느껴 온 것이 있습니다. 가죽공예의 정보와 기법은 나라나 지역마다 갇혀 있어서 서로 오가기가 어렵다는 점입니다. 같은 도구, 같은 가죽을 쓰는데도 이웃 나라에서는 어떤 패턴을 만들고 어떤 바느질 방식을 즐겨 쓰는지 좀처럼 전해지지 않습니다.</p>
+    <p>패턴 도구인 Leathercraft CAD를 하나의 ‘공통 언어’로 만들 수는 없을까. 패턴을 나누고 게시판에서 이야기를 주고받으며 전 세계 가죽공예인이 교류할 수 있는 자리를 만들 수는 없을까. 그런 생각을 계속해 왔습니다. 맨땅에서 시작한다면 어려운 일이지만, Leathercraft CAD에는 이미 전 세계에 수만 명의 사용자가 있어 바탕은 마련되어 있습니다.</p>
+
+    <h2>웹 버전으로 할 수 있는 일 ― 패턴 CAD × 가죽 길드</h2>
+    <ul>
+      <li><strong>브라우저만으로 쓰는 패턴 CAD.</strong> 도면, 바느질 구멍, 가죽 시뮬레이터, 인쇄까지 데스크톱 버전과 같은 사용감을 목표로 하고 있습니다. Windows·macOS·Linux의 브라우저와 iPad(Apple Pencil)에서 작동합니다(Android 태블릿과 Raspberry Pi 4 / Pi 5는 아직 확인하지 못했습니다).</li>
+      <li><strong>클라우드 저장.</strong> 어느 기기에서든 같은 도면을 열 수 있습니다.</li>
+      <li><strong>가죽 길드.</strong> 원하는 라이선스를 골라 패턴을 공개하고, ‘광장’에서 찾아볼 수 있습니다. 게시판에서는 만든 작품, 잘 안 됐던 일, 도구 이야기를 편하게 나눠 주세요.</li>
+      <li><strong>가죽공예 용어를 아는 AI 번역.</strong> 화면은 한국어, 일본어, 영어를 포함해 20개 언어를 지원합니다. 길드에서는 모두 자기 언어로 글을 쓰고, AI가 가죽공예 전문 용어를 고려해 번역합니다.</li>
+      <li><strong>데스크톱 버전과 데이터 주고받기.</strong> .lcc 파일 불러오기와 내보내기를 모두 지원합니다(일부 도형은 내보낼 수 없습니다. <a href="releases.html">릴리스 노트</a>를 참고해 주세요).</li>
+      <li><strong>AI와 함께 패턴 만들기(MCP).</strong> Claude 같은 AI 어시스턴트를 연결하면 AI가 도면을 그리거나 고칠 수 있습니다. 지금은 일부 테스터분들과 시험하고 있으며, 베타 도중에 모든 분께 열 예정입니다.</li>
+    </ul>
+    <p><strong>앞으로:</strong> 길드에 등급을 둘 예정입니다. 처음에는 모두 ‘견습생’에서 시작합니다. 패턴을 세계에 공개하고, 평가를 받고, 게시판에서 질문에 답하는 등의 활동으로 경험치가 쌓이고, 등급이 오르면 패턴을 만드는 과정을 단계별로 재생해 볼 수 있는 기능 등을 쓸 수 있게 됩니다.</p>
+    <p>전 세계의 가죽공예인과 가죽 업계에 활력을 불어넣고 싶습니다. 그리고 저 자신도 가죽공예를 더 즐기고 싶습니다. 그런 마음으로 웹 버전을 만들었습니다. 이 마음에 공감해 주시는 분이 첫 테스터로 함께해 주신다면 정말 기쁘겠습니다.</p>
+
+    <h2>요금에 대해</h2>
+    <p>데스크톱 버전은 앞으로도 무료입니다. 웹 버전을 무료로 할지, 무료와 유료 단계를 둘지는 베타 테스트에서 들은 의견을 바탕으로 정하겠습니다. 베타 기간의 운영비는 제가 부담하고 있습니다.</p>
+
+    <h2>베타 버전에 대해</h2>
+    <ul>
+      <li>대상은 YouTube 채널 멤버와 그동안 후원해 주신 분들입니다. Google로 로그인한 뒤 언락 코드를 입력해 사용합니다.</li>
+      <li>아직 완성되지 않았습니다. 예고 없이 바뀔 수 있으며, 정식 버전으로 공개된다는 보장은 없습니다.</li>
+      <li>개별 지원은 하지 않습니다. 사용법에 관한 질문은 앱 안의 게시판 ‘길드’에 남겨 주세요. 버그나 요청 사항은 길드의 고정 게시글 <a href="https://cad.coffee-craft.net/feedback">‘🐞 피드백 보내는 방법’</a>(어떤 언어로 써도 괜찮습니다. 영어 번역과 GitHub 등록은 제가 합니다)이나 <a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">GitHub 이슈</a>로 보내 주세요.</li>
+      <li>변경 사항은 <a href="releases.html">릴리스 노트</a>에 기록합니다.</li>
+    </ul>
+    <p class="meta">데스크톱 버전, 후원, 채널 멤버십 안내: <a href="https://coffee-craft.net/leathercraft_cad/" target="_blank" rel="noopener">coffee-craft.net/leathercraft_cad</a></p>
+  </section>
+
+  <section data-lang="da">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="start.html">Kom i gang</a> · <a href="releases.html">Udgivelsesnoter</a> · <a href="terms.html">Vilkår for brug</a> · <a href="privacy.html">Privatlivspolitik</a></nav>
+    <p class="brand">CAD til snitmønstre i din browser. Et laug uden grænser.</p>
+    <h1>Hvorfor en webversion?</h1>
+    <p class="meta">af LuthierTN, september 2026</p>
+
+    <p>Leathercraft CAD Web er browserudgaven af Leathercraft CAD, CAD-programmet til at tegne mønstre til læderarbejde, som hidtil har fandtes til Windows og macOS. Siden 1. oktober 2026 har den været i betatest hos kanalmedlemmer på YouTube og hos dem, der tidligere har støttet Leathercraft CAD.</p>
+
+    <h2>Den direkte anledning</h2>
+    <p>Mange har spurgt efter en Linux- og en iPad-version. Det er et stort arbejde at bygge en app til hvert enkelt styresystem, men en browserversion klarer begge dele på én gang. Webversionen kører i browseren på computere med Windows, macOS og Linux og også på iPad (med Apple Pencil). Android-tablets burde virke, men er ikke testet endnu, og den kører måske også i browseren på en Raspberry Pi 4 / Pi 5 (heller ikke testet).</p>
+
+    <h2>Den anden grund</h2>
+    <p>Der er noget, jeg har tænkt på, lige siden jeg begyndte på computerversionen. Viden og teknikker inden for læderhåndværk har det med at blive inden for hvert land eller område og når sjældent ud over grænsen. Vi bruger det samme værktøj og det samme læder, men vi får sjældent at vide, hvilke mønstre man laver, eller hvilke syteknikker man holder af, lige på den anden side af grænsen.</p>
+    <p>Kunne Leathercraft CAD som mønsterværktøj blive et »fælles sprog«? Kunne det at dele mønstre og snakke sammen i et forum lade læderhåndværkere fra hele verden mødes? Hvis man skulle starte fra bunden, ville det være en stor mundfuld, men Leathercraft CAD har allerede titusindvis af brugere verden over, så grundlaget er der.</p>
+
+    <h2>Hvad den kan – mønster-CAD × læderlaug</h2>
+    <ul>
+      <li><strong>Mønster-CAD, der kører i browseren.</strong> Tegning, syhuller, lædersimulatoren og udskrivning – målet er, at den føles som computerversionen. Den kører i browsere på Windows, macOS og Linux og på iPad (med Apple Pencil); Android-tablets og Raspberry Pi 4 / Pi 5 er ikke testet.</li>
+      <li><strong>Gem i skyen.</strong> Åbn den samme tegning fra hvilken som helst enhed.</li>
+      <li><strong>Læderlauget.</strong> Udgiv mønstre med en licens efter eget valg, og find dem på Pladsen. I forummet kan du fortælle om det, du har lavet, det, der gik galt, og det værktøj, du er glad for.</li>
+      <li><strong>AI-oversættelse, der kender til læderarbejde.</strong> Brugerfladen findes på 20 sprog, heriblandt japansk og engelsk. I Lauget skriver alle på deres eget sprog, og AI'en oversætter med læderhåndværkets fagudtryk for øje.</li>
+      <li><strong>Udveksling med computerversionen.</strong> .lcc-filer kan både importeres og eksporteres (nogle få slags figurer kan endnu ikke eksporteres; se <a href="releases.html">udgivelsesnoterne</a>).</li>
+      <li><strong>Tegn mønstre sammen med en AI (MCP).</strong> Forbind en AI-assistent som Claude, så kan den tegne og rette i tegningen sammen med dig. Nogle få testere prøver det nu; det åbnes for alle et stykke inde i betaperioden.</li>
+    </ul>
+    <p><strong>Det næste:</strong> Lauget får rangtrin. Alle begynder som Lærling og samler erfaring ved at udgive mønstre for hele verden, få bedømmelser og svare på spørgsmål i forummet. Højere rangtrin låser op for funktioner som trin-for-trin-afspilning af, hvordan et mønster bliver til.</p>
+    <p>Jeg vil gerne være med til at give læderhåndværkere og læderbranchen over hele verden medvind, og jeg vil selv have mere glæde af læderarbejdet. Det er derfor, webversionen findes. Hvis du kan se dig selv i det, vil jeg blive glad for at have dig med blandt de første testere.</p>
+
+    <h2>Pris</h2>
+    <p>Computerversionen forbliver gratis. Om webversionen skal være gratis eller have både gratis og betalte niveauer, afgøres ud fra de tilbagemeldinger, vi får i betaperioden. Mens betaen kører, betaler jeg selv driftsudgifterne.</p>
+
+    <h2>Om betaversionen</h2>
+    <ul>
+      <li>Den er åben for kanalmedlemmer på YouTube og for dem, der tidligere har støttet projektet. Log ind med Google, og indtast din oplåsningskode.</li>
+      <li>Den er ikke færdig. Ting kan ændre sig uden varsel, og der er ingen garanti for, at den bliver udgivet som en endelig version.</li>
+      <li>Der ydes ikke individuel support. Stil gerne dine spørgsmål i forummet i appens Laug. Fejl og ønsker kan du melde enten i Laugets fastgjorte tråd <a href="https://cad.coffee-craft.net/feedback">»🐞 Sådan sender du feedback«</a> (på hvilket sprog du vil; vi oversætter og opretter sagen) eller direkte som <a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">issues på GitHub</a>.</li>
+      <li>Ændringer bliver noteret i <a href="releases.html">udgivelsesnoterne</a>.</li>
+    </ul>
+    <p class="meta">Computerversionen, donationer og kanalmedlemskab: <a href="https://coffee-craft.net/leathercraft_cad/" target="_blank" rel="noopener">coffee-craft.net/leathercraft_cad</a></p>
+  </section>
+
+  <section data-lang="no">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="start.html">Kom i gang</a> · <a href="releases.html">Utgivelsesnotater</a> · <a href="terms.html">Vilkår for bruk</a> · <a href="privacy.html">Personvernregler</a></nav>
+    <p class="brand">Mønster-CAD i nettleseren. Velkommen til et lærlaug uten grenser.</p>
+    <h1>Hvorfor en nettversjon?</h1>
+    <p class="meta">av LuthierTN, september 2026</p>
+
+    <p>Leathercraft CAD Web er nettleserutgaven av Leathercraft CAD, CAD-programmet for mønstertegning til lærhåndverk som har vært tilgjengelig for Windows og macOS. Fra 1. oktober 2026 er den i betatesting blant kanalmedlemmer på YouTube og alle som tidligere har støttet Leathercraft CAD.</p>
+
+    <h2>Den direkte grunnen</h2>
+    <p>Mange har ønsket seg en versjon for Linux og for iPad. Å lage en egen app for hvert operativsystem er mye arbeid, men en versjon som kjører i nettleseren, løser begge deler på én gang. Nettversjonen kjører i nettlesere på datamaskiner med Windows, macOS og Linux, og også på iPad (med Apple Pencil). Android-nettbrett skal fungere, men er ikke testet ennå, og den kan kanskje også kjøre i nettleseren på en Raspberry Pi 4 / Pi 5 (heller ikke testet).</p>
+
+    <h2>Den andre grunnen</h2>
+    <p>Det er noe jeg har kjent på helt siden jeg begynte på datamaskinversjonen. Kunnskap og teknikker innen lærhåndverk holder seg gjerne innenfor hvert land eller hver region og krysser sjelden grensene. Vi bruker de samme verktøyene og det samme læret, men vi får sjelden vite hvilke mønstre som lages, eller hvilke sømteknikker folk er glade i, rett over grensen.</p>
+    <p>Kunne Leathercraft CAD, som mønsterverktøy, bli et «felles språk»? Kunne deling av mønstre og samtaler i et forum la lærhåndverkere over hele verden møtes? Å starte fra null ville vært en stor oppgave, men Leathercraft CAD har allerede titusenvis av brukere verden over, så grunnmuren er på plass.</p>
+
+    <h2>Hva den kan — mønster-CAD × lærlaug</h2>
+    <ul>
+      <li><strong>Et mønster-CAD som kjører i nettleseren.</strong> Tegning, stinghull, lærsimulatoren og utskrift – målet er at det skal kjennes som datamaskinversjonen. Den kjører i nettlesere på Windows, macOS og Linux, og på iPad (med Apple Pencil); Android-nettbrett og Raspberry Pi 4 / Pi 5 er ikke testet.</li>
+      <li><strong>Lagring i skyen.</strong> Åpne den samme tegningen fra hvilken som helst enhet.</li>
+      <li><strong>Lærlauget.</strong> Publiser mønstre med en lisens du velger selv, og finn dem på Plassen. I forumet kan du fortelle om det du har laget, det som gikk galt, og verktøyene du liker.</li>
+      <li><strong>KI-oversettelse som kan lærhåndverk.</strong> Grensesnittet finnes på 20 språk, blant dem japansk og engelsk. I Lauget skriver alle på sitt eget språk, og KI-en oversetter med fagordene for lærhåndverk i tankene.</li>
+      <li><strong>Utveksling med datamaskinversjonen.</strong> .lcc-filer kan både importeres og eksporteres (noen få typer former kan ikke eksporteres ennå; se <a href="releases.html">utgivelsesnotatene</a>).</li>
+      <li><strong>Lag mønstre sammen med KI (MCP).</strong> Koble til en KI-assistent som Claude, så kan den tegne og redigere tegningen sammen med deg. Noen få testere prøver det nå; det åpnes for alle et stykke ut i betaperioden.</li>
+    </ul>
+    <p><strong>Det som kommer:</strong> Lauget får rangeringer. Alle begynner som Lærling og samler erfaring ved å publisere mønstre for verden, få vurderinger og svare på spørsmål i forumet. Høyere rang låser opp funksjoner som å spille av steg for steg hvordan et mønster er laget.</p>
+    <p>Jeg vil bidra til at lærhåndverkere og lærbransjen over hele verden får det bedre, og jeg vil selv få mer glede av lærhåndverket. Derfor har jeg laget nettversjonen. Hvis du kjenner deg igjen i dette, blir jeg glad om du vil være med blant de første testerne.</p>
+
+    <h2>Pris</h2>
+    <p>Datamaskinversjonen forblir gratis. Om nettversjonen blir gratis, eller får både gratis- og betalingsnivåer, avgjør jeg ut fra tilbakemeldingene i betaperioden. Mens betaen pågår, betaler jeg som utvikler driftskostnadene selv.</p>
+
+    <h2>Om betaversjonen</h2>
+    <ul>
+      <li>Den er åpen for kanalmedlemmer på YouTube og alle som tidligere har gitt støtte. Logg inn med Google og skriv inn opplåsingskoden din.</li>
+      <li>Den er ikke ferdig. Ting kan endres uten varsel, og det er ingen garanti for at den blir lansert som ferdig versjon.</li>
+      <li>Det gis ingen individuell brukerstøtte. Still spørsmål i forumet i appen, «Laug». Meld feil og ønsker enten i den festede tråden i Lauget <a href="https://cad.coffee-craft.net/feedback">«🐞 Slik sender du tilbakemelding»</a> (hvilket som helst språk; jeg oversetter og legger det inn på GitHub) eller direkte som <a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">issues på GitHub</a>.</li>
+      <li>Endringer føres i <a href="releases.html">utgivelsesnotatene</a>.</li>
+    </ul>
+    <p class="meta">Datamaskinversjonen, donasjoner og kanalmedlemskap: <a href="https://coffee-craft.net/leathercraft_cad/" target="_blank" rel="noopener">coffee-craft.net/leathercraft_cad</a></p>
+  </section>
+
+  <section data-lang="pl">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="start.html">Jak zacząć</a> · <a href="releases.html">Informacje o wydaniu</a> · <a href="terms.html">Warunki użytkowania</a> · <a href="privacy.html">Polityka prywatności</a></nav>
+    <p class="brand">CAD do wykrojów w przeglądarce. Cech bez granic.</p>
+    <h1>Dlaczego wersja internetowa?</h1>
+    <p class="meta">LuthierTN, wrzesień 2026</p>
+
+    <p>Leathercraft CAD Web to przeglądarkowe wydanie Leathercraft CAD – programu CAD do projektowania wykrojów w kaletnictwie, dostępnego dotąd na Windows i macOS. Od 1 października 2026 roku trwają testy beta z osobami wspierającymi kanał YouTube oraz z tymi, którzy wcześniej wsparli Leathercraft CAD.</p>
+
+    <h2>Bezpośredni powód</h2>
+    <p>Wiele osób prosiło o wersję na Linuksa i na iPada. Napisanie natywnej aplikacji na każdy system to ogrom pracy, a wersja w przeglądarce spełnia obie prośby naraz. Wersja internetowa działa w przeglądarkach na komputerach z Windows, macOS i Linuksem, a także na iPadzie (z Apple Pencil). Tablety z Androidem powinny działać, ale nie zostały jeszcze sprawdzone; program może też działać w przeglądarce na Raspberry Pi 4 / Pi 5 (to również niesprawdzone).</p>
+
+    <h2>Drugi powód</h2>
+    <p>Od czasu, gdy powstała wersja na komputery, czuję jedno: wiedza i techniki kaletnicze zwykle zostają w obrębie jednego kraju czy regionu i rzadko przekraczają granice. Używamy tych samych narzędzi i tej samej skóry, a jednak mało wiemy o tym, jakie wykroje powstają tuż za granicą i jakie sposoby szycia są tam lubiane.</p>
+    <p>Czy Leathercraft CAD, jako narzędzie do wykrojów, mógłby stać się „wspólnym językiem”? Czy dzielenie się wykrojami i rozmowy na forum pozwoliłyby kaletnikom z całego świata się spotkać? Zaczynając od zera, byłoby to trudne, ale Leathercraft CAD ma już dziesiątki tysięcy użytkowników na całym świecie, więc fundament jest gotowy.</p>
+
+    <h2>Co potrafi – CAD do wykrojów × Cech kaletników</h2>
+    <ul>
+      <li><strong>CAD do wykrojów działający w przeglądarce.</strong> Rysowanie, otwory do szycia, symulator skóry i drukowanie – tak, by pracowało się jak w wersji na komputery. Działa w przeglądarkach na Windows, macOS i Linuksie oraz na iPadzie (z Apple Pencil); tablety z Androidem i Raspberry Pi 4 / Pi 5 nie zostały sprawdzone.</li>
+      <li><strong>Zapis w chmurze.</strong> Ten sam rysunek otworzysz na każdym urządzeniu.</li>
+      <li><strong>Cech kaletników.</strong> Publikuj wykroje z wybraną przez siebie licencją i znajduj je na Placu. Na forum pokaż, co zrobiłeś, co nie wyszło i jakie narzędzia lubisz.</li>
+      <li><strong>Tłumaczenie AI, które zna kaletnictwo.</strong> Interfejs mówi w 20 językach, w tym po japońsku i angielsku. W Cechu każdy pisze we własnym języku, a AI tłumaczy z uwzględnieniem fachowego słownictwa.</li>
+      <li><strong>Wymiana danych z wersją na komputery.</strong> Pliki .lcc można zarówno importować, jak i eksportować (kilku rodzajów kształtów nie da się jeszcze wyeksportować; zobacz <a href="releases.html">informacje o wydaniu</a>).</li>
+      <li><strong>Projektuj wykroje razem z AI (MCP).</strong> Podłącz asystenta AI, np. Claude, a będzie mógł razem z tobą rysować i poprawiać rysunek. Teraz testuje to kilka osób; w trakcie bety funkcja zostanie udostępniona wszystkim.</li>
+    </ul>
+    <p><strong>W planach:</strong> Cech dostanie rangi. Każdy zaczyna jako Uczeń i zdobywa doświadczenie, publikując wykroje dla świata, otrzymując oceny i odpowiadając na pytania na forum. Wyższe rangi odblokowują funkcje takie jak odtwarzanie krok po kroku procesu powstawania wykroju.</p>
+    <p>Chcę, żeby kaletnikom i branży skórzanej na całym świecie dobrze się działo, i sam chcę mieć więcej radości z kaletnictwa. Dlatego powstała wersja internetowa. Jeśli myślisz podobnie, z radością przyjmę cię do grona pierwszych testerów.</p>
+
+    <h2>Cennik</h2>
+    <p>Wersja na komputery pozostaje bezpłatna. O tym, czy wersja internetowa będzie bezpłatna, czy będzie miała darmowy i płatny poziom, zdecyduję na podstawie opinii z testów beta. W czasie bety koszty utrzymania pokrywam sam.</p>
+
+    <h2>O wersji beta</h2>
+    <ul>
+      <li>Beta jest dostępna dla osób wspierających kanał YouTube oraz dla dotychczasowych darczyńców. Zaloguj się przez Google i wpisz swój kod odblokowujący.</li>
+      <li>Program jest niedokończony. Wiele może się zmienić bez zapowiedzi i nie ma gwarancji, że zostanie wydany jako wersja ostateczna.</li>
+      <li>Nie ma indywidualnego wsparcia. Pytania zadawaj na forum Cechu w aplikacji. Błędy i propozycje zgłaszaj w przypiętym wątku Cechu <a href="https://cad.coffee-craft.net/feedback">„🐞 Jak przesłać opinię”</a> (w dowolnym języku; sam przetłumaczę i założę zgłoszenie) albo bezpośrednio jako <a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">zgłoszenia (issues) na GitHubie</a>.</li>
+      <li>Zmiany są opisywane w <a href="releases.html">informacjach o wydaniu</a>.</li>
+    </ul>
+    <p class="meta">Wersja na komputery, darowizny i wspieranie kanału: <a href="https://coffee-craft.net/leathercraft_cad/" target="_blank" rel="noopener">coffee-craft.net/leathercraft_cad</a></p>
+  </section>
+
+  <section data-lang="pb">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="start.html">Primeiros passos</a> · <a href="releases.html">Notas de versão</a> · <a href="terms.html">Termos de Uso</a> · <a href="privacy.html">Política de Privacidade</a></nav>
+    <p class="brand">Um CAD de moldes no seu navegador. Uma guilda sem fronteiras.</p>
+    <h1>Por que uma versão web?</h1>
+    <p class="meta">por LuthierTN, setembro de 2026</p>
+
+    <p>O Leathercraft CAD Web é a versão para navegador do Leathercraft CAD, o CAD de moldes para trabalhos em couro que já estava disponível para Windows e macOS. Desde 1º de outubro de 2026, ele está em teste beta com os membros do canal no YouTube e com quem já apoiou o Leathercraft CAD.</p>
+
+    <h2>O motivo imediato</h2>
+    <p>Muitos de vocês pediram versões para Linux e iPad. Criar um aplicativo nativo para cada sistema dá muito trabalho, mas uma versão para navegador atende aos dois pedidos de uma vez. A versão web funciona nos navegadores de computador com Windows, macOS e Linux, e também no iPad (com Apple Pencil). Tablets Android devem funcionar, mas ainda não foram testados, e talvez ela rode também no navegador de um Raspberry Pi 4 / Pi 5 (também não testado).</p>
+
+    <h2>O segundo motivo</h2>
+    <p>Há algo que sinto desde que comecei a versão para computador. O conhecimento e as técnicas do trabalho em couro costumam ficar dentro de cada país ou região e raramente atravessam fronteiras. Usamos as mesmas ferramentas e o mesmo couro, mas quase nunca ficamos sabendo que moldes estão sendo feitos, ou que estilos de costura são os preferidos, logo ali no país vizinho.</p>
+    <p>Será que o Leathercraft CAD, como ferramenta de moldes, poderia se tornar uma “língua comum”? Será que compartilhar moldes e conversar num fórum poderia aproximar artesãos do couro do mundo inteiro? Começando do zero seria uma tarefa difícil, mas o Leathercraft CAD já tem dezenas de milhares de usuários pelo mundo, então a base já existe.</p>
+
+    <h2>O que ele faz — CAD de moldes × Guilda do couro</h2>
+    <ul>
+      <li><strong>Um CAD de moldes que roda no navegador.</strong> Desenho, furos de costura, o simulador de couro e a impressão, buscando a mesma sensação de uso da versão para computador. Funciona nos navegadores com Windows, macOS e Linux, e no iPad (com Apple Pencil); tablets Android e Raspberry Pi 4 / Pi 5 ainda não foram testados.</li>
+      <li><strong>Salvamento na nuvem.</strong> Abra o mesmo desenho em qualquer aparelho.</li>
+      <li><strong>A Guilda do couro.</strong> Publique moldes com a licença que você escolher e encontre-os na Praça. No fórum, mostre o que você fez, conte o que deu errado e fale das ferramentas de que gosta.</li>
+      <li><strong>Tradução por IA que entende de trabalho em couro.</strong> A interface está em 20 idiomas, incluindo japonês e inglês. Na Guilda, cada um escreve no próprio idioma, e a IA traduz levando em conta os termos do ofício.</li>
+      <li><strong>Troca de arquivos com a versão para computador.</strong> Arquivos .lcc podem ser importados e exportados (alguns tipos de forma ainda não podem ser exportados; veja as <a href="releases.html">notas de versão</a>).</li>
+      <li><strong>Crie moldes junto com uma IA (MCP).</strong> Conecte um assistente de IA, como o Claude, e ele pode desenhar e editar o desenho com você. Alguns testadores já estão experimentando; o recurso será liberado para todos ao longo do beta.</li>
+    </ul>
+    <p><strong>Em breve:</strong> a Guilda vai ganhar níveis. Todo mundo começa como Aprendiz e ganha experiência publicando moldes para o mundo, recebendo avaliações e respondendo perguntas no fórum. Os níveis mais altos liberam recursos como a reprodução passo a passo de como um molde foi feito.</p>
+    <p>Quero ajudar os artesãos do couro e o setor do couro no mundo todo a prosperar, e quero eu mesmo aproveitar mais o trabalho em couro. Foi por isso que criei a versão web. Se você também acredita nisso, vou ficar feliz em ter você entre os primeiros testadores.</p>
+
+    <h2>Preços</h2>
+    <p>A versão para computador continua gratuita. Se a versão web será gratuita, ou se terá planos gratuitos e pagos, vai ser decidido a partir do que ouvirmos durante o beta. Durante o beta, os custos de operação são pagos pelo autor.</p>
+
+    <h2>Sobre o beta</h2>
+    <ul>
+      <li>Está aberto aos membros do canal no YouTube e a quem já apoiou o projeto. Entre com sua conta Google e digite seu código de desbloqueio.</li>
+      <li>Ainda não está pronto. As coisas podem mudar sem aviso, e não há garantia de que será lançado como versão final.</li>
+      <li>Não há suporte individual. Tire suas dúvidas no fórum da Guilda, dentro do aplicativo. Relate erros e sugestões no tópico fixado da Guilda <a href="https://cad.coffee-craft.net/feedback">“🐞 Como enviar feedback”</a> (em qualquer idioma; nós traduzimos e registramos a issue) ou diretamente como <a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">issues no GitHub</a>.</li>
+      <li>As mudanças ficam registradas nas <a href="releases.html">notas de versão</a>.</li>
+    </ul>
+    <p class="meta">Versão para computador, doações e como ser membro do canal: <a href="https://coffee-craft.net/leathercraft_cad/" target="_blank" rel="noopener">coffee-craft.net/leathercraft_cad</a></p>
+  </section>
+
+  <section data-lang="pt">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="start.html">Como começar</a> · <a href="releases.html">Notas de versão</a> · <a href="terms.html">Termos de Utilização</a> · <a href="privacy.html">Política de Privacidade</a></nav>
+    <p class="brand">CAD de moldes no seu navegador. Uma guilda sem fronteiras.</p>
+    <h1>Porquê uma versão web?</h1>
+    <p class="meta">por LuthierTN, setembro de 2026</p>
+
+    <p>O Leathercraft CAD Web é a versão para navegador do Leathercraft CAD, o CAD de moldes para marroquinaria que tem estado disponível para Windows e macOS. Desde 1 de outubro de 2026 está em fase de testes beta com os membros do canal do YouTube e com quem já apoiou o Leathercraft CAD.</p>
+
+    <h2>O motivo imediato</h2>
+    <p>Muitos de vós pediram versões para Linux e para iPad. Criar uma aplicação nativa para cada sistema operativo dá muito trabalho, mas uma versão para navegador responde aos dois pedidos de uma só vez. A versão web funciona nos navegadores de computador em Windows, macOS e Linux, e também no iPad (com Apple Pencil). Os tablets Android deverão funcionar, mas ainda não foram testados, e talvez também funcione no navegador de um Raspberry Pi 4 / Pi 5 (igualmente por testar).</p>
+
+    <h2>O segundo motivo</h2>
+    <p>Há uma coisa que sinto desde que comecei a versão para computador. Os conhecimentos e as técnicas de marroquinaria tendem a ficar fechados em cada país ou região e raramente passam fronteiras. Usamos as mesmas ferramentas e o mesmo couro, mas poucas vezes ficamos a saber que moldes se fazem, ou que formas de coser se preferem, logo ali no país vizinho.</p>
+    <p>Poderia o Leathercraft CAD, enquanto ferramenta de moldes, tornar-se uma «língua comum»? Partilhar moldes e conversar num fórum poderia juntar artesãos do couro de todo o mundo? Começando do zero, seria uma tarefa difícil, mas o Leathercraft CAD já tem dezenas de milhares de utilizadores em todo o mundo, por isso a base já existe.</p>
+
+    <h2>O que faz — CAD de moldes × Guilda do couro</h2>
+    <ul>
+      <li><strong>Um CAD de moldes que funciona no navegador.</strong> Desenho, furos de costura, simulador de couro e impressão, procurando a mesma sensação da versão para computador. Funciona nos navegadores em Windows, macOS e Linux, e no iPad (com Apple Pencil); os tablets Android e o Raspberry Pi 4 / Pi 5 ainda não foram testados.</li>
+      <li><strong>Guardar na nuvem.</strong> Abra o mesmo desenho a partir de qualquer dispositivo.</li>
+      <li><strong>A Guilda do couro.</strong> Publique moldes com a licença que escolher e encontre-os na Praça. No fórum, partilhe o que fez, o que correu mal e as ferramentas de que gosta.</li>
+      <li><strong>Tradução por IA que conhece a marroquinaria.</strong> A interface está disponível em 20 línguas, incluindo japonês e inglês. Na Guilda, cada um escreve na sua própria língua e a IA traduz tendo em conta os termos do ofício.</li>
+      <li><strong>Troca de ficheiros com a versão para computador.</strong> Os ficheiros .lcc podem ser importados e exportados (alguns tipos de forma ainda não podem ser exportados; consulte as <a href="releases.html">notas de versão</a>).</li>
+      <li><strong>Desenhar moldes com uma IA (MCP).</strong> Ligue um assistente de IA como o Claude e ele pode desenhar e editar o desenho consigo. Neste momento, alguns testadores estão a experimentá-lo; ficará aberto a todos a meio da fase beta.</li>
+    </ul>
+    <p><strong>Em breve:</strong> a Guilda vai ter categorias. Todos começam como Aprendiz e ganham experiência ao publicar moldes para o mundo, ao receber avaliações e ao responder a perguntas no fórum. As categorias mais altas desbloqueiam funcionalidades como a reprodução passo a passo de como um molde é feito.</p>
+    <p>Quero ajudar os artesãos do couro e a indústria do couro de todo o mundo a prosperar, e quero eu próprio tirar mais prazer da marroquinaria. Foi por isso que criei a versão web. Se se identifica com esta ideia, terei todo o gosto em tê-lo entre os primeiros testadores.</p>
+
+    <h2>Preços</h2>
+    <p>A versão para computador continua gratuita. Se a versão web vai ser gratuita, ou ter um nível gratuito e outros pagos, será decidido com base no que ouvirmos durante a fase beta. Durante a beta, os custos de funcionamento são suportados pelo autor.</p>
+
+    <h2>Sobre a versão beta</h2>
+    <ul>
+      <li>Está aberta aos membros do canal do YouTube e a quem já apoiou o projeto. Inicie sessão com Google e introduza o seu código de desbloqueio.</li>
+      <li>Ainda não está terminada. As coisas podem mudar sem aviso prévio, e não há garantia de que venha a ser lançada como versão final.</li>
+      <li>Não há apoio individual. Coloque as suas dúvidas no fórum da Guilda, dentro da aplicação. Comunique erros e sugestões no tópico fixado da Guilda <a href="https://cad.coffee-craft.net/feedback">«🐞 Como enviar comentários»</a> (em qualquer língua; nós traduzimos e registamos a issue) ou diretamente como <a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">issues no GitHub</a>.</li>
+      <li>As alterações ficam registadas nas <a href="releases.html">notas de versão</a>.</li>
+    </ul>
+    <p class="meta">Versão para computador, donativos e membros do canal: <a href="https://coffee-craft.net/leathercraft_cad/" target="_blank" rel="noopener">coffee-craft.net/leathercraft_cad</a></p>
+  </section>
+
+  <section data-lang="ro">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="start.html">Primii pași</a> · <a href="releases.html">Note de lansare</a> · <a href="terms.html">Termeni de utilizare</a> · <a href="privacy.html">Politica de confidențialitate</a></nav>
+    <p class="brand">CAD pentru tipare, direct în browser. O breaslă a pielarilor, fără granițe.</p>
+    <h1>De ce versiunea web?</h1>
+    <p class="meta">de LuthierTN, septembrie 2026</p>
+
+    <p>Leathercraft CAD Web este versiunea pentru browser a Leathercraft CAD, programul CAD pentru tipare de marochinărie, disponibil până acum pentru Windows și macOS. Din 1 octombrie 2026 este testată în versiune beta de membrii canalului YouTube și de cei care au susținut până acum Leathercraft CAD.</p>
+
+    <h2>Motivul direct</h2>
+    <p>Mulți dintre voi mi-ați cerut versiuni pentru Linux și iPad. Să construiești o aplicație nativă pentru fiecare sistem de operare înseamnă multă muncă, dar o versiune pentru browser le rezolvă pe amândouă deodată. Versiunea web merge în browserele de pe calculatoare cu Windows, macOS și Linux, dar și pe iPad (cu Apple Pencil). Pe tabletele Android ar trebui să meargă, dar încă nu am verificat, și s-ar putea să meargă și în browserul de pe un Raspberry Pi 4 / Pi 5 (nici aici nu am verificat).</p>
+
+    <h2>Al doilea motiv</h2>
+    <p>Există ceva ce simt de când am început versiunea pentru calculator. Cunoștințele și tehnicile de marochinărie tind să rămână în interiorul fiecărei țări sau regiuni și rareori trec dincolo. Folosim aceleași unelte și aceeași piele, și totuși aflăm rar ce tipare se fac sau ce feluri de cusut sunt îndrăgite chiar peste graniță.</p>
+    <p>Ar putea Leathercraft CAD, ca unealtă pentru tipare, să devină un „limbaj comun”? Ar putea împărtășirea tiparelor și discuțiile pe forum să-i aducă împreună pe cei care lucrează pielea din toată lumea? Pornind de la zero ar fi fost greu, dar Leathercraft CAD are deja zeci de mii de utilizatori în întreaga lume, așa că temelia există.</p>
+
+    <h2>Ce face — CAD pentru tipare × Breasla pielarilor</h2>
+    <ul>
+      <li><strong>Un CAD pentru tipare care merge în browser.</strong> Desen, găuri de cusătură, simulatorul de piele și imprimare, cu scopul de a se simți ca versiunea pentru calculator. Merge în browserele de pe Windows, macOS și Linux, precum și pe iPad (cu Apple Pencil); tabletele Android și Raspberry Pi 4 / Pi 5 nu au fost încă verificate.</li>
+      <li><strong>Salvare în nor.</strong> Deschizi același desen de pe orice dispozitiv.</li>
+      <li><strong>Breasla pielarilor.</strong> Publici tipare cu licența pe care o alegi și le găsești în Piață. Pe forum poți povesti liniștit ce ai făcut, ce nu a ieșit și ce unelte îți plac.</li>
+      <li><strong>Traducere AI care cunoaște marochinăria.</strong> Interfața vorbește 20 de limbi, printre care japoneza și engleza. În Breaslă fiecare scrie în limba lui, iar AI-ul traduce ținând cont de termenii meșteșugului.</li>
+      <li><strong>Schimb de date cu versiunea pentru calculator.</strong> Fișierele .lcc pot fi atât importate, cât și exportate (câteva tipuri de forme nu pot fi încă exportate; vezi <a href="releases.html">notele de lansare</a>).</li>
+      <li><strong>Creezi tipare împreună cu un AI (MCP).</strong> Conectezi un asistent AI precum Claude și acesta poate desena și modifica desenul alături de tine. Acum îl încearcă doar câțiva testeri; va fi deschis tuturor pe parcursul perioadei beta.</li>
+    </ul>
+    <p><strong>Ce urmează:</strong> Breasla va avea ranguri. Toată lumea începe ca Ucenic și adună experiență publicând tipare pentru toată lumea, primind evaluări și răspunzând la întrebări pe forum. Rangurile mai înalte deblochează funcții precum redarea pas cu pas a felului în care a fost făcut un tipar.</p>
+    <p>Vreau să ajut pielarii și industria pielii din toată lumea să prospere și vreau, la rândul meu, să mă bucur mai mult de marochinărie. De aceea există versiunea web. Dacă te regăsești în asta, m-aș bucura să te am printre primii testeri.</p>
+
+    <h2>Prețuri</h2>
+    <p>Versiunea pentru calculator rămâne gratuită. Dacă versiunea web va fi gratuită sau va avea niveluri gratuite și plătite vom decide pe baza a ceea ce aflăm de la voi în perioada beta. Pe durata beta, costurile de funcționare sunt suportate de autor.</p>
+
+    <h2>Despre versiunea beta</h2>
+    <ul>
+      <li>Este deschisă membrilor canalului YouTube și celor care au susținut proiectul până acum. Te conectezi cu Google și introduci codul de deblocare.</li>
+      <li>Nu este terminată. Lucrurile se pot schimba fără înștiințare și nu există nicio garanție că va fi lansată ca versiune finală.</li>
+      <li>Nu oferim asistență individuală. Pune-ți întrebările pe forumul Breslei, din aplicație. Erorile și dorințele le poți semnala fie în subiectul fixat al Breslei <a href="https://cad.coffee-craft.net/feedback">„🐞 Cum trimiți feedback”</a> (în orice limbă; noi traducem și deschidem issue-ul), fie direct ca <a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">issue pe GitHub</a>.</li>
+      <li>Modificările sunt consemnate în <a href="releases.html">notele de lansare</a>.</li>
+    </ul>
+    <p class="meta">Versiunea pentru calculator, donații și calitatea de membru al canalului: <a href="https://coffee-craft.net/leathercraft_cad/" target="_blank" rel="noopener">coffee-craft.net/leathercraft_cad</a></p>
+  </section>
+
+  <section data-lang="tr">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="start.html">Başlarken</a> · <a href="releases.html">Sürüm notları</a> · <a href="terms.html">Kullanım Şartları</a> · <a href="privacy.html">Gizlilik Politikası</a></nav>
+    <p class="brand">Tarayıcıda çalışan kalıp CAD'i. Dünyaya açılan deri loncasına hoş geldiniz.</p>
+    <h1>Neden web sürümü?</h1>
+    <p class="meta">Yazan: LuthierTN, Eylül 2026</p>
+
+    <p>Leathercraft CAD Web, Windows ve macOS için yayımladığım deri işçiliği CAD programı Leathercraft CAD'in tarayıcı sürümüdür. 1 Ekim 2026'dan bu yana YouTube kanal üyeleri ve bugüne kadar destek olmuş kişilerle beta testi yapılıyor.</p>
+
+    <h2>Çıkış noktası</h2>
+    <p>Doğrudan sebep, Linux ve iPad sürümü isteyen pek çok mesaj almamdı. Her işletim sistemi için ayrı bir uygulama yazmak çok emek ister; ama tarayıcıda çalışan bir sürüm ikisine birden yanıt verebilir. Nitekim web sürümü Windows, macOS ve Linux gibi masaüstü sistemlerin tarayıcılarında, ayrıca iPad'de (Apple Pencil destekli) çalışıyor. Android tabletlerde de çalışması gerekir, ama henüz denemedim. Raspberry Pi 4 / Pi 5'in tarayıcısında da çalışabilir (bu da henüz denenmedi).</p>
+
+    <h2>Bir diğer sebep</h2>
+    <p>Masaüstü sürümünü yapmaya başladığımdan beri hep içimde olan bir düşünce var. Deri işçiliğine dair bilgiler ve teknikler her ülkenin, her bölgenin kendi içinde kalıyor; birinden diğerine pek geçmiyor. Aynı aletleri, aynı derileri kullansak da hemen yan ülkede ne tür kalıpların çizildiğini, hangi dikiş yöntemlerinin sevildiğini öğrenmek pek kolay olmuyor.</p>
+    <p>Bir kalıp aracı olarak Leathercraft CAD bir “ortak dil” olabilir mi? Kalıpları paylaşıp panoda sohbet ederek dünyanın dört bir yanındaki deri zanaatkârlarının buluşabileceği bir yer kurulabilir mi? Uzun zamandır bunu düşünüyorum. Sıfırdan başlamak zor olurdu; ama Leathercraft CAD'in dünya genelinde on binlerce kullanıcısı var, yani temel zaten hazır.</p>
+
+    <h2>Web sürümüyle neler yapabilirsiniz — kalıp CAD'i × deri Loncası</h2>
+    <ul>
+      <li><strong>Yalnızca tarayıcıyla çalışan kalıp CAD'i.</strong> Çizimden dikiş deliklerine, deri simülatöründen yazdırmaya kadar, masaüstü sürümüyle aynı kullanım rahatlığını hedefliyorum. Windows, macOS ve Linux tarayıcılarında ve iPad'de (Apple Pencil ile) çalışır (Android tabletler ile Raspberry Pi 4 / Pi 5 henüz denenmedi).</li>
+      <li><strong>Buluta kaydetme.</strong> Aynı çizimi hangi cihazdan olursa olsun açabilirsiniz.</li>
+      <li><strong>Deri Loncası.</strong> Kalıplarınızı istediğiniz lisansı seçerek yayımlayabilir, “Plaza”da başka kalıpları bulabilirsiniz. Panoda yaptıklarınızı, işin yolunda gitmediği anları ve aletlerinizi rahatça konuşabilirsiniz.</li>
+      <li><strong>Deri işçiliğinin dilinden anlayan yapay zekâ çevirisi.</strong> Arayüz, Japonca ve İngilizce dahil 20 dilde. Lonca'da herkes kendi dilinde yazar; yapay zekâ da deri işçiliğinin terimlerini gözeterek çevirir.</li>
+      <li><strong>Masaüstü sürümüyle veri alışverişi.</strong> .lcc dosyaları hem içe aktarılabilir hem dışa aktarılabilir (bazı şekiller henüz dışa aktarılamıyor; <a href="releases.html">sürüm notlarına</a> bakın).</li>
+      <li><strong>Kalıpları yapay zekâyla birlikte tasarlayın (MCP).</strong> Claude gibi bir yapay zekâ asistanını bağladığınızda, yapay zekâ çizim yapabilir ve çizimi düzeltebilir. Şu an birkaç test kullanıcısı deniyor; beta sürecinin ortasında herkese açılacak.</li>
+    </ul>
+    <p><strong>Sırada ne var:</strong> Lonca'ya rütbeler eklemeyi planlıyorum. Herkes “Çırak” olarak başlar. Kalıplarınızı dünyaya yayımladıkça, değerlendirme aldıkça ve panoda soruları yanıtladıkça deneyim kazanırsınız; rütbeniz yükseldikçe bir kalıbın nasıl yapıldığını adım adım yeniden oynatma gibi özellikler açılır.</p>
+    <p>Dünyadaki deri zanaatkârlarına ve deri sektörüne can katmak, kendim de deri işçiliğinden daha çok keyif almak istiyorum. Web sürümünü bu düşünceyle yaptım. Siz de bu düşünceyi paylaşıyorsanız, ilk test kullanıcıları arasında olmanızdan mutluluk duyarım.</p>
+
+    <h2>Ücretler</h2>
+    <p>Masaüstü sürümü bundan sonra da ücretsiz kalacak. Web sürümünün ücretsiz mi olacağına, yoksa ücretsiz ve ücretli seçenekler mi sunacağına beta testinde gelen görüşlere göre karar vereceğim. Beta süresince işletme masraflarını ben karşılıyorum.</p>
+
+    <h2>Beta sürümü hakkında</h2>
+    <ul>
+      <li>YouTube kanal üyelerine ve bugüne kadar destek olmuş kişilere açıktır. Google ile oturum açıp kilit açma kodunuzu girerek kullanabilirsiniz.</li>
+      <li>Henüz tamamlanmadı. Haber verilmeden değişiklikler olabilir ve resmi sürüm olarak yayımlanacağının bir garantisi yoktur.</li>
+      <li>Bireysel destek verilmiyor. Kullanımla ilgili sorularınızı uygulama içindeki “Lonca” panosunda sorabilirsiniz. Hataları ve isteklerinizi Lonca'daki sabitlenmiş konuya <a href="https://cad.coffee-craft.net/feedback">“🐞 Geri bildirim nasıl gönderilir”</a> (istediğiniz dilde yazabilirsiniz; İngilizceye çevirip GitHub'a kaydetmeyi biz yaparız) ya da doğrudan <a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">GitHub issue</a> olarak bildirebilirsiniz.</li>
+      <li>Değişiklikler <a href="releases.html">sürüm notlarında</a> kayıt altına alınır.</li>
+    </ul>
+    <p class="meta">Masaüstü sürümü, bağışlar ve kanal üyeliği hakkında: <a href="https://coffee-craft.net/leathercraft_cad/" target="_blank" rel="noopener">coffee-craft.net/leathercraft_cad</a></p>
+  </section>
+
+  <section data-lang="uk">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="start.html">З чого почати</a> · <a href="releases.html">Примітки до випуску</a> · <a href="terms.html">Умови використання</a> · <a href="privacy.html">Політика конфіденційності</a></nav>
+    <p class="brand">CAD для викрійок просто у браузері. Ласкаво просимо до Гільдії шкіряних майстрів, що єднає весь світ.</p>
+    <h1>Чому веб-версія?</h1>
+    <p class="meta">Автор LuthierTN, вересень 2026</p>
+
+    <p>Leathercraft CAD Web — це браузерна версія Leathercraft CAD, програми для створення викрійок для роботи зі шкірою, яка досі була доступна для Windows і macOS. З 1 жовтня 2026 року її бета-тестують спонсори YouTube-каналу та всі, хто раніше підтримав Leathercraft CAD.</p>
+
+    <h2>З чого все почалося</h2>
+    <p>Безпосередньою причиною стало те, що багато хто з вас просив версії для Linux та iPad. Робити окремий застосунок для кожної операційної системи — велика праця, а браузерна версія закриває обидва побажання одразу. Веб-версія працює в браузерах на комп'ютерах з Windows, macOS і Linux, а також на iPad (з Apple Pencil). На планшетах з Android вона мала б працювати, але я ще не перевіряв. Можливо, вона запуститься й у браузері на Raspberry Pi 4 / Pi 5 (теж не перевірено).</p>
+
+    <h2>Друга причина</h2>
+    <p>Є дещо, що я відчуваю відтоді, як почав робити версію для комп'ютера. Знання й прийоми роботи зі шкірою зазвичай залишаються в межах своєї країни чи регіону і рідко виходять за них. Ми користуємося тими самими інструментами й тією самою шкірою, але майже не знаємо, які викрійки роблять і які шви люблять зовсім поруч, за кордоном.</p>
+    <p>Чи може Leathercraft CAD як інструмент для викрійок стати «спільною мовою»? Чи можна, ділячись викрійками й спілкуючись на дошці оголошень, створити місце, де зустрічаються шкіряні майстри з усього світу? Ось про що я думав. Починати з нуля було б дуже складно, але Leathercraft CAD уже має десятки тисяч користувачів у різних країнах, тож основа вже є.</p>
+
+    <h2>Що вміє веб-версія — CAD для викрійок × Гільдія шкіряних майстрів</h2>
+    <ul>
+      <li><strong>CAD для викрійок, що працює просто в браузері.</strong> Креслення, отвори під шов, симулятор шкіри й друк — я прагну, щоб усе це було так само зручно, як у версії для комп'ютера. Працює в браузерах на Windows, macOS і Linux, а також на iPad (з Apple Pencil); планшети з Android і Raspberry Pi 4 / Pi 5 ще не перевірені.</li>
+      <li><strong>Збереження в хмару.</strong> Те саме креслення можна відкрити з будь-якого пристрою.</li>
+      <li><strong>Гільдія шкіряних майстрів.</strong> Публікуйте викрійки з ліцензією на ваш вибір і шукайте їх на «Майданчику». На дошці оголошень можна невимушено розповісти, що ви зробили, що не вдалося, і поговорити про інструменти.</li>
+      <li><strong>ШІ-переклад, який знає мову роботи зі шкірою.</strong> Інтерфейс доступний 20 мовами, зокрема японською та англійською. У Гільдії кожен пише своєю мовою, а ШІ перекладає, враховуючи фахові терміни шкіряної справи.</li>
+      <li><strong>Обмін даними з версією для комп'ютера.</strong> Файли .lcc можна як імпортувати, так і експортувати (деякі види фігур поки що не експортуються; див. <a href="releases.html">примітки до випуску</a>).</li>
+      <li><strong>Створюйте викрійки разом зі ШІ (MCP).</strong> Підключіть ШІ-помічника, наприклад Claude, і він зможе креслити й виправляти креслення. Зараз це пробують кілька тестувальників, а під час бети я відкрию цю можливість для всіх.</li>
+    </ul>
+    <p><strong>Що далі:</strong> у Гільдії з'являться ранги. Усі починають як Учень і набираються досвіду, публікуючи викрійки для всього світу, отримуючи оцінки та відповідаючи на запитання на дошці оголошень. Вищі ранги відкривають нові можливості, наприклад покрокове відтворення того, як створювалася викрійка.</p>
+    <p>Я хочу підтримати шкіряних майстрів і шкіряну галузь у всьому світі, а ще — сам більше радіти роботі зі шкірою. Саме тому я й зробив веб-версію. Якщо вам це близьке, я буду радий бачити вас серед перших тестувальників.</p>
+
+    <h2>Про вартість</h2>
+    <p>Версія для комп'ютера й надалі залишиться безкоштовною. Чи буде веб-версія безкоштовною, чи матиме безкоштовний і платні рівні, я вирішу з урахуванням ваших відгуків під час бета-тестування. Поки триває бета, витрати на її роботу я покриваю сам.</p>
+
+    <h2>Про бета-версію</h2>
+    <ul>
+      <li>Вона доступна спонсорам YouTube-каналу та всім, хто раніше підтримав проєкт. Увійдіть через Google і введіть свій код розблокування.</li>
+      <li>Програма ще не завершена. Усе може змінитися без попередження, і немає гарантії, що вона вийде як остаточна версія.</li>
+      <li>Індивідуальної підтримки немає. З питаннями щодо роботи з програмою звертайтеся на дошку оголошень у Гільдії всередині застосунку. Про помилки та побажання пишіть у закріплену тему Гільдії <a href="https://cad.coffee-craft.net/feedback">«🐞 Як надіслати відгук»</a> (будь-якою мовою; переклад англійською та запис на GitHub я зроблю сам) або одразу в <a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">issues на GitHub</a>.</li>
+      <li>Усі зміни записуються в <a href="releases.html">примітках до випуску</a>.</li>
+    </ul>
+    <p class="meta">Про версію для комп'ютера, пожертви та спонсорство каналу: <a href="https://coffee-craft.net/leathercraft_cad/" target="_blank" rel="noopener">coffee-craft.net/leathercraft_cad</a></p>
+  </section>
+
+  <section data-lang="hy">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="start.html">Ինչպես սկսել</a> · <a href="releases.html">Թողարկման նշումներ</a> · <a href="terms.html">Օգտագործման պայմաններ</a> · <a href="privacy.html">Գաղտնիության քաղաքականություն</a></nav>
+    <p class="brand">Ձևանմուշների CAD՝ ձեր դիտարկիչում։ Բարի գալուստ կաշեգործների Համքարություն, որն աշխարհն է միավորում։</p>
+    <h1>Ինչու՞ վեբ տարբերակ</h1>
+    <p class="meta">Հեղինակ՝ LuthierTN, սեպտեմբեր 2026</p>
+
+    <p>Leathercraft CAD Web-ը Leathercraft CAD-ի դիտարկիչային տարբերակն է․ Leathercraft CAD-ը կաշեգործության համար ձևանմուշներ գծելու ծրագիր է, որը մինչ այժմ հասանելի էր Windows-ի և macOS-ի համար։ 2026 թ. հոկտեմբերի 1-ից այն բետա փորձարկման մեջ է YouTube ալիքի անդամների և Leathercraft CAD-ին նախկինում աջակցածների հետ։</p>
+
+    <h2>Անմիջական պատճառը</h2>
+    <p>Ձեզնից շատերը խնդրել են Linux-ի և iPad-ի տարբերակներ։ Յուրաքանչյուր օպերացիոն համակարգի համար առանձին հավելված ստեղծելը մեծ աշխատանք է, իսկ դիտարկիչում աշխատող տարբերակը միանգամից պատասխանում է երկու խնդրանքին էլ։ Վեբ տարբերակն աշխատում է Windows-ի, macOS-ի և Linux-ի համակարգչային դիտարկիչներում, ինչպես նաև iPad-ում (Apple Pencil-ի աջակցությամբ)։ Android պլանշետներում պետք է որ աշխատի, բայց դեռ չի ստուգվել, և հնարավոր է՝ աշխատի նաև Raspberry Pi 4 / Pi 5-ի դիտարկիչում (սա նույնպես չի ստուգվել)։</p>
+
+    <h2>Երկրորդ պատճառը</h2>
+    <p>Համակարգչային տարբերակն ստեղծելու առաջին օրերից ինձ մի բան մտահոգում էր։ Կաշեգործության գիտելիքներն ու հնարքները հիմնականում մնում են յուրաքանչյուր երկրի կամ տարածաշրջանի ներսում և հազվադեպ են հատում սահմանները։ Մենք օգտագործում ենք նույն գործիքները և նույն կաշին, բայց քիչ ենք իմանում, թե ինչ ձևանմուշներ են պատրաստում հարևան երկրում կամ կարի ինչ ոճեր են այնտեղ սիրում։</p>
+    <p>Կարո՞ղ է արդյոք Leathercraft CAD-ը՝ որպես ձևանմուշների գործիք, դառնալ «ընդհանուր լեզու»։ Կարո՞ղ են ձևանմուշներով կիսվելն ու քննարկումների տախտակում զրուցելը միավորել ամբողջ աշխարհի կաշեգործներին։ Այսպես էի մտածում։ Զրոյից սկսելու դեպքում դա շատ դժվար կլիներ, բայց Leathercraft CAD-ն արդեն ունի տասնյակ հազարավոր օգտատերեր ամբողջ աշխարհում, այնպես որ հիմքն արդեն կա։</p>
+
+    <h2>Ինչ կարող է անել — ձևանմուշների CAD × կաշեգործների Համքարություն</h2>
+    <ul>
+      <li><strong>Դիտարկիչում աշխատող ձևանմուշների CAD։</strong> Գծագրեր, կարի անցքեր, կաշվի սիմուլյատոր և տպում․ նպատակն է, որ աշխատանքն այնքան հարմար լինի, որքան համակարգչային տարբերակում։ Աշխատում է Windows-ի, macOS-ի և Linux-ի դիտարկիչներում, ինչպես նաև iPad-ում (Apple Pencil-ով)․ Android պլանշետներն ու Raspberry Pi 4 / Pi 5-ը դեռ չեն ստուգվել։</li>
+      <li><strong>Պահպանում ամպում։</strong> Նույն գծագիրը կարող եք բացել ցանկացած սարքից։</li>
+      <li><strong>Կաշեգործների Համքարությունը։</strong> Հրապարակեք ձեր ձևանմուշները՝ ընտրելով լիցենզիան, և գտեք դրանք «Հրապարակ»-ում։ Քննարկումների տախտակում անկաշկանդ կիսվեք ձեր պատրաստածով, այն ամենով, ինչը չստացվեց, և պատմեք ձեր սիրելի գործիքների մասին։</li>
+      <li><strong>Կաշեգործության լեզուն հասկացող AI թարգմանություն։</strong> Միջերեսը հասանելի է 20 լեզվով, այդ թվում՝ ճապոներեն և անգլերեն։ Համքարությունում յուրաքանչյուրը գրում է իր լեզվով, իսկ AI-ն թարգմանում է՝ հաշվի առնելով կաշեգործության մասնագիտական տերմինները։</li>
+      <li><strong>Տվյալների փոխանակում համակարգչային տարբերակի հետ։</strong> .lcc ֆայլերը կարելի է և՛ ներմուծել, և՛ արտահանել (որոշ տեսակի ձևեր դեռ հնարավոր չէ արտահանել․ տե՛ս <a href="releases.html">թողարկման նշումները</a>)։</li>
+      <li><strong>Ձևանմուշներ ստեղծեք AI-ի հետ միասին (MCP)։</strong> Միացրեք Claude-ի նման AI օգնական, և այն ձեզ հետ կգծի ու կխմբագրի գծագիրը։ Հիմա այն փորձարկում են մի քանի փորձարկողներ, իսկ բետայի ընթացքում այն հասանելի կդառնա բոլորին։</li>
+    </ul>
+    <p><strong>Առջևում․</strong> Համքարությունում կլինեն աստիճաններ։ Բոլորը սկսում են «Աշակերտ»-ից և փորձ են կուտակում՝ ձևանմուշներ հրապարակելով ամբողջ աշխարհի համար, գնահատականներ ստանալով և քննարկումների տախտակում հարցերի պատասխանելով։ Ավելի բարձր աստիճանները բացում են նոր հնարավորություններ, օրինակ՝ ձևանմուշի ստեղծման ընթացքը քայլ առ քայլ վերարտադրելը։</p>
+    <p>Ես ուզում եմ, որ ամբողջ աշխարհի կաշեգործներն ու կաշվի ոլորտը ծաղկեն, և ինքս էլ ուզում եմ ավելի շատ վայելել կաշեգործությունը։ Հենց դրա համար էլ ստեղծեցի վեբ տարբերակը։ Եթե այս միտքը ձեզ հարազատ է, ուրախ կլինեմ տեսնել ձեզ առաջին փորձարկողների շարքում։</p>
+
+    <h2>Գների մասին</h2>
+    <p>Համակարգչային տարբերակը կմնա անվճար։ Արդյոք վեբ տարբերակը կլինի անվճար, թե կունենա անվճար և վճարովի մակարդակներ, կորոշվի բետայի ընթացքում ստացված կարծիքների հիման վրա։ Բետայի ընթացքում աշխատանքի ծախսերը հոգում է հեղինակը։</p>
+
+    <h2>Բետա տարբերակի մասին</h2>
+    <ul>
+      <li>Այն բաց է YouTube ալիքի անդամների և նախկինում աջակցածների համար։ Մուտք գործեք Google-ով և մուտքագրեք ձեր բացման կոդը։</li>
+      <li>Այն դեռ ավարտված չէ։ Փոփոխություններ կարող են լինել առանց նախազգուշացման, և երաշխիք չկա, որ այն կթողարկվի որպես վերջնական տարբերակ։</li>
+      <li>Անհատական աջակցություն չի տրամադրվում։ Օգտագործման հարցերը տվեք հավելվածի «Համքարություն» քննարկումների տախտակում։ Սխալների և առաջարկների մասին հայտնեք կա՛մ Համքարության ամրացված թեմայում <a href="https://cad.coffee-craft.net/feedback">«🐞 Ինչպես ուղարկել կարծիք»</a> (ցանկացած լեզվով․ ես կթարգմանեմ անգլերեն և կգրանցեմ GitHub-ում), կա՛մ անմիջապես <a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">GitHub-ի Issue-ներում</a>։</li>
+      <li>Փոփոխությունները գրանցվում են <a href="releases.html">թողարկման նշումներում</a>։</li>
+    </ul>
+    <p class="meta">Համակարգչային տարբերակ, նվիրատվություններ և ալիքի անդամակցություն՝ <a href="https://coffee-craft.net/leathercraft_cad/" target="_blank" rel="noopener">coffee-craft.net/leathercraft_cad</a></p>
+  </section>
+
+  <section data-lang="fi">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="start.html">Näin pääset alkuun</a> · <a href="releases.html">Julkaisutiedot</a> · <a href="terms.html">Käyttöehdot</a> · <a href="privacy.html">Tietosuojakäytäntö</a></nav>
+    <p class="brand">Selaimessa toimiva kaava-CAD. Tervetuloa nahkatyöläisten kiltaan, joka ei tunne rajoja.</p>
+    <h1>Miksi web-versio?</h1>
+    <p class="meta">Kirjoittanut LuthierTN, syyskuu 2026</p>
+
+    <p>Leathercraft CAD Web on selainversio Leathercraft CAD -ohjelmasta, nahkatöiden kaavoitukseen tehdystä CAD-ohjelmasta, joka on ollut saatavilla Windowsille ja macOS:lle. 1.10.2026 alkaen sitä beetatestaavat YouTube-kanavan jäsenet ja Leathercraft CAD:n aiemmat tukijat.</p>
+
+    <h2>Välitön syy</h2>
+    <p>Moni on toivonut Linux- ja iPad-versiota. Oman sovelluksen tekeminen jokaiselle käyttöjärjestelmälle on iso työ, mutta selainversio vastaa molempiin toiveisiin kerralla. Web-versio toimii tietokoneiden selaimissa Windowsissa, macOS:ssä ja Linuxissa sekä iPadilla (myös Apple Pencilin kanssa). Android-tableteilla sen pitäisi toimia, mutta sitä ei ole vielä kokeiltu, ja se saattaa toimia myös Raspberry Pi 4:n / Pi 5:n selaimessa (tätäkään ei ole vielä kokeiltu).</p>
+
+    <h2>Toinen syy</h2>
+    <p>Yksi asia on askarruttanut minua siitä asti, kun aloin tehdä tietokoneversiota. Nahkatöiden tieto ja tekniikat jäävät helposti oman maan tai alueen sisälle eivätkä juuri liiku rajojen yli. Käytämme samoja työkaluja ja samaa nahkaa, mutta harvoin saamme tietää, millaisia kaavoja naapurimaassa tehdään tai millaisia ompelutapoja siellä suositaan.</p>
+    <p>Voisiko Leathercraft CAD kaavatyökaluna olla ”yhteinen kieli”? Voisivatko nahkatyöläiset ympäri maailmaa tutustua toisiinsa jakamalla kaavoja ja juttelemalla ilmoitustaululla? Tyhjästä aloittaen se olisi iso urakka, mutta Leathercraft CAD:lla on jo kymmeniätuhansia käyttäjiä eri puolilla maailmaa, joten pohja on valmiina.</p>
+
+    <h2>Mitä sillä voi tehdä – kaava-CAD × nahkatyöläisten Kilta</h2>
+    <ul>
+      <li><strong>Selaimessa toimiva kaava-CAD.</strong> Piirtäminen, ompelureiät, nahkasimulaattori ja tulostus – tavoitteena on, että käyttö tuntuu samalta kuin tietokoneversiossa. Se toimii Windowsin, macOS:n ja Linuxin selaimissa sekä iPadilla (Apple Pencilin kanssa); Android-tabletteja ja Raspberry Pi 4:ää / Pi 5:tä ei ole vielä kokeiltu.</li>
+      <li><strong>Tallennus pilveen.</strong> Avaa sama piirustus millä tahansa laitteella.</li>
+      <li><strong>Nahkatyöläisten Kilta.</strong> Julkaise kaavoja valitsemallasi lisenssillä ja löydä niitä Torilta. Ilmoitustaululla voit kertoa, mitä olet tehnyt, mikä meni pieleen ja mistä työkaluista pidät.</li>
+      <li><strong>Tekoälykäännös, joka tuntee nahkatyöt.</strong> Käyttöliittymä on saatavilla 20 kielellä, mukana japani ja englanti. Killassa jokainen kirjoittaa omalla kielellään, ja tekoäly kääntää nahkatöiden sanaston huomioiden.</li>
+      <li><strong>Tiedostojen vaihto tietokoneversion kanssa.</strong> .lcc-tiedostoja voi sekä tuoda että viedä (muutamaa muototyyppiä ei vielä voi viedä; katso <a href="releases.html">julkaisutiedot</a>).</li>
+      <li><strong>Suunnittele kaavoja tekoälyn kanssa (MCP).</strong> Kun yhdistät tekoälyavustajan, kuten Clauden, se voi piirtää ja muokata piirustusta kanssasi. Nyt sitä kokeilee muutama testaaja; se avataan kaikille beetan aikana.</li>
+    </ul>
+    <p><strong>Tulossa:</strong> Kiltaan tulee arvoasteet. Kaikki aloittavat Oppilaina ja keräävät kokemusta julkaisemalla kaavoja maailmalle, saamalla arvioita ja vastaamalla kysymyksiin ilmoitustaululla. Korkeammat arvoasteet avaavat ominaisuuksia, kuten vaihe vaiheelta toistettavan katsauksen siihen, miten kaava on tehty.</p>
+    <p>Haluan auttaa nahkatyöläisiä ja nahka-alaa kukoistamaan kaikkialla maailmassa, ja haluan itsekin nauttia nahkatöistä entistä enemmän. Siksi tein web-version. Jos ajatus tuntuu sinusta omalta, olisin iloinen, jos liittyisit ensimmäisten testaajien joukkoon.</p>
+
+    <h2>Hinnoittelu</h2>
+    <p>Tietokoneversio pysyy jatkossakin ilmaisena. Se, onko web-versio ilmainen vai tuleeko siihen ilmainen ja maksullinen taso, päätetään beetan aikana saadun palautteen perusteella. Beetan ajan maksan ylläpitokulut itse.</p>
+
+    <h2>Beetaversiosta</h2>
+    <ul>
+      <li>Beeta on avoin YouTube-kanavan jäsenille ja aiemmille tukijoille. Kirjaudu Google-tilillä ja syötä avauskoodisi.</li>
+      <li>Ohjelma on keskeneräinen. Asiat voivat muuttua ilman ennakkoilmoitusta, eikä ole varmaa, että siitä julkaistaan koskaan valmis versio.</li>
+      <li>Henkilökohtaista tukea ei ole. Kysy neuvoa sovelluksen ”Kilta”-ilmoitustaululla. Ilmoita virheistä ja toiveista joko Killan kiinnitetyssä ketjussa <a href="https://cad.coffee-craft.net/feedback">”🐞 Näin lähetät palautetta”</a> (millä kielellä tahansa; käännän sen ja kirjaan issuen itse) tai suoraan <a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">GitHub-issueina</a>.</li>
+      <li>Muutokset kirjataan <a href="releases.html">julkaisutietoihin</a>.</li>
+    </ul>
+    <p class="meta">Tietokoneversio, lahjoitukset ja kanavajäsenyys: <a href="https://coffee-craft.net/leathercraft_cad/" target="_blank" rel="noopener">coffee-craft.net/leathercraft_cad</a></p>
+  </section>
+  <!-- i18n:pages end -->
+</main>
+<script src="_legal.js?v=2"></script>
+</body>
+</html>

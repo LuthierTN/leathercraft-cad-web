@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leathercraft CAD Web — リリースノート / Release notes</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/icon-32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/icon-180.png">
+  <meta name="theme-color" content="#1a1a1e">
+  <link rel="stylesheet" href="_legal.css?v=2">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-QB0HNEXG6E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-QB0HNEXG6E');
+  </script>
+</head>
+<body>
+<main>
+  <div class="lang"><button type="button" data-lang="ja">日本語</button><button type="button" data-lang="en">English</button></div>
+
+  <section data-lang="ja">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="about.html">なぜ Web 版か</a> · <a href="start.html">始め方</a> · <a href="terms.html">利用規約</a> · <a href="privacy.html">プライバシーポリシー</a></nav>
+    <h1>リリースノート</h1>
+    <p class="meta">新しいものが上。不具合の報告は ギルドの固定スレッド <a href="https://cad.coffee-craft.net/feedback">「🐞 フィードバックの送り方」</a>（好きな言語で OK）か <a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">GitHub の Issue</a> へ。</p>
+
+    <h2>2026-10-10</h2>
+    <ul>
+      <li>印刷：開いたときは、図形の左上に合わせた 1 ページだけになりました（前は図形全体を覆うようにページを並べていました）。「タイル配置」ボタンの代わりに「タイル配置」のチェックと「横のページ数」（既定 2）を付けました。タイル配置では「ページ追加」で右へページが増え、横のページ数を超えると次の段へ折り返します。どのページをドラッグしても全体が一緒に動きます（デスクトップ版と同じ）。</li>
+      <li>印刷プレビュー：「自動配置」ボタンを付けました。1 ページに収まらない図形は、縦と横の少ない方の枚数でタイル状に並べ、それ以外の図形は切らずに、縦横を混ぜてできるだけ少ないページに収めます。</li>
+      <li>印刷プレビュー：ページをクリックして選ぶと、プレビューの右上に操作パネルが出ます。このページを印刷するかどうか、検証定規を印刷するかどうかと印刷する角（右下→左下→左上→右上）、縦／横をそこで変えられます。開いたときは 1 ページ目を選んでいます。ページごとに縦横を変えられるので、縦と横のページを混ぜて印刷できます（タイルに並んだページは組ごとにそろえます）。ページを右クリックしても印刷しない設定にでき、印刷しないページは斜線の入った薄い赤で表示します。</li>
+      <li>印刷プレビュー：検証定規がどの角に、どの大きさで印刷されるかが見えるようになりました。大きさは 100×100 mm と 160×220 mm から、目盛りの向きは余白側（既定）と印刷範囲側から選べます。定規の軸はどちらも印刷範囲の端で、目盛りが余白へ向くか印刷範囲の中へ向くかだけが変わります。余白が 5mm 未満のときは印刷範囲側だけです。プレビューには各ページの紙の輪郭（余白込み）も破線で出します。</li>
+      <li>印刷のページ配置（位置、縦横、定規を印刷するかと角、ページを印刷するか）を図面と一緒に保存するようにしました（.lcad・クラウド・.lcc）。デスクトップ版の .lcc を開いたときは、ページの枚数と印刷するか、定規の角を引き継ぎます。目盛りの向きは図面ごとではなく、この端末の設定として覚えます。</li>
+    </ul>
+
+    <h2>2026-10-09</h2>
+    <ul>
+      <li>AI 接続：つないだ AI に、このアプリで描くときの決まり（線種の使い分け、人と同じ手順で描くこと、目打ち、仕上げの検査、図面を消す前に聞くこと）を最初に読ませるようにしました。これまでは会話のたびに教える必要がありました。読まずに描き始めた AI には、最初の 1 回だけ読むよう促します。</li>
+      <li>AI と描く機能の使い方のページ（<a href="ai.html">AI と描く</a>）を作り、設定 › AI からも開けるようにしました。タブを AI に任せる設定、コネクタの足し方、頼み方、止め方をまとめています。</li>
+    </ul>
+
+    <h2>2026-10-08</h2>
+    <ul>
+      <li>図形を選んだままタッチパッドでピンチすると、拡大縮小と一緒に選んだ図形まで回ってしまっていたのを直しました（Windows などの、Apple 以外のタッチパッドで起きていました）。これに合わせて、Ctrl（Mac は Cmd）＋ホイールで選んだ図形を 1° ずつ回す操作をやめ、選んでいてもいなくてもズームにしました。回転はギズモか <kbd>[</kbd> <kbd>]</kbd> キーで行えます。</li>
+      <li>ファイルパネル（「リポジトリ」の下）に「外枠を作成」を付けました。選んだ図形（選んでいなければ図面の全部）を、指定した余白を空けて四角く囲む線を引きます。線は外枠用の線種 #38 で、元に戻すは 1 回です（デスクトップ版と同じ機能）。</li>
+    </ul>
+
+    <h2>2026-10-07</h2>
+    <ul>
+      <li>選択ツールの右クリックメニューに「この直線が水平になるように回転」「この直線が垂直になるように回転」を付けました。選んだ図形の中の直線を右クリックして選ぶと、その直線が水平（垂直）になるよう、選んでいる図形をまとめて回します。回す角度は 90° 以内の小さい方で、軸は「回転・拡大縮小の軸に設定」で決めた点（決めていなければ選択範囲の中心）です（デスクトップ版と同じ機能）。</li>
+      <li>自動ステッチの固定ピッチ（余りを終わりの側に寄せる設定）で、2 つの点をクリックして範囲を決めたとき、2 回目にクリックした側から打ち始めることがあったのを直しました。1 回目にクリックした側から打ち始めます。</li>
+      <li>同じ設定で、終わりの穴の手前に 1 mm に満たないような詰まった一目ができていたのを直しました。最後の穴が終わりの点から半ピッチ未満なら、その穴を終わりの穴とします。</li>
+      <li>掲示板の投稿と返信の写真欄に「図面を撮る」を付けました。押すと、いま画面に見えている図面がそのまま画像になって添えられます（ボタンやパネルは写りません）。質問や不具合の報告で、スマホで画面を撮らなくて済みます。見せたい所を拡大してから掲示板を開くと伝わりやすくなります。</li>
+    </ul>
+
+    <h2>2026-10-06</h2>
+    <ul>
+      <li>オフセットツールに内部オフセットを付けました。何も選んでいない状態で、閉じた形の内側の空いた所にカーソルを置くとその範囲が光り、クリックすると内側へ「距離」だけ寄せた線が 1 周引かれます。範囲の見つけ方は革シミュレーターの「革を置く」と同じで、縫い線や補助線は壁になりません。中にある窓や穴は、同じ距離だけ外へ避けます。線のそばでは今までどおりクリックで線を選べ、何か 1 つでも選んでいれば今までのオフセットです（デスクトップ版と同じ操作）。ベジエ曲線 1 本で閉じた形（しずく形など）にも使えます。</li>
+      <li>自動ステッチで、閉じた線のすぐ内側にあるステッチラインにカーソルを置いても外側の線がプレビューされていたのを直しました。カーソルにいちばん近い線を選びます。</li>
+      <li>MCP（AI と一緒に作図する機能。いまはテスト中の方だけ）でも、AI がこの内部オフセットを使えるようになりました。</li>
+    </ul>
+
+    <h2>2026-10-05</h2>
+    <ul>
+      <li>広場の型紙にコメントと写真を付けられるようになりました。コメントは型紙の詳細画面に出て、公開した人に通知が届きます。読めるのは、その型紙を見られる人だけです。公開する人は、公開の画面の「コメントを受け付ける」で受け付けを止められます。</li>
+      <li>MCP（AI と一緒に作図する機能。いまはテスト中の方だけ）のつなぎ方を、アカウントでのログイン（OAuth）に変えました。Claude.ai や ChatGPT にカスタムコネクタの URL を入れると、初めてつなぐときにログインと許可の画面が出ます。接続トークンを作ったり貼り付けたりする必要はなくなり、トークン方式は終了しました。</li>
+      <li>Android のタブレットで、Chrome や Samsung Internet からデスクトップ版のデータ（.lcc）や .lcad を開こうとすると、ファイルが灰色になって選べなかった不具合を直しました（Firefox では開けていました）。DXF と革カタログの読み込みも同じです。</li>
+      <li>設定 › AI に「許可した AI」の一覧を付けました。「解除」を押すと、その AI は 1 分ほどでつながらなくなります。また使うときは、AI の側でつなぎ直して許可すれば戻ります。</li>
+    </ul>
+
+    <h2>2026-10-04</h2>
+    <ul>
+      <li>掲示板で、新しいスレッドの作成や返信・イイねができなかった不具合を直しました（管理者以外のアカウントで起きていました）。</li>
+      <li>常に表示する設定の縫い穴を、革シミュレーターの外でも縫い穴らしい見た目（影付きの穴）で表示するようにしました。その線種を隠しているときも残ります。革ありのサムネイルにも糸が描かれます。</li>
+    </ul>
+
+    <h2>2026-10-03　メンバー向けに公開</h2>
+    <ul>
+      <li>寄付のお願いの表示が「×」で閉じられなかった不具合を直しました。</li>
+    </ul>
+
+    <h2>2026-10-01　β テスト開始</h2>
+    <p>YouTube チャンネルメンバーと、これまでにご支援いただいた方に向けて β テストを始めました。Google でログインし、アンロックコード（メンバー限定動画の固定コメント、またはご支援のお礼メールに記載）を入力すると使えます。</p>
+    <h3>できること</h3>
+    <ul>
+      <li>図面・縫い穴・印刷（印刷キャリブレーション付き）。Windows・macOS・Linux のブラウザと iPad（Apple Pencil）で動きます。Android タブレットは動くはずですが、まだ確かめていません。Raspberry Pi 4 / Pi 5 のブラウザでも動くかもしれません（こちらも未確認です。試した方はギルドで教えてください）。</li>
+      <li>革シミュレーター：革の画像を型紙に置いて、仕上がりを確かめられます（塗りつぶしバケツ、単色塗り、線を隠す表示）。</li>
+      <li>クラウド保存（版の履歴付き）。フォルダ分けと、デモ用に中身を隠せる Privacy フォルダ。</li>
+      <li>革ギルド：型紙の公開・共有（ライセンスを選んで公開）と「広場」での検索、写真付きの掲示板、イイね、フォロー。</li>
+      <li>20 言語の画面（ログイン画面を含む）と、革の専門用語を踏まえたギルドの AI 翻訳。</li>
+      <li>デスクトップ版のデータ（.lcc）の読み込みと書き出し。DXF・SVG・PDF の読み込みと、DXF・SVG・STL の書き出し（DXF・SVG の文字は文字のまま、またはアウトライン化を選べます）。</li>
+      <li>原寸の PDF 書き出し：レーザーカッターや抜き型、印刷屋さんに渡すデータ。1枚にするか、用紙に分割（のりしろ・トンボ付き）するかを選べ、線種ごとにレイヤーに分かれます。</li>
+      <li>作者が記録した型紙の作り方の再生と、学習モード（次の一手を見て、自分の手でなぞる）。</li>
+      <li>mm とインチの切り替え（数値入力欄と目打ちのピッチもインチで扱えます）。</li>
+    </ul>
+    <h3>9月19日の非公開テストから変わったこと（主なもの）</h3>
+    <ul>
+      <li>革シミュレーターをデスクトップ版と同じ「モード」に。専用のツールバー（選択／革を置く／単色で塗る／消す）。</li>
+      <li>デスクトップ版への書き出し（.lcc）に対応。</li>
+      <li>画面の 20 言語化。</li>
+      <li>一直線上の 2 本の線の結合（K キー）、目打ちの「穴の数を指定」、余りを両端に均等に配る固定ピッチ、スマートコーナーの改良。</li>
+      <li>オフセット・トリム・ミラー・面取りの細かな不具合の修正。</li>
+      <li>クラウドの開く／保存ダイアログが最後にいたフォルダで開くように。上書き前の確認。</li>
+      <li>ギルドのサムネイルを、革あり・線画の 2 枚が切り替わる表示に。</li>
+    </ul>
+    <h3>先にお断りしておくこと</h3>
+    <ul>
+      <li>デスクトップ版と完全に同じではありません。機能の有無や操作が異なる箇所があります。</li>
+      <li>デスクトップ版のデータの曼荼羅図形は、ふつうの図形として読み込まれます。</li>
+      <li>.lcc への書き出しでは、円弧に沿った文字、SVG 画像、旧式のステッチはまだ書き出せません。</li>
+      <li>型紙の作り方を記録する機能は、当面は作者だけが使えます（再生は誰でもできます）。</li>
+      <li>MCP（Claude などの AI アシスタントと一緒に作図する機能）は、いまは一部のテスターだけで試しています。β の途中から皆さんに開放します。</li>
+      <li>クラウド保存の容量は 1 人あたり 100 MB（図面は圧縮して保存、直近 2 版を保持）、写真は 1 人あたり 50 MB です。上限は今後見直すことがあります。</li>
+      <li>β 版です。予告なく変わることがあり、正式版として公開される保証はありません。</li>
+    </ul>
+
+    <h2>2026-09-19　非公開テスト</h2>
+    <p>少人数のテスターで試験運用を始めました。</p>
+  </section>
+
+  <section data-lang="en">
+    <nav class="top"><a href="./">← Leathercraft CAD Web</a> · <a href="about.html">Why a web version</a> · <a href="start.html">Getting started</a> · <a href="terms.html">Terms of Use</a> · <a href="privacy.html">Privacy Policy</a></nav>
+    <h1>Release notes</h1>
+    <p class="meta">Newest first. Report bugs in the pinned Guild thread <a href="https://cad.coffee-craft.net/feedback">"🐞 How to send feedback"</a> (any language) or as <a href="https://github.com/LuthierTN/leathercraft-cad-web/issues" target="_blank" rel="noopener">GitHub issues</a>.</p>
+
+    <h2>2026-10-10</h2>
+    <ul>
+      <li>Printing: the print preview now opens with a single page at the top left of the drawing (it used to lay out enough pages to cover everything). The "Auto-tile" button is replaced by a "Tile pages" checkbox and a "Pages across" number (2 by default). When tiling, "Add page" adds a page to the right and wraps to the next row once the row is full, and dragging any page moves the whole grid (as in the desktop app).</li>
+      <li>Print preview: new "Auto layout" button. A shape too big for one page is tiled with the fewer pages of portrait or landscape; the other shapes are fitted whole onto as few pages as possible, mixing portrait and landscape.</li>
+      <li>Print preview: click a page to select it and a panel appears at the top right of the preview. There you choose whether the page prints, whether its check ruler prints and in which corner (bottom right → bottom left → top left → top right), and portrait or landscape. The first page is selected when the preview opens. Each page can have its own orientation, so portrait and landscape pages can print together (pages tiled together stay alike). Right-clicking a page also leaves it out of the print; such pages are shown hatched in light red.</li>
+      <li>Print preview: you can now see which corner each check ruler prints in and how big it is. The ruler can be 100 × 100 mm or 160 × 220 mm, with its ticks pointing out into the margin (default) or into the print area. Either way the ruler runs along the edge of the print area. With a margin under 5 mm only the inside option is available. The preview also outlines each page's paper (margins included) with a dashed line.</li>
+      <li>The print page layout (positions, orientation, whether and where the ruler prints, which pages print) is now saved with the drawing (.lcad, cloud and .lcc). Opening a desktop .lcc keeps its page count, which pages print and the ruler corners. The tick direction is remembered as a setting on this device rather than per drawing.</li>
+    </ul>
+
+    <h2>2026-10-09</h2>
+    <ul>
+      <li>AI connection: a connected AI now reads this app's drawing rules first (which line type is for what, drawing in the order a person would, stitching, the checks before finishing, and asking before it discards your drawing). Until now you had to teach them in each conversation. An AI that starts drawing without reading them is reminded once.</li>
+      <li>Added a how-to page for drawing with an AI (<a href="ai.html">Drawing with an AI</a>), linked from Settings › AI. It covers handing a tab to the AI, adding the connector, how to ask, and how to stop it.</li>
+    </ul>
+
+    <h2>2026-10-08</h2>
+    <ul>
+      <li>Pinching on a touchpad with shapes selected no longer spins the selection along with the zoom (this happened on Windows and other non-Apple touchpads). Along with that, Ctrl (Cmd on a Mac) + wheel no longer rotates the selection by 1°; it always zooms, selection or not. Rotate with the gizmo or the <kbd>[</kbd> <kbd>]</kbd> keys.</li>
+      <li>The file panel has "Draw Boundary" (under "Repository"). It frames the selected shapes (or the whole drawing when nothing is selected) with a rectangle, leaving the margin you enter. The frame uses the boundary line type #38 and undoes in one step. The same as the desktop app.</li>
+    </ul>
+
+    <h2>2026-10-07</h2>
+    <ul>
+      <li>The select tool's right-click menu has "Rotate so this line is horizontal" and "Rotate so this line is vertical". Right-click a straight line in the selection and pick one: everything selected turns together until that line is level (or upright), by the smaller turn of at most 90°, around the pivot set with "Set as the rotate / scale pivot" (or the middle of the selection). The same as the desktop app.</li>
+      <li>Fixed: automatic stitching at a fixed pitch with the leftover at the end sometimes started from the second click when you picked a range with two clicks. It starts from the first click now.</li>
+      <li>Fixed: with the same setting, a crammed stitch (sometimes under 1 mm) could appear just before the last hole. When the last hole falls within half a pitch of the end point, it now serves as the end hole.</li>
+      <li>The photo row of board posts and replies has "Snap the drawing". It attaches the drawing exactly as it is on screen now (buttons and panels are left out), so you no longer need to photograph your screen to ask a question or report a bug. Zoom in on the part you want to show before opening the board.</li>
+    </ul>
+
+    <h2>2026-10-06</h2>
+    <ul>
+      <li>The offset tool now has an inner offset. With nothing selected, rest the pointer in empty space inside a closed outline: the area lights up, and a click draws one closed line moved inward by the distance. The area is found the same way the leather simulator's "Place leather" finds it, so stitch and auxiliary lines are not walls, and windows or holes inside are kept clear by the same distance. Near a line a click still picks the line, and with anything selected the offset works as before (the same as the desktop app). It also works on a closed shape drawn as a single bezier curve (a teardrop, for example).</li>
+      <li>Fixed: in automatic stitching, pointing at a stitch line just inside a closed outline previewed the outline instead. The line nearest the pointer is used now.</li>
+      <li>Over MCP (drawing together with an AI; for testers only for now) the AI can use this inner offset too.</li>
+    </ul>
+
+    <h2>2026-10-05</h2>
+    <ul>
+      <li>Plaza patterns can now take comments and photos. Comments appear on the pattern's detail page and notify the person who published it, and only people who can see the pattern can read them. Publishers can stop accepting comments with "Accept comments" in the publish dialog.</li>
+      <li>MCP (drawing together with an AI; for testers only for now) now connects through your account (OAuth). Put the custom connector URL into Claude.ai or ChatGPT, and the first time it connects you sign in and allow it. There is no connection token to make or paste any more, and the token method has ended.</li>
+      <li>On Android tablets, Chrome and Samsung Internet showed desktop files (.lcc) and .lcad files greyed out in the file picker, so they could not be opened (Firefox worked). Fixed; DXF and leather catalog imports had the same problem.</li>
+      <li>Settings › AI lists the AIs you have allowed. Revoke disconnects one within about a minute; to use it again, reconnect from the AI and allow it once more.</li>
+    </ul>
+
+    <h2>2026-10-04</h2>
+    <ul>
+      <li>Fixed: members other than the admin could not start board threads, reply or like.</li>
+      <li>Always-on stitch holes now look like holes (the shadowed holes of the leather simulator) outside the simulator too, stay visible when their line type is hidden, and show their thread in the leather thumbnail.</li>
+    </ul>
+
+    <h2>2026-10-03　Opened to members</h2>
+    <ul>
+      <li>Fixed: the × on the donation notice did not close it.</li>
+    </ul>
+
+    <h2>2026-10-01　Beta test begins</h2>
+    <p>Opened to YouTube channel members and past supporters. Sign in with Google and enter the unlock code (posted in the pinned comment of the members-only video, or sent in the thank-you mail to supporters).</p>
+    <h3>What works</h3>
+    <ul>
+      <li>Drawing, stitching holes and printing (with print calibration). Runs in browsers on Windows, macOS and Linux, and on iPad (Apple Pencil). Android tablets should work but have not been tested yet. It may also run in the browser on a Raspberry Pi 4 / Pi 5 (also untested; if you try it, please tell us in the Guild).</li>
+      <li>The leather simulator: lay leather images on a pattern to see the finished piece (paint bucket, solid colours, hiding the lines on leather).</li>
+      <li>Cloud save with version history, folders, and Privacy folders that hide their contents for demos.</li>
+      <li>The leather Guild: publishing patterns with a license of your choice, searching them in the Plaza, a board with photos, likes and follows.</li>
+      <li>The interface in 20 languages (sign-in screen included), and Guild AI translation that knows the craft's terms.</li>
+      <li>Import and export of desktop-version files (.lcc). Import of DXF, SVG and PDF; export to DXF, SVG and STL (text in DXF and SVG stays text, or can be exported as outlines).</li>
+      <li>Full-size PDF export for laser cutters, die makers and print shops: one page, or tiled on paper with overlap and crop marks, with each line type on its own layer.</li>
+      <li>Replays of how a pattern is made, recorded by the author, and learn mode (see the next move, then do it yourself).</li>
+      <li>Millimetres or inches (length fields and stitching pitches work in inches too).</li>
+    </ul>
+    <h3>Changes since the private test of 19 September (highlights)</h3>
+    <ul>
+      <li>The leather simulator is now a mode, as on the desktop, with its own toolbar (select / place leather / solid colour / erase).</li>
+      <li>Export to the desktop version (.lcc).</li>
+      <li>The interface in 20 languages.</li>
+      <li>Merging two lines that lie on one straight line (K key), stitching a given number of holes, fixed pitch with the leftover spread over both ends, better smart corners.</li>
+      <li>Many small fixes to offset, trim, mirror and chamfer.</li>
+      <li>Cloud open / save dialogs start in the folder last visited, and ask before saving over another drawing.</li>
+      <li>Guild thumbnails alternate between the leather picture and the line drawing.</li>
+    </ul>
+    <h3>Please note</h3>
+    <ul>
+      <li>It is not identical to the desktop version. Some features and operations differ.</li>
+      <li>Mandala shapes in desktop files are imported as plain shapes.</li>
+      <li>Export to .lcc cannot yet write text along an arc, SVG images or old-style stitches.</li>
+      <li>Recording how a pattern is made is limited to the author for now (anyone can replay).</li>
+      <li>MCP (drawing together with an AI assistant such as Claude) is being tried by a few testers for now; it opens to everyone part-way through the beta.</li>
+      <li>Cloud storage is limited to 100 MB per person (drawings are stored compressed, the latest 2 versions are kept) and photos to 50 MB per person. These limits may be reviewed.</li>
+      <li>This is a beta. Things may change without notice, and there is no guarantee that it will be launched as a final release.</li>
+    </ul>
+
+    <h2>2026-09-19　Private test</h2>
+    <p>Trial run with a small group of testers.</p>
+  </section>
+</main>
+<script src="_legal.js?v=2"></script>
+</body>
+</html>

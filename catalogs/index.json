@@ -1,0 +1,61 @@
+{
+ "version": 2,
+ "source": "https://coffee-craft.net/leathercraft_cad/versions",
+ "catalogs": [
+  {
+   "file": "catalog_kawamura_leather_v3.lcc_ctlg",
+   "name": "Kawamura Leather - カワムラレザー",
+   "guid": "{C054B249-AFF3-42F0-986D-155B0E990E6D}",
+   "officialVer": 3,
+   "officialUrl": "https://github.com/LuthierLeather/leathercraft-cad-catalogs/releases/download/catalog-20260830/catalog_kawamura_leather_v3.lcc_ctlg",
+   "hash": "3785e1356df97b2dbfb70dac65d9ca87c6c49479",
+   "size": 1852311,
+   "leathers": 31,
+   "format": 4
+  },
+  {
+   "file": "catalog_phoenix_v2.lcc_ctlg",
+   "name": "Phoenix/フェニックス",
+   "guid": "{72E67268-6C57-4F65-83EF-EC06C60241C1}",
+   "officialVer": 2,
+   "officialUrl": "https://github.com/LuthierLeather/leathercraft-cad-catalogs/releases/download/catalog-20260816/catalog_phoenix_v2.lcc_ctlg",
+   "hash": "2e5e641e0c13b30ee438cd518209f269387baca7",
+   "size": 1239386,
+   "leathers": 16,
+   "format": 4
+  },
+  {
+   "file": "catalog_miyatsugu_v3.lcc_ctlg",
+   "name": "Miyatsugu/ミヤツグ",
+   "guid": "{77848050-DB68-468B-8003-9ADEB9CED68F}",
+   "officialVer": 3,
+   "officialUrl": "https://github.com/LuthierLeather/leathercraft-cad-catalogs/releases/download/catalog-20260830/catalog_miyatsugu_v3.lcc_ctlg",
+   "hash": "b95e155277d9987f622646a420b8dbe28c1e5125",
+   "size": 953328,
+   "leathers": 27,
+   "format": 4
+  },
+  {
+   "file": "catalog_hanatokawa_v1.lcc_ctlg",
+   "name": "hanatokawa - ハナトカワ",
+   "guid": "{DD829665-87C1-4E7B-867F-AAF8E30558C4}",
+   "officialVer": 1,
+   "officialUrl": "https://github.com/LuthierLeather/leathercraft-cad-catalogs/releases/download/catalog-20260816/catalog_hanatokawa_v1.lcc_ctlg",
+   "hash": "fc87cf0a8fb4612c69c94bb23e28743c258565f4",
+   "size": 11605381,
+   "leathers": 24,
+   "format": 4
+  },
+  {
+   "file": "catalog_leather_mania_v1.lcc_ctlg",
+   "name": "Leather Mania/レザーマニア",
+   "guid": "{51ECE053-5C15-4122-920F-59F185290053}",
+   "officialVer": 1,
+   "officialUrl": "https://github.com/LuthierLeather/leathercraft-cad-catalogs/releases/download/catalog-20260816/catalog_leather_mania_v1.lcc_ctlg",
+   "hash": "9f49f89164e5ae77e73ed4cdbc0d8a5c6b070fbb",
+   "size": 305420,
+   "leathers": 3,
+   "format": 4
+  }
+ ]
+}
